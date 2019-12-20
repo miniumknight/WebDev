@@ -106,16 +106,16 @@ body {
         background-color: #B0A990;
         z-index: 11;
         left: 215px;
+        top: 82px;
         width: 100%;
-        border-radius: 25px;
+        border-radius: 0px 0px 0px 25px;
         padding-left: 20px;
     }
     .navbar a:not(:first-child) {
         display: none;
     }
     .navbar a {
-        float: left;
-        display: block;
+        display: none;
     }
     .navbar a.resIcon {
         float: right;
@@ -133,5 +133,12 @@ body {
         float: none;
         display: block;
         text-align: left;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .innernav {
+        left: 0;
+        border-radius: 0;
     }
 }
