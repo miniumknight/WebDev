@@ -92,14 +92,14 @@ body {
     top: 0;
 }
 
-@media screen and (max-width: 1341px) {
+@media screen and (max-width: 1341px) { /*Media query responsiveness for laptops and or large tablet screens (Docking the navbar in place)*/
     .innernav {
         float: right;
         margin-left: 0;
     }
 }
 
-@media screen and (max-width: 877px) {
+@media screen and (max-width: 877px) { /*Media query responsiveness for tablets or large phones (Shows a toggleable nav menu)*/
     .navbar{
         overflow: visible;
     }
@@ -140,14 +140,14 @@ body {
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) { /*Media query responsiveness for tall screens such as mobile phones in vertical view*/
     .innernav {
         left: 0;
         border-radius: 0;
     }
 }
 
-@media screen and (max-height: 400px) {
+@media screen and (max-height: 400px) { /*Media query responsiveness for thin viewport such as a mobile phone in horizontal view*/
     .slideshow {
         top: 85px;
     }
@@ -188,5 +188,13 @@ body {
         padding-left: 20px;
         overflow-y: scroll;
         top: 57px;
+    }
+}
+
+@media screen and (max-height: 400px) and (max-width: 410px) { /*Media query responsiveness in the event of extremely small screens*/
+    .innernav {
+            left: 0;
+            border-radius: 0;
+            height: 175px;
     }
 }
