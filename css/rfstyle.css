@@ -136,7 +136,7 @@ body {
     }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 600px) {
     .innernav {
         left: 0;
         border-radius: 0;
