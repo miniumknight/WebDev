@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+
+body {
+    background-color: #202030;
+}
+
+.navbar {
+    background-color: #B0A990;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.innernav {
+    margin-top: 27.5px;
+    margin-left: 50%;
+}
+
+.navbar img {
+    height: 100px;
+    top: 0;
+    float: left;
+    display: block;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 0px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #39304A;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    padding-top: 20px;
+    font-size: 18pt;
+    font-family: 'Comfortaa';
+    overflow: hidden;
+}
+
+.navbar a:hover {
+    color: #14141c;
+}
+
+.navbar a.active {
+    color: #101014;
+}
+
+.navbar .resIcon {
+    display: none;
+}
+
+.slideshow {
+    width: 100%; 
+    position: relative;
+    top: 110px;
+}
+
+.slides {
+   display: none;
+}
+
+.slides img {
+    max-width: 100%;
+}
+
+.prevSlide, .nextSlide {
+    position: absolute; 
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: black;
+    font-size: 18px;
+    user-select: none;
+}
+
+.nextSlide {
+    right: 0;
+}
+
+.slideText {
+    color: black;
+    font-size: 18px;
+    padding: 12px;
+    position: absolute; 
+    top: 0;
+}
+
+@media screen and (max-width: 1341px) {
+    .innernav {
+        float: right;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 877px) {
+    .navbar{
+        overflow: visible;
+    }
+    .innernav {
+        position: absolute;
+        background-color: #B0A990;
+        z-index: 11;
+        left: 215px;
+        width: 100%;
+        border-radius: 25px;
+        padding-left: 20px;
+    }
+    .navbar a:not(:first-child) {
+        display: none;
+    }
+    .navbar a {
+        float: left;
+        display: block;
+    }
+    .navbar a.resIcon {
+        float: right;
+        display: block;
+        position: absolute;
+        top: 16px;
+        right: 10px;
+        z-index: 12;
+    }
+    .resIcon img {
+        height: 50px;
+        top: -10px;
+    }
+    .navbar.resNav a{
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}

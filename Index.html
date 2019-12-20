@@ -1,0 +1,48 @@
+<head>
+    <link rel="stylesheet" type ="text/css" href="css/rfstyle.css">
+</head>
+<body>
+    <div class="navbar" id="responsive">
+        <img src="img/EME Logo.png">
+        <div class="innerNav">
+            <a href="#home">Home</a>
+            <a href="#xml">XML Page</a>
+            <a href="#order">Order Form</a> 
+            <a href="#slideshow">Slide Show</a> 
+            <a href="#report">Report</a>
+        </div>
+        <a href="javascript:void(0);" class="resIcon" onclick="toggleMobile()">
+            <img src="img/Menu Icon.png">
+        </a>
+    </div>
+    <div class="slideshow">
+        <div class="slides">
+            <img src="img/slideImg1.jpg">
+            <div class="slideText">Test</div>
+        </div>
+        <div class="slides">
+            <img src="img/slideImg2.jpg">
+            <div class="slideText"></div>
+        </div>
+        <div class="slides">
+            <img src="img/slideImg3.jpg">
+            <div class="slideText"></div>
+        </div>
+        <div class="slides">
+            <div class="slideText"></div>
+        </div>
+        <div class="slides">
+            <div class="slideText"></div>
+        </div>
+        <a class="prevSlide" onclick="addtoSlide(-1)">&larr;</a>
+        <a class="nextSlide" onclick="addtoSlide(1)">&rarr;</a>
+    </div>
+    <div>
+        <span class="thumb" onclick="SwitchSlide(1)"></span>
+        <span class="thumb" onclick="SwitchSlide(2)"></span>
+        <span class="thumb" onclick="SwitchSlide(3)"></span>
+        <span class="thumb" onclick="SwitchSlide(4)"></span>
+        <span class="thumb" onclick="SwitchSlide(5)"></span>
+    </div>
+    <script src="js/rffunctions.js"></script>
+</body>
