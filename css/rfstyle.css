@@ -108,11 +108,10 @@ body {
         background-color: #B0A990;
         z-index: 11;
         left: 215px;
-        top: 82px;
+        top: 81px;
         width: 100%;
         border-radius: 0px 0px 0px 25px;
         padding-left: 20px;
-        overflow: auto;
     }
     .navbar a:not(:first-child) {
         display: none;
@@ -128,9 +127,11 @@ body {
         right: 10px;
         z-index: 12;
     }
+    .navbar a:last-child {
+        padding-bottom: 20px;
+    }
     .resIcon img {
         height: 50px;
-        top: -10px;
     }
     .navbar.resNav a{
         float: none;
@@ -143,5 +144,49 @@ body {
     .innernav {
         left: 0;
         border-radius: 0;
+    }
+}
+
+@media screen and (max-height: 400px) {
+    .slideshow {
+        top: 85px;
+    }
+    .navbar {
+        overflow: visible;
+    }
+    .navbar img {
+        height: 75px;
+    }
+    .navbar a.resIcon {
+        float: right;
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        z-index: 12;
+    }
+    .navbar.resNav a{
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .navbar.resNav .innernav {
+        display: block;
+    }
+    .resIcon img {
+        height: 40px;
+    }
+    .innernav {
+        display: none;
+        position: absolute;
+        background-color: #B0A990;
+        z-index: 11;
+        left: 215px;
+        width: 100%;
+        height: 250px;
+        border-radius: 0px 0px 0px 25px;
+        padding-left: 20px;
+        overflow-y: scroll;
+        top: 57px;
     }
 }
