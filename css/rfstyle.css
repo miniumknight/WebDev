@@ -201,6 +201,7 @@ body {
     }
     .slideText {
         width: 100%;
+        top: 45px;
     }
 }
 
@@ -212,6 +213,9 @@ body {
     .thumbcontainer {
         display: none;
     }
+    .slideText {
+        top: 110px;
+    }
 }
 
 @media screen and (max-height: 400px) { /*Media query responsiveness for thin viewport such as a mobile phone in horizontal view*/
@@ -219,7 +223,7 @@ body {
         top: 85px;
     }
     .slideText {
-        top: 85px;
+        top: 20px;
     }
     .navbar {
         overflow: visible;
@@ -265,5 +269,8 @@ body {
     .innernav {
             left: 0;
             border-radius: 0;
+    }
+    .slideText {
+        top: 85px;
     }
 }
