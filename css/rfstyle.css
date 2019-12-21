@@ -157,7 +157,7 @@ body {
     }
 }
 
-@media screen and (max-width: 877px) { /*Media query responsiveness for tablets or large phones (Shows a toggleable nav menu)*/
+@media screen and (max-width: 900px) { /*Media query responsiveness for tablets or large phones (Shows a toggleable nav menu)*/
     .navbar{
         overflow: visible;
     }
