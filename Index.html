@@ -16,34 +16,59 @@
             <img src="img/Menu Icon.png">
         </a>
     </div>
-    <div class="slideshow">
-        <div class="slides">
-            <img src="img/slideImg1.jpg">
-            <div class="slideText">Test</div>
+    <div class="content">
+        <div class="slideshow">
+            <div class="slides">
+                <img src="img/slideImg1.jpg">
+            </div>
+            <div class="slides">
+                <img src="img/slideImg2.jpg">
+            </div>
+            <div class="slides">
+                <img src="img/slideImg3.jpg">
+            </div>
+            <div class="slides">
+                <img src="img/slideImg4.jpg">
+            </div>
+            <div class="slides">
+                <img src="img/slideImg5.jpg">
+            </div>
+            <img src="img/arrowLeft.png" class="prevSlide" onclick="addtoSlide(-1)">
+            <img src="img/arrowRight.png" class="nextSlide" onclick="addtoSlide(1)">
+            <div class="thumbcontainer">
+                <img src="img/slideImg1.jpg" class="thumb" onclick="switchSlide(1)">
+                <img src="img/slideImg2.jpg" class="thumb" onclick="switchSlide(2)">
+                <img src="img/slideImg3.jpg" class="thumb" onclick="switchSlide(3)">
+                <img src="img/slideImg4.jpg" class="thumb" onclick="switchSlide(4)">
+                <img src="img/slideImg5.jpg" class="thumb" onclick="switchSlide(5)">
+            </div>
         </div>
-        <div class="slides">
-            <img src="img/slideImg2.jpg">
-            <div class="slideText"></div>
+        <div class="slideText">
+            <h1>New Nintendo 2DS XL</h1>
+            <p>Lorem Ipsum</p>
+            <img class="slideBg" src="img/txtBg.png">
         </div>
-        <div class="slides">
-            <img src="img/slideImg3.jpg">
-            <div class="slideText"></div>
+        <div class="slideText">
+            <h1>HP Laptop</h1>
+            <p>Lorem Ipsum</p>
+            <img class="slideBg" src="img/txtBg.png">
         </div>
-        <div class="slides">
-            <div class="slideText"></div>
+        <div class="slideText">
+            <h1>Sony PS4 Pro</h1>
+            <p>Lorem Ipsum</p>
+            <img class="slideBg" src="img/txtBg.png">
         </div>
-        <div class="slides">
-            <div class="slideText"></div>
+        <div class="slideText">
+            <h1>Raspberry Pi</h1>
+            <p>Lorem Ipsum</p>
+            <img class="slideBg" src="img/txtBg.png">
         </div>
-        <a class="prevSlide" onclick="addtoSlide(-1)">&larr;</a>
-        <a class="nextSlide" onclick="addtoSlide(1)">&rarr;</a>
-    </div>
-    <div>
-        <span class="thumb" onclick="SwitchSlide(1)"></span>
-        <span class="thumb" onclick="SwitchSlide(2)"></span>
-        <span class="thumb" onclick="SwitchSlide(3)"></span>
-        <span class="thumb" onclick="SwitchSlide(4)"></span>
-        <span class="thumb" onclick="SwitchSlide(5)"></span>
+        <div class="slideText">
+            <h1>Soldering Iron</h1>
+            <p>Lorem Ipsum</p>
+            <img class="slideBg" src="img/txtBg.png">
+        </div>
+        
     </div>
     <script src="js/rffunctions.js"></script>
 </body>

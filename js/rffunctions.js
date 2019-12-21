@@ -1,6 +1,7 @@
 const numberSlides = document.getElementsByClassName("slides");
+const numberText = document.getElementsByClassName("slidetext");
 const thumbs = document.getElementsByClassName("thumb");
-var currSlide = 1;
+var currSlide = 0;
 timedSlide();
 
 function addtoSlide(n) {
@@ -22,10 +23,14 @@ function displaySlide(n) {
     for (i = 0; i < numberSlides.length; i++) 
         numberSlides[i].style.display = "none";
     
+    for (i = 0; i< numberText.length; i++)
+        numberText[i].style.display = "none";
+
     for (i = 0; i < thumbs.length; i++) 
         thumbs[i].className = thumbs[i].className.replace(" active", "");
     
     numberSlides[currSlide-1].style.display = "block";
+    numberText[currSlide-1].style.display = "block";
     thumbs[currSlide-1].className += " active";
 }
 
@@ -33,13 +38,22 @@ function timedSlide() {
     let i; 
     for (i = 0; i < numberSlides.length; i++) 
         numberSlides[i].style.display = "none";
-    
+
+    for (i = 0; i< numberText.length; i++)
+        numberText[i].style.display = "none";
+
+    for (i = 0; i < thumbs.length; i++) 
+        thumbs[i].className = thumbs[i].className.replace(" active", "");
+
     currSlide++;
+    
     if (currSlide > numberSlides.length)
         currSlide = 1
 
     numberSlides[currSlide-1].style.display = "block";
-    setTimeout(timedSlide, 7000);
+    numberText[currSlide-1].style.display = "block";
+    thumbs[currSlide-1].className += " active";
+    setTimeout(timedSlide, 10000);
 }
 
 function toggleMobile() {
