@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Cabin&display=swap');
 
 body {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
     margin: 0;
-    background-color: #202030;
+    background-color: white;
 }
 
 .navbar {
-    background-color: #B0A990;
+    background-color: purple;
     overflow: hidden;
     position: fixed;
     top: 0;
@@ -18,13 +18,23 @@ body {
     box-shadow: 0 2px 4px -1px;
 }
 
+.navstyle {
+    overflow: auto;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .innernav {
+    overflow: auto;
     margin-top: 27.5px;
-    margin-left: 50%;
+    margin-left: auto;
+    margin-right: 0;
+    float: right;
 }
 
 .navbar img {
-    height: 100px;
+    height: 80px;
     top: 0;
     float: left;
     display: block;
@@ -36,22 +46,22 @@ body {
 .navbar a {
     float: left;
     display: block;
-    color: #39304A;
+    color: white;
     text-align: center;
     text-decoration: none;
     padding: 10px;
-    padding-top: 20px;
-    font-size: 18pt;
-    font-family: 'Comfortaa';
+    padding-top: 7px;
+    font-size: 16pt;
+    font-family: 'Cabin', sans-serif;
     overflow: hidden;
 }
 
 .navbar a:hover {
-    color: #14141c;
+    color: black;
 }
 
 .navbar a.active {
-    color: #101014;
+    color: black;
 }
 
 .navbar .resIcon {
@@ -59,51 +69,114 @@ body {
 }
 
 .content {
-    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    overflow: visible;
+    height: auto;
+    position: relative;
+    top: 85px;
+}
+
+.title {
+    overflow: auto;
+    text-align: center;
+}
+
+.title h1 {
+    font-family: 'Cabin', sans-serif;
+    position: relative;
+    overflow: hidden;
+    color: purple;
+}
+
+.title h1:before {
+    margin-left: -50%;
+    text-align: right;
 }
 
 .slideshow {
-    width: 50%; 
+    height: 500px;
+}
+
+.slideImgContainer {
+    width: 45%; 
     position: relative;
     float: left;
-    top: 110px;
+    overflow: hidden;
+    max-height: 100%;
 }
 
-.slideText {
-    width: 50%;
-    height: inherit;
-    position: relative;
-    float: right;
-    top: 110px;
-    color: #B0A990;
-    font-family: 'Comfortaa';
-    text-align: left;
-}
-
-.slideText h1{
-    font-size: 24pt;
-    padding-left: 15px;
-    padding-right: 15px;
-    text-decoration: underline;
-}
-
-.slideText p{
-    font-size: 18pt;
-    margin-top: 0;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-.slideBg{
+.slides {
+    width: 100%;
     max-width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    max-height: 100%;
 }
 
 .slides img {
-    max-width: 100%;
+    display: block; 
+    width: 100%;
+    height: 100%;
+}
+
+.slideTxtContainer{
+    width: 55%;
+    height: 100%;
+    position: relative;
+    float: right;
+}
+
+.slideText {
+    display: block;
+    width: 100%;
+    height: auto;
+    float: right;
+    color: #5c005c;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+}
+
+.slideText h1 {
+    font-size: 30pt;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.slideText p {
+    font-size: 20pt;
+    margin-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.buyBtn {
+    cursor: pointer;
+    background-color: purple;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 15px;
+    margin: 30px;
+    font-size: 18pt;
+    font-family: 'Cabin', sans-serif;
+    color: white;
+}
+
+.buyBtn:hover {
+    color: black;
+}
+
+.fullWidthBg{
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    height: 100%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background-color: lightgray;
+    z-index: -1;
+    box-shadow: inset 0px 11px 8px -10px, inset 0 -11px 8px -10px;
 }
 
 .prevSlide, .nextSlide {
@@ -113,7 +186,6 @@ body {
     padding: 10px;
     user-select: none;
     height: 20px;
-    background-color: #B0A990;
     opacity: 50%;
 }
 
@@ -131,15 +203,19 @@ body {
     margin: 0 auto;
     position: relative;
     bottom: 55px;
+    overflow: auto;
 }
 
 .thumbcontainer img {
     cursor: pointer;
-    height: 45px;
-    margin: 5px;
+    height: 47px;
     padding-bottom: 5px;
-    background-color: #B0A990;
-    opacity: 50%;
+    margin: 5px;
+    margin-bottom: 0px;
+    background-color: white;
+    opacity: 75%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .thumbcontainer img:hover {
@@ -150,10 +226,33 @@ body {
     opacity: 100%;
 }
 
+.fade-in-transition {
+    animation-name: fadeTransition;
+    animation-duration: 0.5s;
+}
+
+@keyframes fadeTransition {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
 @media screen and (max-width: 1341px) { /*Media query responsiveness for laptops and or large tablet screens (Docking the navbar in place)*/
     .innernav {
         float: right;
         margin-left: 0;
+    }
+    .slideshow {
+        height: 440px;
+    }
+    .slideText h1 {
+        font-size: 24pt;
+    }
+    .slideText p {
+        font-size: 18pt;
     }
 }
 
@@ -163,16 +262,13 @@ body {
     }
     .innernav {
         position: absolute;
-        background-color: #B0A990;
+        background-color: purple;
         z-index: 11;
         left: 215px;
-        top: 81px;
+        top: 62px;
         width: 100%;
         border-radius: 0px 0px 0px 25px;
         padding-left: 20px;
-    }
-    .navbar a:not(:first-child) {
-        display: none;
     }
     .navbar a {
         display: none;
@@ -197,11 +293,16 @@ body {
         text-align: left;
     }
     .slideshow {
+        height: 500px;
+    }
+    .slideImgContainer {
         width: 100%;
     }
-    .slideText {
+    .slideTxtContainer {
         width: 100%;
-        top: 45px;
+    }
+    .buyBtn {
+        display: none;
     }
 }
 
@@ -213,18 +314,18 @@ body {
     .thumbcontainer {
         display: none;
     }
-    .slideText {
-        top: 110px;
+    .slideshow {
+        height: 300px;
+    }
+    .slideText h1 {
+        font-size: 16pt;
+    }
+    .slideText p {
+        font-size: 14pt;
     }
 }
 
 @media screen and (max-height: 400px) and (max-width: 877px) { /*Media query responsiveness for thin viewport such as a mobile phone in horizontal view*/
-    .slideshow {
-        top: 85px;
-    }
-    .slideText {
-        top: 20px;
-    }
     .navbar {
         overflow: visible;
     }
@@ -235,7 +336,7 @@ body {
         float: right;
         display: block;
         position: absolute;
-        top: 5px;
+        top: 15px;
         right: 10px;
         z-index: 12;
     }
@@ -253,7 +354,7 @@ body {
     .innernav {
         display: none;
         position: absolute;
-        background-color: #B0A990;
+        background-color: purple;
         z-index: 11;
         left: 215px;
         width: 100%;
@@ -262,15 +363,5 @@ body {
         padding-left: 20px;
         overflow-y: scroll;
         top: 57px;
-    }
-}
-
-@media screen and (max-height: 400px) and (max-width: 410px) { /*Media query responsiveness in the event of extremely small screens*/
-    .innernav {
-            left: 0;
-            border-radius: 0;
-    }
-    .slideText {
-        top: 85px;
     }
 }

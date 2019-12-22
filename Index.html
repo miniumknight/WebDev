@@ -4,71 +4,98 @@
 </head>
 <body>
     <div class="navbar" id="responsive">
-        <img src="img/EME Logo.png">
-        <div class="innerNav">
-            <a href="#home">Home</a>
-            <a href="#xml">XML Page</a>
-            <a href="#order">Order Form</a> 
-            <a href="#slideshow">Slide Show</a> 
-            <a href="#report">Report</a>
+        <div class="navstyle">
+            <img src="img/EME Logo.png">
+            <div class="innerNav">
+                <a href="#home">Home</a>
+                <a href="#xml">XML Page</a>
+                <a href="#order">Order Form</a> 
+                <a href="#slideshow">Slide Show</a> 
+                <a href="#report">Report</a>
+            </div>
         </div>
         <a href="javascript:void(0);" class="resIcon" onclick="toggleMobile()">
             <img src="img/Menu Icon.png">
         </a>
     </div>
     <div class="content">
+        <div class="title">
+            <h1>Featured Products</h1>
+        </div>
         <div class="slideshow">
-            <div class="slides">
-                <img src="img/slideImg1.jpg">
+            <div class="slideImgContainer">
+                <div class="slides fade-in-transition">
+                    <img src="img/slideImg1.png">
+                </div>
+                <div class="slides fade-in-transition">
+                    <img src="img/slideImg2.png">
+                </div>
+                <div class="slides fade-in-transition">
+                    <img src="img/slideImg3.png">
+                </div>
+                <div class="slides fade-in-transition">
+                    <img src="img/slideImg4.png">
+                </div>
+                <div class="slides fade-in-transition">
+                    <img src="img/slideImg5.png">
+                </div>
+                <img src="img/arrowLeft.png" class="prevSlide" onclick="addtoSlide(-1)">
+                <img src="img/arrowRight.png" class="nextSlide" onclick="addtoSlide(1)">
+                <div class="thumbcontainer">
+                    <img src="img/slideImg1.png" class="thumb" onclick="switchSlide(1)">
+                    <img src="img/slideImg2.png" class="thumb" onclick="switchSlide(2)">
+                    <img src="img/slideImg3.png" class="thumb" onclick="switchSlide(3)">
+                    <img src="img/slideImg4.png" class="thumb" onclick="switchSlide(4)">
+                    <img src="img/slideImg5.png" class="thumb" onclick="switchSlide(5)">
+                </div>
             </div>
-            <div class="slides">
-                <img src="img/slideImg2.jpg">
+            <div class="slideTxtContainer">
+                <div class="slideText">
+                    <h1>New Nintendo 2DS XL</h1>
+                    <p>We now have new stock of the popular New 2DS XL console by nintendo,
+                        this console is great for kids and adults alike and would make a great gift.
+                        <br><br>
+                        We currently have a sale on this item for 20% off so grab one before they're gone!
+                    </p>
+                </div>
+                <div class="slideText">
+                    <h1>HP Laptops</h1>
+                    <p>We now have a site-wide sale on all HP brand laptops with savings of up to £100.
+                        <br><br>
+                        In combination with free shipping on all orders over £50 you can grab some huge savings, get yours today!
+                    </p>
+                </div>
+                <div class="slideText">
+                    <h1>Sony PS4 Pro</h1>
+                    <p>With the ability to output at a 4k resolution and increased processing poower
+                        the PS4 pro is one of the best home consoles money can buy.
+                        <br><br>
+                        Get yours today and recieve a free game from our selection!
+                    </p>
+                </div>
+                <div class="slideText">
+                    <h1>Raspberry Pi</h1>
+                    <p>When we think of programming, we think of this lovely machine, you can do so much with this
+                        affordable peice of kit that the sky is the limit!
+                        <br><br>
+                        This is one of the best items any aspiring programmer can get their hands on!
+                    </p>
+                </div>
+                <div class="slideText">
+                    <h1>Soldering Iron</h1>
+                    <p>A soldering iron is one of the most useful tools and electronics engineer can have
+                        with so many applications in curcuitry from replacing battery sockets to fixing
+                        motherboards.
+                        <br><br>
+                        Our soldering irons are all from quality brands.
+                    </p>
+                </div>
+                <div class="buyBtn">
+                    Buy It Now
+                </div>
             </div>
-            <div class="slides">
-                <img src="img/slideImg3.jpg">
-            </div>
-            <div class="slides">
-                <img src="img/slideImg4.jpg">
-            </div>
-            <div class="slides">
-                <img src="img/slideImg5.jpg">
-            </div>
-            <img src="img/arrowLeft.png" class="prevSlide" onclick="addtoSlide(-1)">
-            <img src="img/arrowRight.png" class="nextSlide" onclick="addtoSlide(1)">
-            <div class="thumbcontainer">
-                <img src="img/slideImg1.jpg" class="thumb" onclick="switchSlide(1)">
-                <img src="img/slideImg2.jpg" class="thumb" onclick="switchSlide(2)">
-                <img src="img/slideImg3.jpg" class="thumb" onclick="switchSlide(3)">
-                <img src="img/slideImg4.jpg" class="thumb" onclick="switchSlide(4)">
-                <img src="img/slideImg5.jpg" class="thumb" onclick="switchSlide(5)">
-            </div>
+            <div class="fullWidthBg"></div>
         </div>
-        <div class="slideText">
-            <h1>New Nintendo 2DS XL</h1>
-            <p>Lorem Ipsum</p>
-            <img class="slideBg" src="img/txtBg.png">
-        </div>
-        <div class="slideText">
-            <h1>HP Laptop</h1>
-            <p>Lorem Ipsum</p>
-            <img class="slideBg" src="img/txtBg.png">
-        </div>
-        <div class="slideText">
-            <h1>Sony PS4 Pro</h1>
-            <p>Lorem Ipsum</p>
-            <img class="slideBg" src="img/txtBg.png">
-        </div>
-        <div class="slideText">
-            <h1>Raspberry Pi</h1>
-            <p>Lorem Ipsum</p>
-            <img class="slideBg" src="img/txtBg.png">
-        </div>
-        <div class="slideText">
-            <h1>Soldering Iron</h1>
-            <p>Lorem Ipsum</p>
-            <img class="slideBg" src="img/txtBg.png">
-        </div>
-        
     </div>
     <script src="js/rffunctions.js"></script>
 </body>
