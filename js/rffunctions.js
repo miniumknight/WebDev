@@ -1,5 +1,5 @@
 const numberSlides = document.getElementsByClassName("slides");
-const numberText = document.getElementsByClassName("slidetext");
+const numberText = document.getElementsByClassName("slideText");
 const thumbs = document.getElementsByClassName("thumb");
 var currSlide = 0;
 timedSlide();

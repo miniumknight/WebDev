@@ -129,8 +129,14 @@ p {
     float: left;
 }
 
-.slideshow {
+.slideShow {
     height: 500px;
+}
+
+.slides {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .slideImgContainer {
@@ -138,12 +144,6 @@ p {
     position: relative;
     float: left;
     overflow: hidden;
-    max-height: 100%;
-}
-
-.slides {
-    width: 100%;
-    max-width: 100%;
     max-height: 100%;
 }
 
@@ -220,17 +220,17 @@ p {
     margin: 5px;
     margin-bottom: 0px;
     background-color: white;
-    opacity: 75%;
+    opacity: .75;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
 .thumbcontainer img:hover {
-    opacity: 100%;
+    opacity: 1;
 }
 
 .thumb.active {
-    opacity: 100%;
+    opacity: 1;
 }
 
 .fullWidthBg{
@@ -261,10 +261,10 @@ p {
 
 @keyframes fadeTransition {
     0% {
-        opacity: 0%;
+        opacity: 0;
     }
     100% {
-        opacity: 100%;
+        opacity: 1;
     }
 }
 
