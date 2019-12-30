@@ -6,14 +6,7 @@ body {
     margin: 0;
     background-color: white;
     overflow-x: hidden;
-}
-
-main {
-    max-width: 1440px;
-    margin: auto;
     height: auto;
-    position: relative;
-    top: 90px;
 }
 
 h1 {
@@ -29,6 +22,14 @@ h2 {
     padding-right: 20px;
     font-family: 'Roboto', sans-serif;
     color: #5c005c;
+}
+
+h3 {
+    font-size: 10pt; 
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-weight: unset;
+    margin: 3px;
 }
 
 p {
@@ -100,7 +101,15 @@ p {
 .navbar .resIcon {
     display: none;
 }
-    
+   
+.content {
+    max-width: 1440px;
+    margin: auto;
+    position: relative;
+    top: 90px;
+    min-height: calc(100% - 90px);
+}
+
 .title {
     text-align: center;
     position: relative;
@@ -227,6 +236,24 @@ p {
     box-shadow: inset 0px 11px 8px -10px, inset 0 -11px 8px -10px;
 }
 
+.footFix {
+    position: relative;
+    padding-bottom: 32px;
+    clear: both;
+}
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    background-color: purple;
+    text-align: center;
+    padding: 5px;
+}
+
 .fade-in-transition {
     animation-name: fadeTransition;
     animation-duration: 0.5s;
@@ -320,6 +347,9 @@ p {
     }
     h2 {
         font-size: 16pt;
+    }
+    h3 {
+        font-size: 8pt;
     }
     p {
         font-size: 14pt;
