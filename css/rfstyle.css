@@ -116,6 +116,12 @@ p {
     overflow: hidden;
 }
 
+.mainTextContainer {
+    width: 100%;
+    overflow: auto;
+    padding-bottom: 32px;
+}
+
 .mainText {
     width: 50%;
     height: auto;
@@ -234,12 +240,6 @@ p {
     background-color: lightgray;
     z-index: -1;
     box-shadow: inset 0px 11px 8px -10px, inset 0 -11px 8px -10px;
-}
-
-.footFix {
-    position: relative;
-    padding-bottom: 32px;
-    clear: both;
 }
 
 .footer {
