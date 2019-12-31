@@ -71,6 +71,12 @@ function checkValidation(){
     else {
         document.getElementById('confirmPassword').setCustomValidity("Passwords do not match!");
     }
+
+    if (grecaptcha.getResponse() == ""){
+        alert("You can't proceed!");
+    } else {
+        alert("Thank you");
+    }
 }
 
 function onSubmit(token) {
