@@ -4,6 +4,19 @@ const thumbs = document.getElementsByClassName("thumb");
 var currSlide = 0;
 timedSlide();
 
+window.onload = function () {
+    var form = document.getElementById('rfform');
+    if (form) {
+        form.addEventListener("submit", function(event){
+            if (grecaptcha.getResponse() === '') {                            
+                event.preventDefault();
+                alert('Please check the recaptcha');
+            }
+        }
+        , false);
+    }
+}
+
 function addtoSlide(n) {
     displaySlide(currSlide += n);
 }
