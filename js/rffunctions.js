@@ -2,20 +2,8 @@ const numberSlides = document.getElementsByClassName("slides");
 const numberText = document.getElementsByClassName("slideText");
 const thumbs = document.getElementsByClassName("thumb");
 var currSlide = 0;
+var allowSubmit = false;
 timedSlide();
-
-window.onload = function () {
-    var form = document.getElementById('rfform');
-    if (form) {
-        form.addEventListener("submit", function(event){
-            if (grecaptcha.getResponse() === '') {                            
-                event.preventDefault();
-                alert('Please check the recaptcha');
-            }
-        }
-        , false);
-    }
-}
 
 function addtoSlide(n) {
     displaySlide(currSlide += n);
@@ -77,11 +65,25 @@ function toggleMobile() {
         x.className = "navbar";
 }
 
+function captchaSuccess() {
+    allowSubmit = true;
+}
+
+function captchaExpiry() {
+    allowSubmit = false;
+}
+
+function captchaCheck() {
+    if (allowSubmit)
+        return true;
+
+    event.preventDefault();
+    alert('Fill in the capcha!');
+}
+
 function checkValidation(){
-    if (document.getElementById('password').value == document.getElementById('confirmPassword').value) {
+    if (document.getElementById('password').value == document.getElementById('confirmPassword').value)
         document.getElementById('confirmPassword').setCustomValidity("");
-    }
-    else {
+    else 
         document.getElementById('confirmPassword').setCustomValidity("Passwords do not match!");
-    }
 }

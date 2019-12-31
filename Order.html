@@ -24,7 +24,7 @@
         <div class="mainTextContainer">
             <div class="mainText">
                 <h1>Registration</h1>
-                <form class="formContainer" id="rfform">
+                <form class="formContainer" onsubmit="captchaCheck()">
                     <label for="firstName"><h1>First Name</h1></label>
                     <input class="form" type="text" placeholder="First Name" name="firstName" required>
 
@@ -41,9 +41,9 @@
                     <input id="confirmPassword" class="form" type="password" placeholder="Repeat Password" name="passwordRepeat" required>
 
                     <div class="submitcontainer">
-                        <div class="g-recaptcha" data-sitekey="6Lc1KssUAAAAAP4MZBgFOa8O8zw83w1vy3KrtqG-"  data-callback="onSubmit"></div>
+                        <div class="g-recaptcha" data-sitekey="6Lc1KssUAAAAAP4MZBgFOa8O8zw83w1vy3KrtqG-"  data-callback="captchaSuccess"  data-expired-callback="captchaExpiry" data-error-callback="captchaExpiry"></div>
 
-                        <button type="submit" class="submitBtn" onclick="submitUserForm();">Register</button>
+                        <button type="submit" class="submitBtn" onclick="checkValidation();">Register</button>
                     </div>
                 </form>
             </div>
