@@ -71,14 +71,13 @@ function checkValidation(){
     else {
         document.getElementById('confirmPassword').setCustomValidity("Passwords do not match!");
     }
-
-    if (grecaptcha.getResponse() == ""){
-        alert("You can't proceed!");
-    } else {
-        alert("Thank you");
-    }
 }
 
-function onSubmit(token) {
-    document.getElementById("formContainer").submit();
+var form = document.getElementById('formContainer');
+form.addEventListener("submit", function(event){
+    if (grecaptcha.getResponse() === '') {                            
+      event.preventDefault();
+      alert('Please check the recaptcha');
+    }
   }
+, false);
