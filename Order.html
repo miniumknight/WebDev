@@ -1,0 +1,62 @@
+<head>
+    <title>East Midlands Electronics Forms</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type ="text/css" href="css/rfstyle.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <div class="navbar" id="responsive">
+        <div class="navstyle">
+            <img src="img/EME Logo.png">
+            <div class="innerNav">
+                <a href="./Index.html">Home</a>
+                <a href="#xml">XML Page</a>
+                <a href="#order">Order Form</a> 
+                <a href="#slideshow">Slide Show</a> 
+                <a href="#report">Report</a>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="resIcon" onclick="toggleMobile()">
+            <img src="img/Menu Icon.png">
+        </a>
+    </div>
+    <div class="content">
+        <div class="mainTextContainer">
+            <div class="mainText">
+                <h1>Registration</h1>
+                <form class="formContainer">
+                    <label for="firstName"><h1>First Name</h1></label>
+                    <input class="form" type="text" placeholder="First Name" name="firstName" required>
+
+                    <label for="lastName"><h1>Last Name</h1></label>
+                    <input class="form" type="text" placeholder="Last Name" name="lastName" required>
+
+                    <label for="email"><h1>Email</h1></label>
+                    <input class="form" type="email" placeholder="Your Email" name="email" required>
+
+                    <label for="password"><h1>Password</h1></label>
+                    <input id="password" class="form" type="password" placeholder="Your Password" name="password" required>
+
+                    <label for="passwordRepeat"><h1>Repeat Password</h1></label>
+                    <input id="confirmPassword" class="form" type="password" placeholder="Repeat Password" name="passwordRepeat" required>
+
+                    <div class="submitcontainer">
+                        <div class="g-recaptcha" data-sitekey="6Lc1KssUAAAAAP4MZBgFOa8O8zw83w1vy3KrtqG-"></div>
+
+                        <button type="submit" class="submitBtn" onclick="checkValidation();">Register</button>
+                    </div>
+                </form>
+            </div>
+            <div class="mainText">
+                <h1>Order Form</h1>
+                <p>Our goal is to supply you with the latest and greatest electronics, from
+                        consoles to circuitry, we have you covered.
+                </p>
+            </div>
+        </div>
+        <div class="footer">
+            <h3>Website by Ross Fitch. Copyright &copy; 2019, All rights reserved.</h3>
+        </div>
+    </div>
+    <script src="js/rffunctions.js"></script>
+</body>

@@ -129,6 +129,56 @@ p {
     float: left;
 }
 
+.formContainer {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.formContainer h1 {
+    padding: 0;
+    font-size: 20pt;
+}
+
+.form {
+    width: 100%;
+    font-size: 20pt;
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+    background-color: lightgray;
+    border-radius: 5px;
+    border: none;
+}
+
+.submitContainer {
+    width: 100%;
+    text-align: center;
+}
+
+.g-recaptcha {
+    margin-top: 30px;
+    width: 50%;
+    float: left;
+}
+
+.submitBtn {
+    cursor: pointer;
+    width: 50%;
+    height: 76px;
+    padding: 16px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 18pt;
+    color: white;
+    background-color: #800080;
+    border-radius: 5px;
+    border: none;
+    float: right;
+}
+
+.submitBtn:hover {
+    background-color: #5c005c;
+}
+
 .slideShow {
     height: 500px;
 }
@@ -183,7 +233,7 @@ p {
 }
 
 .buyBtn:hover {
-    color: black;
+    background-color: #5c005c;
 }
 
 .prevSlide, .nextSlide {
@@ -275,12 +325,22 @@ p {
     h2 {
         font-size: 24pt;
     }
-    p {
+    p, .submitBtn {
         font-size: 18pt;
     }
     .innernav {
         float: right;
         margin-left: 0;
+    }
+    .formContainer h1, .form {
+        font-size: 19pt;
+    }
+    .g-recaptcha {
+        width: initial;
+    }
+    .submitBtn {
+        width: 100%;
+        height: initial;
     }
     .slideshow {
         height: 440px;
@@ -351,12 +411,23 @@ p {
     h3 {
         font-size: 8pt;
     }
-    p {
+    p, .submitBtn {
         font-size: 14pt;
     }
     .innernav {
         left: 0;
         border-radius: 0;
+    }
+    .formContainer h1, .form {
+        font-size: 14.5pt;
+    }
+    .g-recaptcha {
+        width: 100%;
+        transform:scale(0.8);
+        transform-origin:0 0;
+    }
+    .submitBtn {
+        margin-top: 10px;
     }
     .thumbcontainer {
         display: none;

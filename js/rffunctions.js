@@ -63,3 +63,12 @@ function toggleMobile() {
     else 
         x.className = "navbar";
 }
+
+function checkValidation(){
+    if (document.getElementById('password').value == document.getElementById('confirmPassword').value) {
+        document.getElementById('confirmPassword').setCustomValidity("");
+    }
+    else {
+        document.getElementById('confirmPassword').setCustomValidity("Passwords do not match!");
+    }
+}
