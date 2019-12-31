@@ -72,3 +72,7 @@ function checkValidation(){
         document.getElementById('confirmPassword').setCustomValidity("Passwords do not match!");
     }
 }
+
+function onSubmit(token) {
+    document.getElementById("formContainer").submit();
+  }
