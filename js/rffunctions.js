@@ -73,7 +73,7 @@ function checkValidation(){
     }
 }
 
-var form = document.getElementById('formContainer');
+var form = document.getElementByClassName('formContainer');
 form.addEventListener("submit", function(event){
     if (grecaptcha.getResponse() === '') {                            
       event.preventDefault();
