@@ -72,12 +72,3 @@ function checkValidation(){
         document.getElementById('confirmPassword').setCustomValidity("Passwords do not match!");
     }
 }
-
-var form = document.getElementByClassName('formContainer');
-form.addEventListener("submit", function(event){
-    if (grecaptcha.getResponse() === '') {                            
-      event.preventDefault();
-      alert('Please check the recaptcha');
-    }
-  }
-, false);
