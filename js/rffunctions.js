@@ -78,7 +78,7 @@ function captchaCheck() {
         return true;
 
     event.preventDefault();
-    alert('Fill in the capcha!');
+    alert('Please solve the captcha!');
 }
 
 function checkValidation(){
