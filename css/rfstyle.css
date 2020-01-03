@@ -435,6 +435,9 @@ p {
     .slideshow {
         height: 300px;
     }
+    #last {
+        margin-top: 30px;
+    }
 }
 
 @media screen and (max-height: 400px) and (max-width: 877px) { /*Media query responsiveness for thin viewport such as a mobile phone in horizontal view*/
