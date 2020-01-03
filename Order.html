@@ -4,7 +4,7 @@
     <link rel="stylesheet" type ="text/css" href="css/rfstyle.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
-<body>
+<body onload="loadData()">
     <div class="navbar" id="responsive">
         <div class="navstyle">
             <img src="img/EME Logo.png">
@@ -63,7 +63,7 @@
                     <input class="form" type="text" placeholder="House Number | Street | Postcode" name="address" required>
 
                     <label for="telephone"><h1>Telephone</h1></label>
-                    <input class="form" type="tel" placeholder="Telephone Number" name="telephone" required>
+                    <input class="form" type="number" placeholder="Telephone Number" name="telephone" required>
 
                     <div class="submitcontainer">
                         <button type="submit" class="submitBtn" onclick="checkAcc()">Place Order</button>

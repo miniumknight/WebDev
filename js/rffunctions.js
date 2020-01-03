@@ -6,6 +6,15 @@ var currSlide = 0;
 var allowSubmit = false;
 timedSlide();
 
+function loadData() {
+    if(localStorage.getItem('txtValues') == null){
+        accounts = [];
+    }
+    else {
+        accounts = JSON.parse(localStorage.getItem('txtValues'));
+    }
+}
+
 function addtoSlide(n) {
     displaySlide(currSlide += n);
 }
@@ -76,12 +85,6 @@ function captchaExpiry() {
 
 function SubmitAcc() {
     if (allowSubmit) {
-        if(localStorage.getItem('txtValues') == null){
-            accounts = [];
-        }
-        else {
-            accounts = JSON.parse(localStorage.getItem('txtValues'));
-        }
         accounts.push([document.getElementById('preEmail').value, document.getElementById('password').value])
         localStorage.setItem('txtValues', JSON.stringify(accounts));
         return true;
