@@ -24,7 +24,7 @@
         <div class="mainTextContainer">
             <div class="mainText">
                 <h1>Registration</h1>
-                <form class="formContainer" onsubmit="captchaCheck()">
+                <form class="formContainer" onsubmit="SubmitAcc()">
                     <label for="firstName"><h1>First Name</h1></label>
                     <input class="form" type="text" placeholder="First Name" name="firstName" required>
 
@@ -32,7 +32,7 @@
                     <input class="form" type="text" placeholder="Last Name" name="lastName" required>
 
                     <label for="email"><h1>Email</h1></label>
-                    <input class="form" type="email" placeholder="Your Email" name="email" required>
+                    <input id ="preEmail" class="form" type="email" placeholder="Your Email" name="email" required>
 
                     <label for="password"><h1>Password</h1></label>
                     <input id="password" class="form" type="password" placeholder="Your Password" name="password" required>
@@ -49,9 +49,25 @@
             </div>
             <div class="mainText">
                 <h1>Order Form</h1>
-                <p>Our goal is to supply you with the latest and greatest electronics, from
-                        consoles to circuitry, we have you covered.
-                </p>
+                <form class="formContainer">
+                    <label for="email"><h1>Email</h1></label>
+                    <input id="email" class="form" type="email" placeholder="Your Email" name="email" required>
+
+                    <label for="password"><h1>Password</h1></label>
+                    <input id="existingPass" class="form" type="password" placeholder="Your Password" name="password" required>
+
+                    <label for="product"><h1>Desired Product</h1></label>
+                    <input class="form" type="text" placeholder="Product Name" name="product" required>
+
+                    <label for="address"><h1>Address</h1></label>
+                    <input class="form" type="text" placeholder="House Number | Street | Postcode" name="address" required>
+
+                    <label for="telephone"><h1>Telephone</h1></label>
+                    <input class="form" type="tel" placeholder="Telephone Number" name="telephone" required>
+
+                    <div class="submitcontainer">
+                        <button type="submit" class="submitBtn" onclick="checkAcc()">Place Order</button>
+                    </div>
             </div>
         </div>
         <div class="footer">

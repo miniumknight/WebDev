@@ -1,6 +1,7 @@
 const numberSlides = document.getElementsByClassName("slides");
 const numberText = document.getElementsByClassName("slideText");
 const thumbs = document.getElementsByClassName("thumb");
+var accounts = new Array();
 var currSlide = 0;
 var allowSubmit = false;
 timedSlide();
@@ -73,12 +74,28 @@ function captchaExpiry() {
     allowSubmit = false;
 }
 
-function captchaCheck() {
-    if (allowSubmit)
+function SubmitAcc() {
+    if (allowSubmit) {
+        if(localStorage.getItem('txtValues') == null){
+            accounts = [];
+        }
+        else {
+            accounts = JSON.parse(localStorage.getItem('txtValues'));
+        }
+        accounts.push([document.getElementById('preEmail').value, document.getElementById('password').value])
+        localStorage.setItem('txtValues', JSON.stringify(accounts));
         return true;
-
+    }
     event.preventDefault();
     alert('Please solve the captcha!');
+}
+
+function checkAcc() {
+    alert(accounts);
+    if(accounts.includes(document.getElementById("email").value) && accounts.includes(document.getElementById("existingPass").value))
+        document.getElementById("email").setCustomValidity("");
+    else 
+        document.getElementById("email").setCustomValidity("Invalid email or password");
 }
 
 function checkValidation(){
