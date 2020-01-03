@@ -4,7 +4,7 @@
     <link rel="stylesheet" type ="text/css" href="css/rfstyle.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
-<body onload="loadData()">
+<body>
     <div class="navbar" id="responsive">
         <div class="navstyle">
             <img src="img/EME Logo.png">
@@ -41,7 +41,7 @@
                     <input id="confirmPassword" class="form" type="password" placeholder="Repeat Password" name="passwordRepeat" required>
 
                     <div class="submitcontainer">
-                        <div class="g-recaptcha" data-sitekey="6Lc1KssUAAAAAP4MZBgFOa8O8zw83w1vy3KrtqG-"  data-callback="captchaSuccess"  data-expired-callback="captchaExpiry" data-error-callback="captchaExpiry"></div>
+                        <div class="g-recaptcha" data-sitekey="6Lc1KssUAAAAAP4MZBgFOa8O8zw83w1vy3KrtqG-"  data-callback="captchaSuccess"  data-expired-callback="captchaExpiry" data-error-callback="captchaSuccess"></div>
 
                         <button type="submit" class="submitBtn" onclick="checkValidation();">Register</button>
                     </div>

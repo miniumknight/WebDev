@@ -1,16 +1,10 @@
 const numberSlides = document.getElementsByClassName("slides");
 const numberText = document.getElementsByClassName("slideText");
 const thumbs = document.getElementsByClassName("thumb");
+var accounts = new Array();
 var currSlide = 0;
 var allowSubmit = false;
 timedSlide();
-
-if(localStorage.getItem('txtValues') == null){
-    var accounts = [];
-}
-else {
-    accounts = JSON.parse(localStorage.getItem('txtValues'));
-}
 
 function addtoSlide(n) {
     displaySlide(currSlide += n);
@@ -81,8 +75,9 @@ function captchaExpiry() {
 }
 
 function SubmitAcc() {
+    accounts = JSON.parse(localStorage.getItem('txtValues'));
     if (allowSubmit) {
-        accounts.push([document.getElementById('preEmail').value, document.getElementById('password').value])
+        accounts.push([document.getElementById('preEmail').value, document.getElementById('password').value]);
         localStorage.setItem('txtValues', JSON.stringify(accounts));
         alert(accounts);
         return true;
@@ -92,14 +87,13 @@ function SubmitAcc() {
 }
 
 function checkAcc() {
-    alert(accounts);
     if(accounts.includes(document.getElementById("email").value) && accounts.includes(document.getElementById("existingPass").value))
         document.getElementById("email").setCustomValidity("");
     else 
         document.getElementById("email").setCustomValidity("Invalid email or password");
 }
 
-function checkValidation(){
+function checkValidation() {
     if (document.getElementById('password').value == document.getElementById('confirmPassword').value)
         document.getElementById('confirmPassword').setCustomValidity("");
     else 
