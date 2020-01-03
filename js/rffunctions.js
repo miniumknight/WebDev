@@ -1,18 +1,15 @@
 const numberSlides = document.getElementsByClassName("slides");
 const numberText = document.getElementsByClassName("slideText");
 const thumbs = document.getElementsByClassName("thumb");
-var accounts = new Array();
 var currSlide = 0;
 var allowSubmit = false;
 timedSlide();
 
-function loadData() {
-    if(localStorage.getItem('txtValues') == null){
-        accounts = [];
-    }
-    else {
-        accounts = JSON.parse(localStorage.getItem('txtValues'));
-    }
+if(localStorage.getItem('txtValues') == null){
+    var accounts = [];
+}
+else {
+    accounts = JSON.parse(localStorage.getItem('txtValues'));
 }
 
 function addtoSlide(n) {
@@ -87,6 +84,7 @@ function SubmitAcc() {
     if (allowSubmit) {
         accounts.push([document.getElementById('preEmail').value, document.getElementById('password').value])
         localStorage.setItem('txtValues', JSON.stringify(accounts));
+        alert(accounts);
         return true;
     }
     event.preventDefault();
