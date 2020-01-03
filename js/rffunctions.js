@@ -79,7 +79,6 @@ function SubmitAcc() {
     if (allowSubmit) {
         accounts.push([document.getElementById('preEmail').value, document.getElementById('password').value]);
         localStorage.setItem('txtValues', JSON.stringify(accounts));
-        alert(accounts);
         return true;
     }
     event.preventDefault();
@@ -87,10 +86,16 @@ function SubmitAcc() {
 }
 
 function checkAcc() {
-    if(accounts.includes(document.getElementById("email").value) && accounts.includes(document.getElementById("existingPass").value))
-        document.getElementById("email").setCustomValidity("");
+    var exists = false;
+    accounts = JSON.parse(localStorage.getItem('txtValues'));
+    for(var i = 0; i < accounts.length; i++) {
+        if(accounts[i].includes(document.getElementById('email').value) && accounts[i].includes(document.getElementById('existingPass').value))
+            exists = true;
+    }
+    if(exists)
+        document.getElementById('email').setCustomValidity("");
     else 
-        document.getElementById("email").setCustomValidity("Invalid email or password");
+        document.getElementById('email').setCustomValidity("Invalid email or password");
 }
 
 function checkValidation() {
