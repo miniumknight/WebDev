@@ -17,7 +17,7 @@ xmlGet.send();
 function loadXML(xml) {
     xmlFile = xml.responseXML;
     var textboxHead = document.getElementsByClassName("prodName")
-    for (var i; i < textboxHead.length; i++) {
-        textboxHead.item(i).innerHTML = xmlFile.getElementsByTagName("name")[i].childNodes[i].nodeValue;
+    for (var i = 0; i < textboxHead.length; i++) {
+        textboxHead.item(i).innerHTML = xmlFile.getElementsByTagName("name")[0].childNodes[0].nodeValue;
     }
 }
