@@ -1,3 +1,4 @@
+async: true;
 var xmlhttp, xmlDoc;
 
 xmlhttp = new XMLHttpRequest();
