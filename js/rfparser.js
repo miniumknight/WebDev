@@ -5,4 +5,4 @@ xmlhttp.open("GET", "products.xml", false);
 xmlhttp.send();
 xmlDoc = xmlhttp.responseXML;
 document.getElementById("product").innerHTML=
-xmlDoc.getElementsByTagName("product")[0].childNodes[0].nodeValue;
+xmlDoc.getElementsByTagName("product")[0];
