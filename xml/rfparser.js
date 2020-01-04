@@ -1,16 +1,21 @@
 async: true;
 var xmlGet = new XMLHttpRequest();
-var xmlFile;
 xmlGet.onload = function () {
-    alert(xmlGet.responseXML.documentElement.nodeName);
+    console.log(xmlGet.responseXML.documentElement.nodeName);
 }
 xmlGet.onerror = function () {
-    alert("Error while loading XML");
+    console.log("Error while loading XML");
+}
+xmlGet.onreadystatechange = function(){
+    if (this.readyState == 4 && this.status == 200){
+        loadXML(this)
+    }
 }
 xmlGet.open("GET", "products.xml");
-xmlGet.responseType = "document";
 xmlGet.send();
 
-xmlFile = xmlGet.responseXML;
-document.getElementById("product").innerHTML = 
-xmlFile.getElementsByTagName("product")[0].childNodes[0].nodeValue;
+function loadXML(xml) {
+    xmlFile = xml.responseXML;
+    document.getElementById("product").innerHTML = 
+    xmlFile.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+}
