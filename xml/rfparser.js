@@ -16,6 +16,8 @@ xmlGet.send();
 
 function loadXML(xml) {
     xmlFile = xml.responseXML;
-    document.getElementById("product").innerHTML = 
-    xmlFile.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+    var textboxHead = document.getElementsByClassName("prodName")
+    for (var i; i < textboxHead.length; i++) {
+        textboxHead.item(i).innerHTML = xmlFile.getElementsByTagName("name")[i].childNodes[i].nodeValue;
+    }
 }
