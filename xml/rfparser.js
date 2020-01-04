@@ -1,9 +1,11 @@
 async: true;
-var xmlhttp, xmlDoc;
-
-xmlhttp = new XMLHttpRequest();
-xmlhttp.open("GET", "products.xml", false);
-xmlhttp.send();
-xmlDoc = xmlhttp.responseXML;
-document.getElementById("product").innerHTML=
-xmlDoc.getElementsByTagName("product")[0];
+var getxml = new XMLHttpRequest();
+getxml.onload = function () {
+    dump(getxml.responseXML.documentElement.nodeName);
+}
+getxml.onerror = function () {
+    dump("Error while loading XML");
+}
+getxml.open("GET", "products.xml");
+getxml.responseType = "document";
+getxml.send();
