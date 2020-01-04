@@ -13,4 +13,4 @@ xmlGet.send();
 
 xmlFile = xmlGet.responseXML;
 document.getElementById("product").innerHTML = 
-xmlFile.getElementsByTagName("product")[0].childNodes[1].nodeValue;
+xmlFile.getElementsByTagName("name")[0].childNodes[0].nodeValue;
