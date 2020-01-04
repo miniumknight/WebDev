@@ -1,11 +1,16 @@
 async: true;
-var getxml = new XMLHttpRequest();
-getxml.onload = function () {
-    alert(getxml.responseXML.documentElement.nodeName);
+var xmlGet = new XMLHttpRequest();
+var xmlFile;
+xmlGet.onload = function () {
+    alert(xmlGet.responseXML.documentElement.nodeName);
 }
-getxml.onerror = function () {
+xmlGet.onerror = function () {
     alert("Error while loading XML");
 }
-getxml.open("GET", "products.xml");
-getxml.responseType = "document";
-getxml.send();
+xmlGet.open("GET", "products.xml");
+xmlGet.responseType = "document";
+xmlGet.send();
+
+xmlFile = xmlGet.responseXML;
+document.getElementById("product").innerHTML = 
+xmlFile.getElementsByTagName("product")[0].childNodes[1].nodeValue;
