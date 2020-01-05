@@ -22,11 +22,11 @@ function loadXML(xml) {
     }*/
     var txt="";
     if (xmlFile.evaluate) {
-        var nodesName = xmlFile.evaluate('/productshop/product/name', xmlFile, null, XPathResult.ANY_TYPE, null);
-        var result = nodesName.iterateNext();
-        while (result) {
-            txt += '<div class="mainText"><h1>' +  result.childNodes[0].nodeValue + '</h1></div>';
-            result = nodesName.iterateNext();
+        var nameNode = xmlFile.evaluate('/productshop/product/name', xmlFile, null, XPathResult.ANY_TYPE, null);
+        var nameResult = nameNode.iterateNext();
+        while (nameResult) {
+            txt += '<div class="mainText"><h1>' +  nameResult.childNodes[0].nodeValue + '</h1></div>';
+            nameResult = nameNode.iterateNext();
         }
     }
     document.getElementById("productList").innerHTML = txt;
