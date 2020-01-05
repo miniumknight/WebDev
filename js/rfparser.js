@@ -15,11 +15,20 @@ xmlGet.open("GET", "products.xml");
 xmlGet.send();
 
 function loadXML(xml) {
-    /*xmlFile = xml.responseXML;
+    xmlFile = xml.responseXML;
     var textboxHead = document.getElementsByClassName("prodName")
     for (var i = 0; i < textboxHead.length; i++) {
         textboxHead.item(i).innerHTML = xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue;
-    }*/
+    }
+
+    var nodes = xmlFile.evaluate('/productshop/product/name', xml, null, XPathResult.ANY_TYPE, null);
+    var result = nodes.iterateNext();
+    while (result) {
+        txt += result.childNodes[0].nodeValue + "<br>";
+        result = nodes.iterateNext();
+    }
+
+    document.getElementById("test").innerHTML = txt;
 
     var headerCount = document.evaluate('count(//h1)', document, null, XPathResult.ANY_TYPE, null);
     alert(headerCount.numberValue);
