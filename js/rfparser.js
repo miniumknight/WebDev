@@ -25,7 +25,7 @@ function loadXML(xml) {
     var html=""; 
 
     for (var i = 0; i < productContainer[0].length; i++) {
-        console.log("memes");
+        txt += "memes";
     }
             
     document.getElementById("productList").innerHTML = txt;
