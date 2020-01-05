@@ -22,12 +22,12 @@ function loadXML(xml) {
     }*/
     var txt="";
     if (xmlFile.evaluate) {
-        var nodes = xmlFile.evaluate('/productshop/product/name', xmlFile, null, XPathResult.ANY_TYPE, null);
+        var nodesName = xmlFile.evaluate('/productshop/product/name', xmlFile, null, XPathResult.ANY_TYPE, null);
         var result = nodes.iterateNext();
         while (result) {
-            txt += result.childNodes[0].nodeValue + "<br>";
-            result = nodes.iterateNext();
-        } 
+            txt += '<div class="mainText"><h1>' +  result.childNodes[0].nodeValue + '</h1></div>';
+            result = nodesName.iterateNext();
+        }
     }
-    alert(txt);
+    document.getElementById("productList").innerHTML = txt;
 }
