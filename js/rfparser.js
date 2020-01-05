@@ -21,7 +21,7 @@ function loadXML(xml) {
     for (var i = 0; i < textboxHead.length; i++) {
         textboxHead.item(i).innerHTML = xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue;
     }*/
-    if (xmlFile.evaluate) {}
+    if (xmlFile.evaluate) {
         var nodes = xmlFile.evaluate('/productshop/product/name', xml, null, XPathResult.ANY_TYPE, null);
         var result = nodes.iterateNext();
         while (result) {
