@@ -5,7 +5,6 @@ var accounts = new Array();
 var exists = false;
 var currSlide = 0;
 var allowSubmit = false;
-timedSlide();
 
 function addtoSlide(n) {
     displaySlide(currSlide += n);
