@@ -11,7 +11,7 @@ xmlGet.onreadystatechange = function(){
         loadXML(this)
     }
 }
-xmlGet.open("GET", "xml/products.xml");
+xmlGet.open("GET", "products.xml");
 xmlGet.send();
 
 function loadXML(xml) {
