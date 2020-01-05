@@ -22,11 +22,11 @@ function loadXML(xml) {
     var releaseNode = xmlFile.evaluate('/productshop/product/release', xmlFile, null, XPathResult.ANY_TYPE, null);
     var priceNode = xmlFile.evaluate('/productshop/product/price', xmlFile, null, XPathResult.ANY_TYPE, null);
     var productContainer = [nameNode, imageNode,descNode, releaseNode, priceNode];
-    var html=""; 
+    var content=""; 
 
     for (var i = 0; i < productContainer[0].length; i++) {
-        txt += "memes";
+        content += "memes";
     }
             
-    document.getElementById("productList").innerHTML = txt;
+    document.getElementById("productList").innerHTML = content;
 }
