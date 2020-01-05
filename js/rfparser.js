@@ -23,7 +23,7 @@ function loadXML(xml) {
     var txt="";
     if (xmlFile.evaluate) {
         var nodesName = xmlFile.evaluate('/productshop/product/name', xmlFile, null, XPathResult.ANY_TYPE, null);
-        var result = nodes.iterateNext();
+        var result = nodesName.iterateNext();
         while (result) {
             txt += '<div class="mainText"><h1>' +  result.childNodes[0].nodeValue + '</h1></div>';
             result = nodesName.iterateNext();
