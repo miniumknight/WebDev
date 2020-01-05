@@ -22,6 +22,5 @@ function loadXML(xml) {
     }*/
 
     var headerCount = document.evaluate('count(//h1)', document, null, XPathResult.ANY_TYPE, null);
-    headerCount.iterateNext();
     alert(headerCount.numberValue);
 }
