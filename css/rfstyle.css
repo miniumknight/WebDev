@@ -210,6 +210,10 @@ p {
     float: right;
 }
 
+.slideTxtContainer:first-child {
+    display: block;
+}
+
 .slideText {
     display: none;
     width: 100%;
