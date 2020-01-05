@@ -21,13 +21,7 @@ function loadXML(xml) {
         textboxHead.item(i).innerHTML = xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue;
     }*/
 
-    var txt = "";
-    if(xml.evaluate)
-        var nodes = xml.evaluate("/productshop/product[1]/title", xml, null, XPathResult.ANY_TYPE, null);
-        var result = nodes.iterateNext();
-        while(result) {
-            txt += result.childNodes[0].nodeValue + "<br>";
-            result = nodes.iterateNext();
-    }
-    document.getElementById("test").innerHTML = txt;
+    var headerCount = document.evaluate('count(//h1)', document, null, XPathResult.ANY_TYPE, null);
+    headerCount.iterateNext();
+    alert(headerCount.numberValue);
 }
