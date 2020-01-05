@@ -22,7 +22,7 @@ function loadXML(xml) {
     }*/
     var txt="";
     if (xmlFile.evaluate) {
-        var nodes = xmlFile.evaluate('/productshop/product/name', xml, null, XPathResult.ANY_TYPE, null);
+        var nodes = xmlFile.evaluate('/productshop/product/name', xmlFile, null, XPathResult.ANY_TYPE, null);
         var result = nodes.iterateNext();
         while (result) {
             txt += result.childNodes[0].nodeValue + "<br>";
