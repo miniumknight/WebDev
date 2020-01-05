@@ -16,18 +16,17 @@ xmlGet.send();
 
 function loadXML(xml) {
     xmlFile = xml.responseXML;
-    /*var textboxHead = document.getElementsByClassName("prodName")
-    for (var i = 0; i < textboxHead.length; i++) {
-        textboxHead.item(i).innerHTML = xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue;
-    }*/
-    var txt="";
-    if (xmlFile.evaluate) {
-        var nameNode = xmlFile.evaluate('/productshop/product/name', xmlFile, null, XPathResult.ANY_TYPE, null);
-        var nameResult = nameNode.iterateNext();
-        while (nameResult) {
-            txt += '<div class="mainText"><h1>' +  nameResult.childNodes[0].nodeValue + '</h1></div>';
-            nameResult = nameNode.iterateNext();
-        }
+    var nameNode = xmlFile.evaluate('/productshop/product/name', xmlFile, null, XPathResult.ANY_TYPE, null);
+    var imageNode = xmlFile.evaluate('/productshop/product/image', xmlFile, null, XPathResult.ANY_TYPE, null);
+    var descNode = xmlFile.evaluate('/productshop/product/description', xmlFile, null, XPathResult.ANY_TYPE, null);
+    var releaseNode = xmlFile.evaluate('/productshop/product/release', xmlFile, null, XPathResult.ANY_TYPE, null);
+    var priceNode = xmlFile.evaluate('/productshop/product/price', xmlFile, null, XPathResult.ANY_TYPE, null);
+    var productContainer = [nameNode, imageNode,descNode, releaseNode, priceNode];
+    var html=""; 
+
+    for (var i = 0; i < productContainer[0].length; i++) {
+        console.log("memes");
     }
+            
     document.getElementById("productList").innerHTML = txt;
 }
