@@ -56,10 +56,10 @@ function swapXML(button) {
     var infoCheck = document.getElementsByClassName("prodText");
     var products = xmlFile.getElementsByTagName("product");
 
-    var descPath = '/productshop/product[' + selectorNum + ']/description';
-    var pricePath = '/productshop/product[' + selectorNum + ']/price';
-    var relPath = '/productshop/product[' + selectorNum + ']/release';
-    var docPath = `//div[@id="${buttonNum}"]`;
+    var descPath = `/productshop/product[${selectorNum}]/description`;
+    var pricePath = `/productshop/product[${selectorNum}]/price`;
+    var relPath = `/productshop/product[${selectorNum}]/release`;
+    var docPath = `//div[contains(@id, "${buttonNum}")]`;
 
     if(infoCheck[buttonNum].className === "prodText") {
         if (xmlFile.evaluate) {
