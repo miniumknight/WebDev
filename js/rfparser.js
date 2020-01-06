@@ -16,21 +16,29 @@ xmlGet.send();
 
 function loadXML(xml) {
     xmlFile = xml.responseXML;
-    /*var textboxHead = document.getElementsByClassName("prodName")
-    for (var i = 0; i < textboxHead.length; i++) {
-        textboxHead.item(i).innerHTML = xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue;
-    }*/
-    var txt="";
+    var content = "";
+    var products = xmlFile.getElementsByTagName("product");
+    
+    for (var i = 0; i < products.length; i++) {
+        content +=
+        '<div class="mainText"><h1>' +  
+        xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
+        '</h1><p>' +
+        xmlFile.getElementsByTagName("description")[i].childNodes[0].nodeValue +
+        '</p></div>';
+    }
+    
+    /*var txt="";
     if (xmlFile.evaluate) {
+        var firstElectronic = xmlFile.evaluate('/productshop/product[1][@category="electronics"]', xmlFile, null, XPathResult.ANY_TYPE, null);
         var nameNode = xmlFile.evaluate('/productshop/product/name', xmlFile, null, XPathResult.ANY_TYPE, null);
         var imageNode = xmlFile.evaluate('/productshop/product/image', xmlFile, null, XPathResult.ANY_TYPE, null);
+        
         var nameResult = nameNode.iterateNext();
-        var imageResult = imageNode.iterateNext();
         while (nameResult) {
-            txt += '<div class="mainText" style="background-image: url("img/' + imageResult.childNodes[0].nodeValue + '");><h1>' +  nameResult.childNodes[0].nodeValue + '</h1></div>';
+            txt += '<div class="mainText"><h1>' +  nameResult.childNodes[0].nodeValue + '</h1></div>';
             nameResult = nameNode.iterateNext();
-            imageResult = imageNode.iterateNext();
         }
-    }
-    document.getElementById("productList").innerHTML = txt;
+    }*/
+    document.getElementById("productList").innerHTML = content;
 }
