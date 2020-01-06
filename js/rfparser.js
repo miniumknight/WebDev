@@ -25,7 +25,7 @@ function loadXML() {
     for(var i = 0; i < products.length; i++) {
         if (i%2 == 0 || i == 0) {
             content +=
-            '<div class ="prodContainer"><div class="prodText" id="' + i + '">"<h1 class="prodName">' +  
+            '<div class ="prodContainer"><div class="prodText" id="' + i + '"><h1 class="prodName">' +  
             xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
             '</h1><img class="prodImage" src="' + 
             xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
@@ -55,30 +55,32 @@ function swapXML(button) {
     var descPath = '/productshop/product[' + selectorNum + ']/description';
     var pricePath = '/productshop/product[' + selectorNum + ']/price';
     var relPath = '/productshop/product[' + selectorNum + ']/release';
-    var docPath = '//div[@id="' + selectorNum + '"]';
+    var docPath = '//div[@id="' + buttonNum + '"]';
 
-    var descNode = xmlFile.evaluate(descPath, xmlFile, null, XPathResult.ANY_TYPE, null);
-    var priceNode = xmlFile.evaluate(pricePath, xmlFile, null, XPathResult.ANY_TYPE, null);
-    var relNode = xmlFile.evaluate(relPath, xmlFile, null, XPathResult.ANY_TYPE, null);
-    var docNode = xmlFile.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
+    if (xmlFile.evaluate) {
+        var descNode = xmlFile.evaluate(descPath, xmlFile, null, XPathResult.ANY_TYPE, null);
+        var priceNode = xmlFile.evaluate(pricePath, xmlFile, null, XPathResult.ANY_TYPE, null);
+        var relNode = xmlFile.evaluate(relPath, xmlFile, null, XPathResult.ANY_TYPE, null);
+        var docNode = xmlFile.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
 
-    var descResult = descNode.iterateNext();
-    var priceResult = priceNode.iterateNext();
-    var relResult = relNode.iterateNext();
-    var docResult = docNode.iterateNext();
-    
-    for (var i = 0; i < products.length; i++) {
-        if (i == buttonNum) {
-            content +=
-            '<h1 class="prodName">' +  
-            xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
-            '</h1><p>' +
-            descResult.childNodes[0].nodeValue +
-            '</p><p class = "prodPrice">Price: £' +
-            priceResult.childNodes[0].nodeValue +
-            '</p><p class = "prodDate">Year: ' +
-            relResult.childNodes[0].nodeValue +
-            '</p>';
+        var descResult = descNode.iterateNext();
+        var priceResult = priceNode.iterateNext();
+        var relResult = relNode.iterateNext();
+        var docResult = docNode.iterateNext();
+        
+        for (var i = 0; i < products.length; i++) {
+            if (i == buttonNum) {
+                content +=
+                '<h1 class="prodName">' +  
+                xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
+                '</h1><p>' +
+                descResult.childNodes[0].nodeValue +
+                '</p><p class = "prodPrice">Price: £' +
+                priceResult.childNodes[0].nodeValue +
+                '</p><p class = "prodDate">Year: ' +
+                relResult.childNodes[0].nodeValue +
+                '</p>';
+            }
         }
     }
     docResult.innerHTML = content;
