@@ -76,7 +76,7 @@ function swapXML(button) {
                         <p>${descResult.childNodes[0].nodeValue}</p>
                         <p class = "prodPrice">Price: £${priceResult.childNodes[0].nodeValue}</p>
                         <p class = "prodDate">Year: ${relResult.childNodes[0].nodeValue}</p>
-                    <btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">Back</btn>`;
+                    <btn class="prodInfo" onclick="swapXML(this)" id="${i}">Back</btn>`;
                 }
             }
         }
@@ -90,16 +90,12 @@ function swapXML(button) {
 
             for (var i = 0; i < products.length; i++) {
                 if (i == buttonNum) {
-                    content +=
-                    '<h1 class="prodName">' +  
-                    xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
-                    '</h1><p>' +
-                    descNode.childNodes[0].nodeValue +
-                    '</p><p class = "prodPrice">Price: £' +
-                    priceNode.childNodes[0].nodeValue +
-                    '</p><p class = "prodDate">Year: ' +
-                    relNode.childNodes[0].nodeValue +
-                    '</p><btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">Back</btn>';
+                    content +=`
+                    <h1 class="prodName">${xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue}</h1>
+                        <p>${descNode.childNodes[0].nodeValue}</p>
+                        <p class = "prodPrice">Price: £${priceNode.childNodes[0].nodeValue}</p>
+                        <p class = "prodDate">Year: ${relNode.childNodes[0].nodeValue}</p>
+                    <btn class="prodInfo" onclick="swapXML(this)" id="${i}">Back</btn>`;
                 }
             }
         }
@@ -108,12 +104,11 @@ function swapXML(button) {
     else {
         for (var i = 0; i < products.length; i++) {
             if (i == buttonNum) {
-                content +=
-                '<h1 class="prodName">' +  
-                xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
-                '</h1><img class="prodImage" src="' + 
-                xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
-                '"><btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">More Information</btn></img>';
+                content +=`
+                <h1 class="prodName">${xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue}</h1>
+                <img class="prodImage" src="${xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue}">
+                    <btn class="prodInfo" onclick="swapXML(this)" id="${i}">More Information</btn>
+                </img>`;
                 infoCheck[buttonNum].className = "prodText";
             }
         }
