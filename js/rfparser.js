@@ -13,15 +13,44 @@ xmlGet.onreadystatechange = function(){
 }
 xmlGet.open("GET", "products.xml");
 xmlGet.send();
+xmlFile = xmlGet.responseXML;
 
-function loadXML(xml) {
-    xmlFile = xml.responseXML;
+function loadXML() {
     var content = "";
     var products = xmlFile.getElementsByTagName("product");
     
     content += '<div class="header"><h1>All Products</h1></div>';
 
-    /*for (var i = 0; i < products.length; i++) {
+    for(var i = 0; i < products.length; i++) {
+        if (i%2 == 0 || i == 0) {
+            content +=
+            '<div class ="prodContainer"><div class="prodText"><h1 class="prodName">' +  
+            xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
+            '</h1><img class="prodImage" src="' + 
+            xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
+            '"><btn class="prodInfo" onclick"btnCheck(this)" id="' + i + '">More Information</btn></img></div>';
+        }
+        else {
+            content +=
+            '<div class="prodText"><h1 class="prodName">' +  
+            xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
+            '</h1><img class="prodImage" src="' + 
+            xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
+            '"><btn class="prodInfo" onclick"btnCheck(this)" id="' + i + '">More Information</btn></img></div></div>';
+        }
+    }
+
+    content += '<div class="footer"><h3>Website by Ross Fitch. Copyright &copy; 2019, All rights reserved.</h3></div>';
+    
+    document.getElementById("productList").innerHTML = content;
+}
+
+function swapXML(button) {
+    var buttonNum = button.id;
+    var products = xmlFile.getElementsByTagName("product");
+    
+
+     /*for (var i = 0; i < products.length; i++) {
         if (i%2 == 0 || i == 0) {
             content +=
             '<div class ="prodContainer"><div class="prodText"><h1 class="prodName">' +  
@@ -48,27 +77,6 @@ function loadXML(xml) {
         }
     }*/
 
-    for(var i = 0; i < products.length; i++) {
-        if (i%2 == 0 || i == 0) {
-            content +=
-            '<div class ="prodContainer"><div class="prodText"><h1 class="prodName">' +  
-            xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
-            '</h1><img class="prodImage" src="' + 
-            xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
-            '"><btn class="prodInfo" id="btn' + i + '">More Information</btn></img></div>';
-        }
-        else {
-            content +=
-            '<div class="prodText"><h1 class="prodName">' +  
-            xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
-            '</h1><img class="prodImage" src="' + 
-            xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
-            '"><btn class="prodInfo" id="btn' + i + '">More Information</btn></img></div></div>';
-        }
-    }
-
-    content += '<div class="footer"><h3>Website by Ross Fitch. Copyright &copy; 2019, All rights reserved.</h3></div>';
-    
     /*var txt="";
     if (xmlFile.evaluate) {
         var firstElectronic = xmlFile.evaluate('/productshop/product[1][@category="electronics"]', xmlFile, null, XPathResult.ANY_TYPE, null);
@@ -81,6 +89,4 @@ function loadXML(xml) {
             nameResult = nameNode.iterateNext();
         }
     }*/
-    
-    document.getElementById("productList").innerHTML = content;
 }
