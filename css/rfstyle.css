@@ -292,12 +292,19 @@ p {
     box-shadow: inset 0px 11px 8px -10px, inset 0 -11px 8px -10px;
 }
 
-.prodName {
-    background-color: lightgray;
+.prodContainer {
+    width: 100%;
+    overflow: auto;
+    padding-bottom: 32px;
 }
 
-.prodName:first-child {
+.prodContainer:first-of-type {
     border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.prodName {
+    background-color: lightgray;
 }
 
 .prodPrice {

@@ -22,7 +22,7 @@ function loadXML(xml) {
     for (var i = 0; i < products.length; i++) {
         if (i%2 == 0 || i == 0) {
             content +=
-            '<div class ="mainTextContainer"><div class="mainText"><h1 class="prodName">' +  
+            '<div class ="prodContainer"><div class="mainText"><h1 class="prodName">' +  
             xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
             '</h1><p>' +
             xmlFile.getElementsByTagName("description")[i].childNodes[0].nodeValue +
