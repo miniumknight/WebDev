@@ -71,16 +71,12 @@ function swapXML(button) {
             
             for (var i = 0; i < products.length; i++) {
                 if (i == buttonNum) {
-                    content +=
-                    '<h1 class="prodName">' +  
-                    xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
-                    '</h1><p>' +
-                    descResult.childNodes[0].nodeValue +
-                    '</p><p class = "prodPrice">Price: £' +
-                    priceResult.childNodes[0].nodeValue +
-                    '</p><p class = "prodDate">Year: ' +
-                    relResult.childNodes[0].nodeValue +
-                    '</p><btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">Back</btn>';
+                    content +=`
+                    <h1 class="prodName">${xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue}</h1>
+                        <p>${descResult.childNodes[0].nodeValue}</p>
+                        <p class = "prodPrice">Price: £${priceResult.childNodes[0].nodeValue}</p>
+                        <p class = "prodDate">Year: ${relResult.childNodes[0].nodeValue}</p>
+                    <btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">Back</btn>`;
                 }
             }
         }
