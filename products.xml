@@ -3,7 +3,7 @@
 <productshop>
     <product category="electronics">
         <name lang="en">Microchip Dev Board</name>
-        <image>test.png</image>
+        <image>img/test.png</image>
         <description>Satisfy your curiosity with a microchip dev board. 
         This board includes an I/O interface, Intergrated programmer and debugger, 
         8/16/32-bit MCUs, Connectivity options, User interfaces and more.</description>
@@ -13,7 +13,7 @@
 
     <product category="electronics">
         <name lang="en">Raspberry Pi 4</name>
-        <image>test.png</image>
+        <image>img/test.png</image>
         <description>The Raspberry Pi 4 is a tiny desktop computer
         which can be used for anything you can think of, the possibilities are endless
         from application development in python to operating system modification.</description>
@@ -23,7 +23,7 @@
 
     <product category="consoles">
         <name lang="en">Sony PS4 Pro</name>
-        <image>test.png</image>
+        <image>img/test.png</image>
         <description>The sony PS4 is the best selling console of the current generation
         and the pro takes the console to another level. This console boasts increased processing
         power, the ability to output at 4K resolution and a huge existing game library.</description>
@@ -33,7 +33,7 @@
 
     <product category="consoles">
         <name lang="en">Nintendo 2DS XL</name>
-        <image>test.png</image>
+        <image>img/test.png</image>
         <description>The Nintendo 2DS XL does away with the 3D functionality of the 3DS and
         with that change comes a lower price tag for essentially the same console. With access to the
         huge game library of the 3DS this makes for a cheap yet brilliant handheld.</description>
@@ -43,7 +43,7 @@
 
     <product category="consoles">
         <name lang="en">Xbox One X</name>
-        <image>test.png</image>
+        <image>img/test.png</image>
         <description>The Xbox One X is the current rival to the PS4 Pro, however in contrast, it boasts
         more processing power and the ability to output at native 4K rather than upscaling like other consoles
         making it the most powerful console of the current generation.</description>
@@ -53,7 +53,7 @@
 
     <product category="consoles">
         <name lang="en">Nintendo Switch</name>
-        <image>test.png</image>
+        <image>img/test.png</image>
         <description>Nintendo has created a home console and handheld hybrid which surprisingly works extremely well.
         You can take your games anywhere and then play them on the big screen by docking the console.
         The switch also has a huge selection of amazing games!</description>

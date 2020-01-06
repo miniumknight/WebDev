@@ -21,7 +21,7 @@ function loadXML(xml) {
     
     content += '<div class="header"><h1>All Products</h1></div>';
 
-    for (var i = 0; i < products.length; i++) {
+    /*for (var i = 0; i < products.length; i++) {
         if (i%2 == 0 || i == 0) {
             content +=
             '<div class ="prodContainer"><div class="prodText"><h1 class="prodName">' +  
@@ -45,6 +45,30 @@ function loadXML(xml) {
             '</p><p class = "prodDate">Year: ' +
             xmlFile.getElementsByTagName("release")[i].childNodes[0].nodeValue +
             '</p></div></div>';
+        }
+    }*/
+
+    if (xmlFile.evaluate) {
+        var imageNode = xmlFile.evaluate('/product/product/image', xmlFile, null, XPathResult.ANY_TYPE, null);
+        var imageResult = imageNode.iterateNext();
+        for(var i = 0; i < products.length; i++) {
+            if (i%2 == 0 || i == 0) {
+                content +=
+                '<div class ="prodContainer"><div class="prodText"><h1 class="prodName">' +  
+                xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
+                '</h1><img url="' + 
+                imageResult.childNodes[0].nodeValue + 
+                '"></img></div>';
+            }
+            else {
+                content +=
+                '<div class="prodText"><h1 class="prodName">' +  
+                xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
+                '</h1><img url="' + 
+                imageResult.childNodes[0].nodeValue + 
+                '"></img></div></div>';
+            }
+        imageResult = imageNode.iterateNext();
         }
     }
 
