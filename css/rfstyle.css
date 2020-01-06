@@ -110,7 +110,7 @@ p {
     min-height: calc(100% - 90px);
 }
 
-.title {
+.header {
     text-align: center;
     position: relative;
     overflow: hidden;

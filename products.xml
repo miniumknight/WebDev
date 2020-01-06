@@ -15,7 +15,7 @@
         <name lang="en">Raspberry Pi 4</name>
         <image>test.png</image>
         <description>The Raspberry Pi 4 is a tiny desktop computer
-        which can be used for anything can think of, the possibilities are endless
+        which can be used for anything you can think of, the possibilities are endless
         from application development in python to operating system modification.</description>
         <release>2019</release>
         <price>29.99</price>
@@ -24,7 +24,9 @@
     <product category="consoles">
         <name lang="en">Sony PS4 Pro</name>
         <image>test.png</image>
-        <description>Test</description>
+        <description>The sony PS4 is the best selling console of the current generation
+        and the pro takes the console to another level. The console boasts increased processing
+        power and the ability to output at 4K resolution.</description>
         <release>2017</release>
         <price>329.99</price>
     </product>
