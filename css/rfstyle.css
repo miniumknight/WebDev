@@ -301,7 +301,7 @@ p {
     margin-top: 0;
 }
 
-.prodContainer:last-of-type .mainText:last-of-type {
+.prodContainer:last-of-type .prodContainer:last-child {
     padding-bottom: 30px;
 }
 
