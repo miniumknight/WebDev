@@ -295,12 +295,15 @@ p {
 .prodContainer {
     width: 100%;
     overflow: auto;
-    padding-bottom: 32px;
 }
 
 .prodContainer:first-of-type {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
+}
+
+.prodContainer:last-of-type {
+    margin-bottom: 30px;
 }
 
 .prodName {
