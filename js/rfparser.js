@@ -51,9 +51,9 @@ function swapXML(button) {
     var buttonNum = button.id;
     var products = xmlFile.getElementsByTagName("product");
 
-    var descPath = '/productshop/product/description[' + buttonNum + ']';
-    var pricePath = '/productshop/product/price[' + buttonNum + ']';
-    var relPath = '/productshop/product/release[' + buttonNum + ']';
+    var descPath = '/productshop/product[' + buttonNum + ']/description';
+    var pricePath = '/productshop/product[' + buttonNum + ']/price';
+    var relPath = '/productshop/product[' + buttonNum + ']/release';
     var docPath = "//div[contains(concat(' ',normalize-space(@prodText),' '),' foobar ')][" + buttonNum + "]";
 
     var descNode = xmlFile.evaluate(descPath, xmlFile, null, XPathResult.ANY_TYPE, null);
