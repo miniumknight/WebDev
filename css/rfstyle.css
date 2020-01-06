@@ -307,9 +307,14 @@ p {
     border-top-right-radius: 10px;
 }
 
+.prodContainer .open .prodName {
+    margin-bottom: initial;
+}
+
 .prodName {
     background-color: lightgray;
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 .prodText {
