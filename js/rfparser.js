@@ -67,11 +67,11 @@ function swapXML(button) {
             '<h1 class="prodName">' +  
             xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
             '</h1><p>' +
-            descResult.nodeValue +
+            descNode.nodeValue +
             '</p><p class = "prodPrice">Price: £' +
-            priceResult.nodeValue +
+            priceNode.nodeValue +
             '</p><p class = "prodDate">Year: ' +
-            relResult.nodeValue +
+            relNode.nodeValue +
             '</p>';
         }
     }
