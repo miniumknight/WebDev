@@ -27,17 +27,17 @@ function loadXML(xml) {
         textboxHead.item(i).innerHTML = xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue;
     }*/
     
-    for (i = 0; i < products.length; i++) {
-        nameNode.iterateNext();
-    }
+
+    
+    
 
     var txt="";
+
     if (xmlFile.evaluate) {
+        nameNode.iterateNext();
         while (nameNode) {
             txt += '<div class="mainText"><h1>' +  products[0].childNodes[0].nodeValue + '</h1><p>' + products[2].childNodes[0].nodeValue + '</p></div>';
-            for (i = 0; i < products.length; i++) {
-                products[i].iterateNext();
-            }
+            nameNode.iterateNext();
         }
     }
 
