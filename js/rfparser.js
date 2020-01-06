@@ -24,11 +24,8 @@ function loadXML(xml) {
         var releaseNode = xmlFile.evaluate('/productshop/product/release', xmlFile, null, XPathResult.ANY_TYPE, null);
         var priceNode = xmlFile.evaluate('/productshop/product/price', xmlFile, null, XPathResult.ANY_TYPE, null);
         var productContainer = [nameNode, imageNode, descNode, releaseNode, priceNode];
-        var result = productContainer.iterateNext();
-        while(result) {
-            content += '<div class="mainText"><h1>' + result[0].childNodes[0].nodeValue + '</h1></div>';
-            result = productContainer.iterateNext();
-        }
+
+        alert(productContainer[0].length)
     }
     document.getElementById("productList").innerHTML = content;
 }
