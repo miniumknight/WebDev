@@ -298,11 +298,11 @@ p {
     padding-bottom: 32px;
 }
 
-.prodContainer .mainText:first-of-type .prodName {
+.prodContainer .prodText:first-of-type .prodName {
     border-top-left-radius: 15px;
 }
 
-.prodContainer .mainText:last-of-type .prodName {
+.prodContainer .prodText:last-of-type .prodName {
     border-top-right-radius: 15px;
 }
 
@@ -425,6 +425,12 @@ p {
     }
     .buyBtn {
         display: none;
+    }
+    .prodContainer {
+        padding-bottom: 0;
+    }
+    .prodText {
+        padding-bottom: 30px;
     }
 }
 
