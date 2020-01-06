@@ -218,7 +218,7 @@ p {
     text-align: left;
 }
 
-.buyBtn {
+.buyBtn, .prodInfo {
     cursor: pointer;
     background-color: purple;
     border-radius: 10px;
@@ -232,7 +232,7 @@ p {
     color: white;
 }
 
-.buyBtn:hover {
+.buyBtn:hover, .prodInfo:hover {
     background-color: #5c005c;
 }
 
@@ -343,20 +343,7 @@ p {
 }
 
 .prodInfo {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    color: white;
-    background-color: purple;
-    border-radius: 10px;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.prodInfo:hover {
-    background-color: #5c005c;
+    margin: 20px;
 }
 
 .footer {
@@ -409,7 +396,7 @@ p {
         width: 100%;
         height: initial;
     }
-    .slideshow {
+    .slideshow, .prodImage {
         height: 440px;
     }
 }
@@ -453,7 +440,7 @@ p {
     .mainText {
         width: 100%;
     }
-    .slideshow {
+    .slideshow, .prodImage {
         height: 500px;
     }
     .slideImgContainer {
@@ -510,7 +497,7 @@ p {
     .thumbcontainer {
         display: none;
     }
-    .slideshow {
+    .slideshow, .prodImage {
         height: 300px;
     }
     #last {
