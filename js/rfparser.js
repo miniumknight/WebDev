@@ -20,12 +20,22 @@ function loadXML(xml) {
     var products = xmlFile.getElementsByTagName("product");
     
     for (var i = 0; i < products.length; i++) {
-        content +=
-        '<div class="mainText"><h1 class="prodName">' +  
-        xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
-        '</h1><p>' +
-        xmlFile.getElementsByTagName("description")[i].childNodes[0].nodeValue +
-        '</p></div>';
+        if (i%2 == 0 || i == 0) {
+            content +=
+            '<div class ="mainTextContainer"><div class="mainText"><h1 class="prodName">' +  
+            xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
+            '</h1><p>' +
+            xmlFile.getElementsByTagName("description")[i].childNodes[0].nodeValue +
+            '</p></div>';
+        }
+        else {
+            content +=
+            '<div class="mainText"><h1 class="prodName">' +  
+            xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
+            '</h1><p>' +
+            xmlFile.getElementsByTagName("description")[i].childNodes[0].nodeValue +
+            '</p></div></div>';
+        }
     }
     
     /*var txt="";
