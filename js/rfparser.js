@@ -45,7 +45,7 @@ function loadXML() {
     document.getElementById("productList").innerHTML = content;
 }
 
-function swapXML(button) {
+function swapxml(button) {
     var buttonNum = button.id;
     var products = xmlFile.getElementsByTagName("product");
     
