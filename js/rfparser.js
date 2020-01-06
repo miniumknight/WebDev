@@ -59,7 +59,7 @@ function swapXML(button) {
     var descPath = '/productshop/product[' + selectorNum + ']/description';
     var pricePath = '/productshop/product[' + selectorNum + ']/price';
     var relPath = '/productshop/product[' + selectorNum + ']/release';
-    var docPath = '//div[@id="' + buttonNum + '"]';
+    var docPath = `//div[@id="${buttonNum}"]`;
 
     if(infoCheck[buttonNum].className === "prodText") {
         if (xmlFile.evaluate) {
