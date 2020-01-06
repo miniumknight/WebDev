@@ -24,21 +24,25 @@ function loadXML() {
 
     for(var i = 0; i < products.length; i++) {
         if (i%2 == 0 || i == 0) {
-            content +=
-            '<div class ="prodContainer"><div class="prodText" id="' + i + '"><h1 class="prodName">' +  
-            xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
-            '</h1><img class="prodImage" src="' + 
-            xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
-            '"><btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">More Information</btn></img></div>';
+            content +=`
+            <div class ="prodContainer">
+                <div class="prodText" id="${i}">
+                    <h1 class="prodName">${xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue}</h1>
+                    <img class="prodImage" src="${xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue}">
+                        <btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">More Information</btn>
+                    </img>
+                </div>`;
         }
         else {
-            content +=
-            '<div class="prodText" id="' + i + '"><h1 class="prodName">' +  
-            xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
-            '</h1><img class="prodImage" src="' + 
-            xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
-            '"><btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">More Information</btn></img></div></div>';
-        }
+            content +=`
+                <div class="prodText" id="${i}">
+                    <h1 class="prodName">${xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue}</h1>
+                    <img class="prodImage" src="${xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue}">
+                        <btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">More Information</btn>
+                    </img>
+                </div>
+            </div>`
+            }
     }
 
     content += '<div class="footer"><h3>Website by Ross Fitch. Copyright &copy; 2019, All rights reserved.</h3></div>';
@@ -102,6 +106,8 @@ function swapXML(button) {
         infoCheck[buttonNum].className += " open"
     }
     else {
+        docNode = document.selectNodes(docPath);
+        
         for (var i = 0; i < products.length; i++) {
             if (i == buttonNum) {
                 content +=`
