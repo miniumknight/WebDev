@@ -55,7 +55,7 @@ function loadXML(xml) {
             xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
             '</h1><img class="prodImage" src="' + 
             xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
-            '"></img><btn class ="prodInfo"></div>';
+            '"></img><btn class ="prodInfo">More Information</btn></div>';
         }
         else {
             content +=
@@ -63,7 +63,7 @@ function loadXML(xml) {
             xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
             '</h1><img class="prodImage" src="' + 
             xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
-            '"></img><btn class ="prodInfo"></div></div>';
+            '"></img><btn class ="prodInfo">More Information</btn></div></div>';
         }
     }
 
