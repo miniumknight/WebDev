@@ -73,10 +73,10 @@ function swapXML(button) {
             '</p><p class = "prodDate">Year: ' +
             relNode.childNodes[0].nodeValue +
             '</p>';
-            }
         }
-    docNode.innerHTML = content;
     }
+    docNode.innerHTML = content;
+}
 
     
      /*for (var i = 0; i < products.length; i++) {
@@ -118,4 +118,3 @@ function swapXML(button) {
             nameResult = nameNode.iterateNext();
         }
     }*/
-}
