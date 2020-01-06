@@ -80,7 +80,7 @@ function swapXML(button) {
                     priceResult.childNodes[0].nodeValue +
                     '</p><p class = "prodDate">Year: ' +
                     relResult.childNodes[0].nodeValue +
-                    '</p>';
+                    '</p><btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">More Information</btn>';
                 }
             }
         }
@@ -103,13 +103,19 @@ function swapXML(button) {
                     priceNode.childNodes[0].nodeValue +
                     '</p><p class = "prodDate">Year: ' +
                     relNode.childNodes[0].nodeValue +
-                    '</p>';
+                    '</p><btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">More Information</btn>';
                 }
             }
         }
         infoCheck[buttonNum].className += " open"
     }
     else {
+        content +=
+        '<h1 class="prodName">' +  
+        xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
+        '</h1><img class="prodImage" src="' + 
+        xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
+        '"><btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">More Information</btn></img>';
         infoCheck[buttonNum].className = "prodText";
     } 
     docResult.innerHTML = content;
