@@ -61,6 +61,8 @@ function swapXML(button) {
     var relNode = xmlFile.evaluate(relPath, xmlFile, null, XPathResult.ANY_TYPE, null);
     var docNode = xmlFile.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
 
+    alert(descNode.nodeValue)
+    
     for (var i = 0; i < products.length; i++) {
         if (i == buttonNum) {
             content +=
