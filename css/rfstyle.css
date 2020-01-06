@@ -465,7 +465,7 @@ p {
     .prodContainer {
         padding-bottom: 0;
     }
-    .prodText:last-of-type .prodText{
+    .prodText:last-of-type .prodTxtContainer{
         margin-bottom: 30px;
     }
     .prodText {
