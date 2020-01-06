@@ -28,9 +28,9 @@ function loadXML(xml) {
             xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
             '</h1><p>' +
             xmlFile.getElementsByTagName("description")[i].childNodes[0].nodeValue +
-            '</p><p class = "prodPrice">Price: £'
+            '</p><p class = "prodPrice">Price: £' +
             xmlFile.getElementsByTagName("price")[i].childNodes[0].nodeName +
-            '</p><p class = "prodDate>Year:'
+            '</p><p class = "prodDate">Year:' +
             xmlFile.getElementsByTagName("release")[i].childNodes[0].nodeName +
             '</p></div>';
         }
