@@ -311,6 +311,13 @@ p {
     margin-top: 0;
 }
 
+.prodText {
+    width: 50%;
+    height: auto;
+    position: relative;
+    float: left;
+}
+
 .prodPrice {
     float: right;
 }
