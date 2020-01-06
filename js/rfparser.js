@@ -23,10 +23,13 @@ function loadXML(xml) {
     var txt="";
     if (xmlFile.evaluate) {
         var nameNode = xmlFile.evaluate('/productshop/product/name', xmlFile, null, XPathResult.ANY_TYPE, null);
+        var imageNode = xmlFile.evaluate('/productshop/product/image', xmlFile, null, XPathResult.ANY_TYPE, null);
         var nameResult = nameNode.iterateNext();
+        imageNode.iterateNext();
         while (nameResult) {
-            txt += '<div class="mainText"><h1>' +  nameResult.childNodes[0].nodeValue + '</h1></div>';
+            txt += '<div class="mainText" style="background-image: url("' + imageNode.childNodes[0].nodeValue + '");"><h1>' +  nameResult.childNodes[0].nodeValue + '</h1></div>';
             nameResult = nameNode.iterateNext();
+            imageNode.iterateNext();
         }
     }
     document.getElementById("productList").innerHTML = txt;
