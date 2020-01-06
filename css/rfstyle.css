@@ -298,6 +298,11 @@ p {
     padding-bottom: 32px;
 }
 
+.prodContainer:first-of-type .mainText {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
 .prodName {
     background-color: lightgray;
     margin-top: 0;
