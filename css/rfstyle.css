@@ -313,7 +313,7 @@ p {
 
 .prodText {
     width: 50%;
-    height: auto;
+    height: 500px;
     position: relative;
     float: left;
 }
@@ -339,7 +339,7 @@ p {
 .prodImage {
     display: block;
     width: 100%;
-    height: 500px;
+    height: 100%;
 }
 
 .prodInfo {
