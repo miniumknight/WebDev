@@ -83,6 +83,30 @@ function swapXML(button) {
             }
         }
     }
+
+    else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
+        xmlFile.setProperty("SelectionLanguage", "XPath");
+        descNode = xmlFile.selectNodes(descPath);
+        priceNode = xmlFile.selectNodes(pricePath);
+        relNode = xmlFile.selectNodes(relPath)
+        docNode = xmlFile.selectNodes(docPath);
+
+        for (var i = 0; i < products.length; i++) {
+            if (i == buttonNum) {
+                content +=
+                '<h1 class="prodName">' +  
+                xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
+                '</h1><p>' +
+                descNode.childNodes[0].nodeValue +
+                '</p><p class = "prodPrice">Price: £' +
+                priceNode.childNodes[0].nodeValue +
+                '</p><p class = "prodDate">Year: ' +
+                relNode.childNodes[0].nodeValue +
+                '</p>';
+            }
+        }
+    }
+    
     docResult.innerHTML = content;
 }
 
