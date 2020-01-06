@@ -37,6 +37,8 @@ function loadXML(xml) {
             '</p></div></div>';
         }
     }
+
+    content += '<div class="footer"><h3>Website by Ross Fitch. Copyright &copy; 2019, All rights reserved.</h3></div>'
     
     /*var txt="";
     if (xmlFile.evaluate) {
