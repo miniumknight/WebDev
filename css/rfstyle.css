@@ -298,11 +298,11 @@ p {
     padding-bottom: 32px;
 }
 
-.prodContainer:first-of-type .mainText:first-of-type .h1 {
+.prodContainer .mainText:first-of-type .prodName {
     border-top-left-radius: 15px;
 }
 
-.prodContainer:first-of-type .mainText:last-of-type .h1 {
+.prodContainer .mainText:last-of-type .prodName {
     border-top-right-radius: 15px;
 }
 
