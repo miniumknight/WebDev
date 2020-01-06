@@ -342,6 +342,22 @@ p {
     height: 100%;
 }
 
+.prodInfo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    color: white;
+    background-color: purple;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.prodInfo:hover {
+    background-color: #5c005c;
+}
+
 .footer {
     position: absolute;
     right: 0;
