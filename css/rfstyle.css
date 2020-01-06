@@ -509,6 +509,11 @@ p {
     .slideshow, .prodImage, .prodTxtContainer {
         height: 300px;
     }
+    .prodInfo {
+        padding: 5px;
+        margin: 15px;
+        font-size: 15pt;
+    }
     #last {
         margin-top: 30px;
     }
