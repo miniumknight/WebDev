@@ -8,12 +8,12 @@ xmlGet.onerror = function () {
 }
 xmlGet.onreadystatechange = function(){
     if (this.readyState == 4 && this.status == 200){
-        loadXML(this)
+        xmlFile = xmlGet.responseXML;
+        loadXML()
     }
 }
 xmlGet.open("GET", "products.xml");
 xmlGet.send();
-xmlFile = xmlGet.responseXML;
 
 function loadXML() {
     var content = "";
