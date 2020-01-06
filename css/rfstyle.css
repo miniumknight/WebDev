@@ -292,17 +292,13 @@ p {
     box-shadow: inset 0px 11px 8px -10px, inset 0 -11px 8px -10px;
 }
 
-#productList:last-child {
-    padding-bottom: 30px;
-}
-
-#productList:first-child h1 {
-    margin-top: 0;
-}
-
 .prodContainer {
     width: 100%;
     overflow: auto;
+}
+
+.prodContainer:last-of-type {
+    padding-bottom: 30px;
 }
 
 .prodName {
