@@ -48,7 +48,7 @@ function loadXML() {
 
 function swapXML(button) {
     var content = "";
-    var buttonNum = button.id;
+    var buttonNum = button.id + 1;
     var products = xmlFile.getElementsByTagName("product");
 
     var descPath = '/productshop/product[' + buttonNum + ']/description';
