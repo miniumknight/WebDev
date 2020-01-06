@@ -27,7 +27,7 @@ function loadXML(xml) {
         var nameResult = nameNode.iterateNext();
         var imageResult = imageNode.iterateNext();
         while (nameResult) {
-            txt += '<div class="mainText" style="background-image: url("' + imageResult.childNodes[0].nodeValue + '");"><h1>' +  nameResult.childNodes[0].nodeValue + '</h1></div>';
+            txt += '<div class="mainText" style="background-image: url("img/' + imageResult.childNodes[0].nodeValue + '");><h1>' +  nameResult.childNodes[0].nodeValue + '</h1></div>';
             nameResult = nameNode.iterateNext();
             imageResult = imageNode.iterateNext();
         }

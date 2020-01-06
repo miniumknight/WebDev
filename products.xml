@@ -3,7 +3,7 @@
 <productshop>
     <product category="electronics">
         <name lang="en">Microchip Dev Board</name>
-        <image>img/test.png</image>
+        <image>test.png</image>
         <description>Test</description>
         <release>2017</release>
         <price>24.99</price>
@@ -11,7 +11,7 @@
 
     <product category="electronics">
         <name lang="en">Raspberry Pi 4</name>
-        <image>img/test.png</image>
+        <image>test.png</image>
         <description>Test</description>
         <release>2019</release>
         <price>29.99</price>
@@ -19,7 +19,7 @@
 
     <product category="consoles">
         <name lang="en">Sony PS4 Pro</name>
-        <image>img/test.png</image>
+        <image>test.png</image>
         <description>Test</description>
         <release>2017</release>
         <price>329.99</price>
@@ -27,7 +27,7 @@
 
     <product category="consoles">
         <name lang="en">Nintendo 2DS XL</name>
-        <image>img/test.png</image>
+        <image>test.png</image>
         <description>Test</description>
         <release>2018</release>
         <price>189.99</price>
@@ -35,7 +35,7 @@
 
     <product category="consoles">
         <name lang="en">Xbox One X</name>
-        <image>img/test.png</image>
+        <image>test.png</image>
         <description>Test</description>
         <release>2017</release>
         <price>399.99</price>
@@ -43,7 +43,7 @@
 
     <product category="consoles">
         <name lang="en">Nintendo Switch</name>
-        <image>img/test.png</image>
+        <image>test.png</image>
         <description>Test</description>
         <release>2017</release>
         <price>239.99</price>
