@@ -16,30 +16,18 @@ xmlGet.send();
 
 function loadXML(xml) {
     xmlFile = xml.responseXML;
-    var nameNode = xmlFile.evaluate('/productshop/product/name', xmlFile, null, XPathResult.ANY_TYPE, null);
-    var imageNode = xmlFile.evaluate('/productshop/product/image', xmlFile, null, XPathResult.ANY_TYPE, null);
-    var descNode = xmlFile.evaluate('/productshop/product/description', xmlFile, null, XPathResult.ANY_TYPE, null);
-    var releaseNode = xmlFile.evaluate('/productshop/product/release', xmlFile, null, XPathResult.ANY_TYPE, null);
-    var priceNode = xmlFile.evaluate('/productshop/product/price', xmlFile, null, XPathResult.ANY_TYPE, null);
-    var products = [nameNode, imageNode, descNode, releaseNode, priceNode, products];
     /*var textboxHead = document.getElementsByClassName("prodName")
     for (var i = 0; i < textboxHead.length; i++) {
         textboxHead.item(i).innerHTML = xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue;
     }*/
-    
-
-    
-    
-
     var txt="";
-
     if (xmlFile.evaluate) {
-        nameNode.iterateNext();
-        while (nameNode) {
-            txt += '<div class="mainText"><h1>' +  products[0].childNodes[0].nodeValue + '</h1><p>' + products[2].childNodes[0].nodeValue + '</p></div>';
-            nameNode.iterateNext();
+        var nameNode = xmlFile.evaluate('/productshop/product/name', xmlFile, null, XPathResult.ANY_TYPE, null);
+        var nameResult = nameNode.iterateNext();
+        while (nameResult) {
+            txt += '<div class="mainText"><h1>' +  nameResult.childNodes[0].nodeValue + '</h1></div>';
+            nameResult = nameNode.iterateNext();
         }
     }
-
     document.getElementById("productList").innerHTML = txt;
 }
