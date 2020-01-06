@@ -314,10 +314,6 @@ p {
     margin-bottom: 0;
 }
 
-.prodText.open .prodName {
-    margin-bottom: 20px;
-}
-
 .prodText {
     width: 50%;
     height: auto;
@@ -328,6 +324,10 @@ p {
 .prodTxtContainer {
     display: block;
     height: 500px;
+}
+
+.prodTxtContainer p {
+    margin-top: 20px;
 }
 
 .prodPrice {
