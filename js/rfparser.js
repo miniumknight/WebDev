@@ -48,12 +48,12 @@ function loadXML() {
 
 function swapXML(button) {
     var content = "";
-    var buttonNum = button.id + 1;
+    var buttonNum = button.id;
     var products = xmlFile.getElementsByTagName("product");
 
-    var descPath = '/productshop/product[' + buttonNum + ']/description';
-    var pricePath = '/productshop/product[' + buttonNum + ']/price';
-    var relPath = '/productshop/product[' + buttonNum + ']/release';
+    var descPath = '/productshop/product[' + buttonNum + 1 + ']/description';
+    var pricePath = '/productshop/product[' + buttonNum + 1 + ']/price';
+    var relPath = '/productshop/product[' + buttonNum + 1 + ']/release';
     var docPath = "//div[contains(concat(' ',normalize-space(@prodText),' '),' foobar ')][" + buttonNum + "]";
 
     var descNode = xmlFile.evaluate(descPath, xmlFile, null, XPathResult.ANY_TYPE, null);
@@ -61,7 +61,8 @@ function swapXML(button) {
     var relNode = xmlFile.evaluate(relPath, xmlFile, null, XPathResult.ANY_TYPE, null);
     var docNode = xmlFile.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
 
-    alert(descNode.childNodes[0].nodeValue);
+    var test = descNode.iterateNext();
+    alert(test.childNodes[0].nodeValue);
     
     for (var i = 0; i < products.length; i++) {
         if (i == buttonNum) {
