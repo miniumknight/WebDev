@@ -298,9 +298,12 @@ p {
     padding-bottom: 32px;
 }
 
-.prodContainer:first-of-type .mainText {
-    border-top-right-radius: 15px;
+.prodContainer:first-of-type .mainText:first-of-type .h1 {
     border-top-left-radius: 15px;
+}
+
+.prodContainer:first-of-type .mainText:last-of-type .h1 {
+    border-top-right-radius: 15px;
 }
 
 .prodName {
