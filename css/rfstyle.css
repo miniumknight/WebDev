@@ -323,6 +323,11 @@ p {
     float: left;
 }
 
+.prodTxtContainer {
+    display: block;
+    height: 500px;
+}
+
 .prodPrice {
     float: right;
     margin-right: 20px;

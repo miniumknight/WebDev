@@ -85,9 +85,11 @@ function swapXML(button) {
             if (i == buttonNum) {
                 content +=`
                 <h1 class="prodName">${xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue}</h1>
-                    <p class="prodDesc">${descResult.childNodes[0].nodeValue}</p>
-                    <p class="prodPrice">Price: £${priceResult.childNodes[0].nodeValue}</p>
-                    <p class="prodDate">Year: ${relResult.childNodes[0].nodeValue}</p>
+                    <div class="prodTxtContainer">
+                        <p>${descResult.childNodes[0].nodeValue}</p>
+                        <p class="prodPrice">Price: £${priceResult.childNodes[0].nodeValue}</p>
+                        <p class="prodDate">Year: ${relResult.childNodes[0].nodeValue}</p>
+                    </div>
                 <btn class="prodInfo" onclick="swapXML(this)" id="${i}">Back</btn>`;
             }
         }
