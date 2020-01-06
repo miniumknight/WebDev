@@ -293,15 +293,19 @@ p {
 }
 
 .prodName {
-    
+    background-color: lightgray;
+}
+
+.prodName:first-child {
+    border-top-left-radius: 15px;
 }
 
 .prodPrice {
-
+    float: right;
 }
 
 .prodDate {
-
+    float: left;
 }
 
 .footer {
