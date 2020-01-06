@@ -80,7 +80,7 @@ function swapXML(button) {
                     priceResult.childNodes[0].nodeValue +
                     '</p><p class = "prodDate">Year: ' +
                     relResult.childNodes[0].nodeValue +
-                    '</p><btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">More Information</btn>';
+                    '</p><btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">Back</btn>';
                 }
             }
         }
@@ -103,7 +103,7 @@ function swapXML(button) {
                     priceNode.childNodes[0].nodeValue +
                     '</p><p class = "prodDate">Year: ' +
                     relNode.childNodes[0].nodeValue +
-                    '</p><btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">More Information</btn>';
+                    '</p><btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">Back</btn>';
                 }
             }
         }
