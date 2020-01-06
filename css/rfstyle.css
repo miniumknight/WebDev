@@ -301,6 +301,10 @@ p {
     padding-bottom: 30px;
 }
 
+.prodContainer:first-of-type .mainText .prodName {
+    margin-top: 0;
+}
+
 .prodName {
     background-color: lightgray;
 }
