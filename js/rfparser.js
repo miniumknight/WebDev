@@ -53,7 +53,7 @@ function loadXML(xml) {
             content +=
             '<div class ="prodContainer"><div class="prodText"><h1 class="prodName">' +  
             xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
-            '</h1><img url="' + 
+            '</h1><img src="' + 
             xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
             '"></img></div>';
         }
@@ -61,7 +61,7 @@ function loadXML(xml) {
             content +=
             '<div class="prodText"><h1 class="prodName">' +  
             xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
-            '</h1><img url="' + 
+            '</h1><img src="' + 
             xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
             '"></img></div></div>';
         }
