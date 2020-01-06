@@ -61,21 +61,17 @@ function swapXML(button) {
     var relNode = xmlFile.evaluate(relPath, xmlFile, null, XPathResult.ANY_TYPE, null);
     var docNode = xmlFile.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
 
-    var descResult = descNode.iterateNext();
-    var priceResult = priceNode.iterateNext();
-    var relResult = relNode.iterateNext();
-
     for (var i = 0; i < products.length; i++) {
         if (i == buttonNum) {
             content +=
             '<h1 class="prodName">' +  
             xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
             '</h1><p>' +
-            descResult.childNodes[0].nodeValue +
+            descResult.nodeValue +
             '</p><p class = "prodPrice">Price: £' +
-            priceResult.childNodes[0].nodeValue +
+            priceResult.nodeValue +
             '</p><p class = "prodDate">Year: ' +
-            relResult.childNodes[0].nodeValue +
+            relResult.nodeValue +
             '</p>';
         }
     }
