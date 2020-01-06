@@ -28,7 +28,7 @@ function loadXML(xml) {
     }*/
     
     for (i = 0; i < products.length; i++) {
-        products[i].iterateNext();
+        nameNode.iterateNext();
     }
 
     var txt="";
@@ -40,5 +40,6 @@ function loadXML(xml) {
             }
         }
     }
+
     document.getElementById("productList").innerHTML = txt;
 }
