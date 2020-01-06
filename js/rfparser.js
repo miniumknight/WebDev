@@ -84,7 +84,6 @@ function swapXML(button) {
                 }
             }
         }
-
         else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
             xmlFile.setProperty("SelectionLanguage", "XPath");
             descNode = xmlFile.selectNodes(descPath);
@@ -105,9 +104,10 @@ function swapXML(button) {
         }
         infoCheck[buttonNum].className += " open"
     }
+
     else {
         docNode = document.selectNodes(docPath);
-        
+
         for (var i = 0; i < products.length; i++) {
             if (i == buttonNum) {
                 content +=`
@@ -115,9 +115,10 @@ function swapXML(button) {
                 <img class="prodImage" src="${xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue}">
                     <btn class="prodInfo" onclick="swapXML(this)" id="${i}">More Information</btn>
                 </img>`;
-                infoCheck[buttonNum].className = "prodText";
+                
             }
         }
+        infoCheck[buttonNum].className = "prodText";
     } 
     docResult.innerHTML = content;
 }
