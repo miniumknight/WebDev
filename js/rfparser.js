@@ -34,7 +34,7 @@ function loadXML(xml) {
     var txt="";
     if (xmlFile.evaluate) {
         while (nameNode) {
-            txt += '<div class="mainText"><h1>' +  nameResult.childNodes[0].nodeValue + '</h1><p>' + products[i].childNodes[0].nodeValue + '</p></div>';
+            txt += '<div class="mainText"><h1>' +  products[0].childNodes[0].nodeValue + '</h1><p>' + products[2].childNodes[0].nodeValue + '</p></div>';
             for (i = 0; i < products.length; i++) {
                 products[i].iterateNext();
             }
