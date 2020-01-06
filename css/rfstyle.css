@@ -408,7 +408,7 @@ p {
         width: 100%;
         height: initial;
     }
-    .slideshow, .prodImage {
+    .slideshow, .prodImage, .prodTxtContainer {
         height: 440px;
     }
 }
@@ -452,7 +452,7 @@ p {
     .mainText {
         width: 100%;
     }
-    .slideshow, .prodImage {
+    .slideshow, .prodImage, .prodTxtContainer {
         height: 500px;
     }
     .slideImgContainer {
@@ -509,7 +509,7 @@ p {
     .thumbcontainer {
         display: none;
     }
-    .slideshow, .prodImage {
+    .slideshow, .prodImage, .prodTxtContainer {
         height: 300px;
     }
     #last {
