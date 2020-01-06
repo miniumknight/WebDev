@@ -54,7 +54,7 @@ function swapXML(button) {
     var descPath = '/productshop/product/description[' + buttonNum + ']';
     var pricePath = '/productshop/product/price[' + buttonNum + ']';
     var relPath = '/productshop/product/release[' + buttonNum + ']';
-    var docPath = '//*[@class="prodText"][' + buttonNum + ']';
+    var docPath = "//div[contains(concat(' ',normalize-space(@prodText),' '),' foobar ')][" + buttonNum + "]";
 
     var descNode = xmlFile.evaluate(descPath, xmlFile, null, XPathResult.ANY_TYPE, null);
     var priceNode = xmlFile.evaluate(pricePath, xmlFile, null, XPathResult.ANY_TYPE, null);
