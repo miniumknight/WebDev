@@ -473,6 +473,9 @@ p {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
     }
+    .footer {
+        margin-top: 30px;
+    }
 }
 
 @media screen and (max-width: 500px) { /*Media query responsiveness for tall screens such as mobile phones in vertical view*/
