@@ -47,30 +47,26 @@ function loadXML(xml) {
             '</p></div></div>';
         }
     }*/
-
-    if (xmlFile.evaluate) {
-        var imageNode = xmlFile.evaluate('/product/product/image', xmlFile, null, XPathResult.ANY_TYPE, null);
-        var imageResult = imageNode.iterateNext();
-        for(var i = 0; i < products.length; i++) {
-            if (i%2 == 0 || i == 0) {
-                content +=
-                '<div class ="prodContainer"><div class="prodText"><h1 class="prodName">' +  
-                xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
-                '</h1><img url="' + 
-                imageResult.childNodes[0].nodeValue + 
-                '"></img></div>';
-            }
-            else {
-                content +=
-                '<div class="prodText"><h1 class="prodName">' +  
-                xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
-                '</h1><img url="' + 
-                imageResult.childNodes[0].nodeValue + 
-                '"></img></div></div>';
-            }
-        imageResult = imageNode.iterateNext();
+    
+    for(var i = 0; i < products.length; i++) {
+        if (i%2 == 0 || i == 0) {
+            content +=
+            '<div class ="prodContainer"><div class="prodText"><h1 class="prodName">' +  
+            xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
+            '</h1><img url="' + 
+            imageResult.childNodes[0].nodeValue + 
+            '"></img></div>';
+        }
+        else {
+            content +=
+            '<div class="prodText"><h1 class="prodName">' +  
+            xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
+            '</h1><img url="' + 
+            xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
+            '"></img></div></div>';
         }
     }
+}
 
     content += '<div class="footer"><h3>Website by Ross Fitch. Copyright &copy; 2019, All rights reserved.</h3></div>';
     
