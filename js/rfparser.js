@@ -49,6 +49,7 @@ function swapXML(button) {
     var buttonNum = button.id;
     var products = xmlFile.getElementsByTagName("product");
     
+    alert(buttonNum);
 
      /*for (var i = 0; i < products.length; i++) {
         if (i%2 == 0 || i == 0) {
