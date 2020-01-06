@@ -19,6 +19,8 @@ function loadXML(xml) {
     var content = "";
     var products = xmlFile.getElementsByTagName("product");
     
+    content += '<div class="header"><h1>Featured Products</h1></div>';
+
     for (var i = 0; i < products.length; i++) {
         if (i%2 == 0 || i == 0) {
             content +=
@@ -38,7 +40,7 @@ function loadXML(xml) {
         }
     }
 
-    content += '<div class="footer"><h3>Website by Ross Fitch. Copyright &copy; 2019, All rights reserved.</h3></div>'
+    content += '<div class="footer"><h3>Website by Ross Fitch. Copyright &copy; 2019, All rights reserved.</h3></div>';
     
     /*var txt="";
     if (xmlFile.evaluate) {
