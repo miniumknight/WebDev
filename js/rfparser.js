@@ -19,7 +19,7 @@ function loadXML(xml) {
     var content = "";
     var products = xmlFile.getElementsByTagName("product");
     
-    content += '<div class="header"><h1>Featured Products</h1></div>';
+    content += '<div class="header"><h1>All Products</h1></div>';
 
     for (var i = 0; i < products.length; i++) {
         if (i%2 == 0 || i == 0) {
