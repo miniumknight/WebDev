@@ -25,7 +25,7 @@ function loadXML() {
     for(var i = 0; i < products.length; i++) {
         if (i%2 == 0 || i == 0) {
             content +=
-            '<div class ="prodContainer"><div class="prodText"><h1 class="prodName">' +  
+            '<div class ="prodContainer"><div class="prodText" id="' + i + '">"<h1 class="prodName">' +  
             xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
             '</h1><img class="prodImage" src="' + 
             xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
@@ -33,7 +33,7 @@ function loadXML() {
         }
         else {
             content +=
-            '<div class="prodText"><h1 class="prodName">' +  
+            '<div class="prodText" id="' + i + '"><h1 class="prodName">' +  
             xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
             '</h1><img class="prodImage" src="' + 
             xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
@@ -55,7 +55,7 @@ function swapXML(button) {
     var descPath = '/productshop/product[' + selectorNum + ']/description';
     var pricePath = '/productshop/product[' + selectorNum + ']/price';
     var relPath = '/productshop/product[' + selectorNum + ']/release';
-    var docPath = '//div[@class="prodText"][' + selectorNum + ']';
+    var docPath = '//div[@id="' + selectorNum + '"]';
 
     var descNode = xmlFile.evaluate(descPath, xmlFile, null, XPathResult.ANY_TYPE, null);
     var priceNode = xmlFile.evaluate(pricePath, xmlFile, null, XPathResult.ANY_TYPE, null);
