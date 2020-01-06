@@ -72,42 +72,37 @@ function swapXML(button) {
             var priceResult = priceNode.iterateNext();
             var relResult = relNode.iterateNext();
             var docResult = docNode.iterateNext();
-            
-            for (var i = 0; i < products.length; i++) {
-                if (i == buttonNum) {
-                    content +=`
-                    <h1 class="prodName">${xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue}</h1>
-                        <p>${descResult.childNodes[0].nodeValue}</p>
-                        <p class = "prodPrice">Price: £${priceResult.childNodes[0].nodeValue}</p>
-                        <p class = "prodDate">Year: ${relResult.childNodes[0].nodeValue}</p>
-                    <btn class="prodInfo" onclick="swapXML(this)" id="${i}">Back</btn>`;
-                }
-            }
         }
         else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
             xmlFile.setProperty("SelectionLanguage", "XPath");
-            descNode = xmlFile.selectNodes(descPath);
-            priceNode = xmlFile.selectNodes(pricePath);
-            relNode = xmlFile.selectNodes(relPath)
-            docNode = document.selectNodes(docPath);
+            descResult = xmlFile.selectNodes(descPath);
+            priceResult = xmlFile.selectNodes(pricePath);
+            relResult = xmlFile.selectNodes(relPath)
+            docResult = document.selectNodes(docPath);
+        }
 
-            for (var i = 0; i < products.length; i++) {
-                if (i == buttonNum) {
-                    content +=`
-                    <h1 class="prodName">${xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue}</h1>
-                        <p>${descNode.childNodes[0].nodeValue}</p>
-                        <p class = "prodPrice">Price: £${priceNode.childNodes[0].nodeValue}</p>
-                        <p class = "prodDate">Year: ${relNode.childNodes[0].nodeValue}</p>
-                    <btn class="prodInfo" onclick="swapXML(this)" id="${i}">Back</btn>`;
-                }
+        for (var i = 0; i < products.length; i++) {
+            if (i == buttonNum) {
+                content +=`
+                <h1 class="prodName">${xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue}</h1>
+                    <p>${descResult.childNodes[0].nodeValue}</p>
+                    <p class = "prodPrice">Price: £${priceResult.childNodes[0].nodeValue}</p>
+                    <p class = "prodDate">Year: ${relResult.childNodes[0].nodeValue}</p>
+                <btn class="prodInfo" onclick="swapXML(this)" id="${i}">Back</btn>`;
             }
         }
         infoCheck[buttonNum].className += " open"
     }
 
     else {
-        docNode = document.selectNodes(docPath);
-
+        if (xmlFile.evaluate) {
+            var docNode = xmlFile.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
+            var docResult = docNode.iterateNext();
+        }
+        else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
+            xmlFile.setProperty("SelectionLanguage", "XPath");
+            docResult = document.selectNodes(docPath);
+        }
         for (var i = 0; i < products.length; i++) {
             if (i == buttonNum) {
                 content +=`
