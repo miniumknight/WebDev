@@ -300,6 +300,7 @@ p {
 
 .prodName {
     background-color: lightgray;
+    margin-top: 0;
 }
 
 .prodPrice {
