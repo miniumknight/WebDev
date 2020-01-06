@@ -336,10 +336,14 @@ p {
     padding: 5px;
 }
 
+.prodImage, .prodDesc {
+    height: 500px;
+
+}
+
 .prodImage {
     display: block;
     width: 100%;
-    height: 500px;
 }
 
 .prodInfo {
@@ -396,7 +400,7 @@ p {
         width: 100%;
         height: initial;
     }
-    .slideshow, .prodImage {
+    .slideshow, .prodImage, .prodDesc {
         height: 440px;
     }
 }
@@ -440,7 +444,7 @@ p {
     .mainText {
         width: 100%;
     }
-    .slideshow, .prodImage {
+    .slideshow, .prodImage, .prodDesc {
         height: 500px;
     }
     .slideImgContainer {
@@ -497,7 +501,7 @@ p {
     .thumbcontainer {
         display: none;
     }
-    .slideshow, .prodImage {
+    .slideshow, .prodImage, .prodDesc {
         height: 300px;
     }
     #last {
