@@ -296,7 +296,6 @@ p {
     width: 100%;
     overflow: auto;
     padding-bottom: 32px;
-    height: 350px;
 }
 
 .prodContainer .prodText:first-of-type .prodName {
@@ -321,8 +320,6 @@ p {
 
 .prodPrice {
     float: right;
-    bottom: 0;
-    right: 0;
     margin-right: 20px;
     color: white;
     background-color: purple;
@@ -332,8 +329,6 @@ p {
 
 .prodDate {
     float: left;
-    bottom: 0;
-    left: 0;
     margin-left: 20px;
     color: white;
     background-color: purple;
