@@ -293,7 +293,7 @@ p {
 }
 
 #productList:last-child {
-    margin: 30px;
+    padding-bottom: 30px;
 }
 
 #productList:first-child h1 {
