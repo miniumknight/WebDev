@@ -49,12 +49,13 @@ function loadXML() {
 function swapXML(button) {
     var content = "";
     var buttonNum = button.id;
+    var selectorNum = buttonNum += 1;
     var products = xmlFile.getElementsByTagName("product");
 
-    var descPath = '/productshop/product[' + buttonNum + 1 + ']/description';
-    var pricePath = '/productshop/product[' + buttonNum + 1 + ']/price';
-    var relPath = '/productshop/product[' + buttonNum + 1 + ']/release';
-    var docPath = '//div[@class="prodText"][' + buttonNum + 1 + ']';
+    var descPath = '/productshop/product[' + selectorNum + ']/description';
+    var pricePath = '/productshop/product[' + selectorNum + ']/price';
+    var relPath = '/productshop/product[' + selectorNum + ']/release';
+    var docPath = '//div[@class="prodText"][' + selectorNum + ']';
 
     var descNode = xmlFile.evaluate(descPath, xmlFile, null, XPathResult.ANY_TYPE, null);
     var priceNode = xmlFile.evaluate(pricePath, xmlFile, null, XPathResult.ANY_TYPE, null);
