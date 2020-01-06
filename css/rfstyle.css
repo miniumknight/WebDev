@@ -313,8 +313,7 @@ p {
 
 .prodText {
     width: 50%;
-    height: auto;
-    position: relative;
+    height: 500px;
     float: left;
 }
 
@@ -336,14 +335,10 @@ p {
     padding: 5px;
 }
 
-.prodImage, .prodDesc {
-    height: 500px;
-
-}
-
 .prodImage {
     display: block;
     width: 100%;
+    height: 500px;
 }
 
 .prodInfo {
@@ -400,7 +395,7 @@ p {
         width: 100%;
         height: initial;
     }
-    .slideshow, .prodImage, .prodDesc {
+    .slideshow, .prodImage {
         height: 440px;
     }
 }
@@ -444,7 +439,7 @@ p {
     .mainText {
         width: 100%;
     }
-    .slideshow, .prodImage, .prodDesc {
+    .slideshow, .prodImage {
         height: 500px;
     }
     .slideImgContainer {
@@ -501,7 +496,7 @@ p {
     .thumbcontainer {
         display: none;
     }
-    .slideshow, .prodImage, .prodDesc {
+    .slideshow, .prodImage {
         height: 300px;
     }
     #last {
