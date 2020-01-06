@@ -465,9 +465,12 @@ p {
     .prodContainer {
         padding-bottom: 0;
     }
+    .prodText:last-of-type .prodText{
+        margin-bottom: 30px;
+    }
     .prodText {
         width: 100%;
-        margin-bottom: 30px;
+        padding-bottom: 30px;
     }
     .prodName {
         border-top-left-radius: 10px;
