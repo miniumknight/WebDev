@@ -1,4 +1,5 @@
 async: true;
+var xmlFile;
 var xmlGet = new XMLHttpRequest();
 xmlGet.onload = function () {
     console.log(xmlGet.responseXML.documentElement.nodeName);
@@ -50,8 +51,7 @@ function swapXML(button) {
     var products = xmlFile.getElementsByTagName("product");
     
     alert(buttonNum);
-    alert(xmlFile.getElementsByTagName("name").childNodes[0].nodeValue)
-
+    alert(xmlFile.getElementsByTagName("name")[0].childNodes[0].nodeValue)
      /*for (var i = 0; i < products.length; i++) {
         if (i%2 == 0 || i == 0) {
             content +=
