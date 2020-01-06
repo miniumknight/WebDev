@@ -424,6 +424,9 @@ p {
     .buyBtn {
         display: none;
     }
+    .prodContainer:first-of-type .mainText:first-child {
+        margin-top: 0;
+    }
 }
 
 @media screen and (max-width: 500px) { /*Media query responsiveness for tall screens such as mobile phones in vertical view*/
