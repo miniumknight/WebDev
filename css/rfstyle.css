@@ -295,14 +295,7 @@ p {
 .prodContainer {
     width: 100%;
     overflow: auto;
-}
-
-.prodContainer:first-of-type .mainText .prodName {
-    margin-top: 0;
-}
-
-.prodContainer:last-of-type .prodContainer:last-child {
-    padding-bottom: 30px;
+    padding-bottom: 32px;
 }
 
 .prodName {
@@ -423,9 +416,6 @@ p {
     }
     .buyBtn {
         display: none;
-    }
-    .prodContainer:first-of-type .mainText:first-child {
-        margin-top: 0;
     }
 }
 
