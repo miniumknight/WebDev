@@ -297,12 +297,12 @@ p {
     overflow: auto;
 }
 
-.prodContainer:last-of-type {
-    padding-bottom: 30px;
-}
-
 .prodContainer:first-of-type .mainText .prodName {
     margin-top: 0;
+}
+
+.prodContainer:last-of-type .mainText:last-of-type {
+    padding-bottom: 30px;
 }
 
 .prodName {
