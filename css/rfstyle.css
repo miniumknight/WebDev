@@ -320,6 +320,7 @@ p {
 
 .prodPrice {
     float: right;
+    margin-right: 20px;
     color: white;
     background-color: purple;
     border-radius: 10px;
@@ -328,6 +329,7 @@ p {
 
 .prodDate {
     float: left;
+    margin-left: 20px;
     color: white;
     background-color: purple;
     border-radius: 10px;
