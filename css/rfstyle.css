@@ -309,7 +309,6 @@ p {
 .prodName {
     background-color: lightgray;
     margin-top: 0;
-    margin-bottom: 0;
 }
 
 .prodText.open .prodName {
