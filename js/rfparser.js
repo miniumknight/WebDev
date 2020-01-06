@@ -40,5 +40,6 @@ function loadXML(xml) {
             nameResult = nameNode.iterateNext();
         }
     }*/
+    
     document.getElementById("productList").innerHTML = content;
 }
