@@ -47,11 +47,38 @@ function loadXML() {
 }
 
 function swapXML(button) {
+    var content = "";
     var buttonNum = button.id;
     var products = xmlFile.getElementsByTagName("product");
+
+    var descPath = '/productshop/product/description[' + buttonNum + ']';
+    var pricePath = '/productshop/product/price[' + buttonNum + ']';
+    var relPath = '/productshop/product/release[' + buttonNum + ']';
+    var docPath = '//*[@class="prodText"][' + buttonNum + ']';
+
+    var descNode = xmlFile.evaluate(descPath, xmlFile, null, XPathResult.ANY_TYPE, null);
+    var priceNode = xmlFile.evaluate(pricePath, xmlFile, null, XPathResult.ANY_TYPE, null);
+    var relNode = xmlFile.evaluate(relPath, xmlFile, null, XPathResult.ANY_TYPE, null);
+    var docNode = xmlFile.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
+
+    for (var i = 0; i < products.length; i++) {
+        if (i == buttonNum) {
+            content +=
+            '<h1 class="prodName">' +  
+            xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
+            '</h1><p>' +
+            descNode.childNodes[0].nodeValue +
+            '</p><p class = "prodPrice">Price: £' +
+            priceNode.childNodes[0].nodeValue +
+            '</p><p class = "prodDate">Year: ' +
+            relNode.childNodes[0].nodeValue +
+            '</p>';
+            }
+        }
+    docNode.innerHTML = content;
+    }
+
     
-    alert(buttonNum);
-    alert(xmlFile.getElementsByTagName("name")[0].childNodes[0].nodeValue)
      /*for (var i = 0; i < products.length; i++) {
         if (i%2 == 0 || i == 0) {
             content +=
