@@ -296,6 +296,7 @@ p {
     width: 100%;
     overflow: auto;
     padding-bottom: 32px;
+    height: 350px;
 }
 
 .prodContainer .prodText:first-of-type .prodName {
