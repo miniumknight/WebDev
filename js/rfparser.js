@@ -89,7 +89,7 @@ function swapXML(button) {
         descNode = xmlFile.selectNodes(descPath);
         priceNode = xmlFile.selectNodes(pricePath);
         relNode = xmlFile.selectNodes(relPath)
-        docNode = xmlFile.selectNodes(docPath);
+        docNode = document.selectNodes(docPath);
 
         for (var i = 0; i < products.length; i++) {
             if (i == buttonNum) {
@@ -106,7 +106,7 @@ function swapXML(button) {
             }
         }
     }
-    
+
     docResult.innerHTML = content;
 }
 
