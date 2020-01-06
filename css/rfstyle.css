@@ -319,17 +319,19 @@ p {
 }
 
 .prodPrice {
-    position: absolute;
+    float: right;
     color: white;
     background-color: purple;
     border-radius: 10px;
-    bottom: 0;
-    right: 0;
     padding: 5px;
 }
 
 .prodDate {
     float: left;
+    color: white;
+    background-color: purple;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .footer {

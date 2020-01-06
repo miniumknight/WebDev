@@ -30,7 +30,7 @@ function loadXML(xml) {
             xmlFile.getElementsByTagName("description")[i].childNodes[0].nodeValue +
             '</p><p class = "prodPrice">Price: £' +
             xmlFile.getElementsByTagName("price")[i].childNodes[0].nodeValue +
-            '</p><p class = "prodDate">Year:' +
+            '</p><p class = "prodDate">Year: ' +
             xmlFile.getElementsByTagName("release")[i].childNodes[0].nodeValue +
             '</p></div>';
         }
