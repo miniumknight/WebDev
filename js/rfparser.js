@@ -28,7 +28,7 @@ function loadXML() {
             xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
             '</h1><img class="prodImage" src="' + 
             xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
-            '"><btn class="prodInfo" onclick"swapXML(this)" id="' + i + '">More Information</btn></img></div>';
+            '"><btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">More Information</btn></img></div>';
         }
         else {
             content +=
@@ -36,7 +36,7 @@ function loadXML() {
             xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
             '</h1><img class="prodImage" src="' + 
             xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
-            '"><btn class="prodInfo" onclick"swapXML(this)" id="' + i + '">More Information</btn></img></div></div>';
+            '"><btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">More Information</btn></img></div></div>';
         }
     }
 
@@ -45,7 +45,7 @@ function loadXML() {
     document.getElementById("productList").innerHTML = content;
 }
 
-function swapxml(button) {
+function swapXML(button) {
     var buttonNum = button.id;
     var products = xmlFile.getElementsByTagName("product");
     
