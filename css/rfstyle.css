@@ -326,10 +326,6 @@ p {
     height: 500px;
 }
 
-.prodTxtContainer p {
-    padding-top: 20px;
-}
-
 .prodPrice {
     float: right;
     margin-right: 20px;
