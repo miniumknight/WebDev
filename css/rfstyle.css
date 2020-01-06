@@ -299,11 +299,11 @@ p {
 }
 
 .prodContainer .prodText:first-of-type .prodName {
-    border-top-left-radius: 15px;
+    border-top-left-radius: 10px;
 }
 
 .prodContainer .prodText:last-of-type .prodName {
-    border-top-right-radius: 15px;
+    border-top-right-radius: 10px;
 }
 
 .prodName {
@@ -319,7 +319,13 @@ p {
 }
 
 .prodPrice {
-    float: right;
+    position: absolute;
+    color: white;
+    background-color: purple;
+    border-radius: 10px;
+    bottom: 0;
+    right: 0;
+    padding: 5px;
 }
 
 .prodDate {
@@ -441,8 +447,8 @@ p {
         padding-bottom: 30px;
     }
     .prodName {
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
     }
 }
 
