@@ -294,7 +294,6 @@ p {
 
 .prodContainer {
     width: 100%;
-    overflow: auto;
     padding-bottom: 32px;
     height: 500px;
 }
@@ -307,7 +306,7 @@ p {
     border-top-right-radius: 10px;
 }
 
-.prodContainer .open .prodName {
+.open .prodName {
     margin-bottom: initial;
 }
 
