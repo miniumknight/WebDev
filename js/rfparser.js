@@ -47,7 +47,7 @@ function loadXML(xml) {
             '</p></div></div>';
         }
     }*/
-    
+
     for(var i = 0; i < products.length; i++) {
         if (i%2 == 0 || i == 0) {
             content +=
@@ -66,7 +66,6 @@ function loadXML(xml) {
             '"></img></div></div>';
         }
     }
-}
 
     content += '<div class="footer"><h3>Website by Ross Fitch. Copyright &copy; 2019, All rights reserved.</h3></div>';
     
