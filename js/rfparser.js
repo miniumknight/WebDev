@@ -110,13 +110,17 @@ function swapXML(button) {
         infoCheck[buttonNum].className += " open"
     }
     else {
-        content +=
-        '<h1 class="prodName">' +  
-        xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
-        '</h1><img class="prodImage" src="' + 
-        xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
-        '"><btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">More Information</btn></img>';
-        infoCheck[buttonNum].className = "prodText";
+        for (var i = 0; i < products.length; i++) {
+            if (i == buttonNum) {
+                content +=
+                '<h1 class="prodName">' +  
+                xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
+                '</h1><img class="prodImage" src="' + 
+                xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue + 
+                '"><btn class="prodInfo" onclick="swapXML(this)" id="' + i + '">More Information</btn></img>';
+                infoCheck[buttonNum].className = "prodText";
+            }
+        }
     } 
     docResult.innerHTML = content;
 }
