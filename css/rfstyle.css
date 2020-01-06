@@ -295,7 +295,6 @@ p {
 .prodContainer {
     width: 100%;
     margin-bottom: 32px;
-    height: 500px;
 }
 
 .prodContainer .prodText:first-of-type .prodName {
@@ -306,7 +305,7 @@ p {
     border-top-right-radius: 10px;
 }
 
-.open .prodName {
+.prodText.open .prodName {
     margin-bottom: initial;
 }
 
