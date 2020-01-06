@@ -51,10 +51,10 @@ function swapXML(button) {
     var buttonNum = button.id;
     var products = xmlFile.getElementsByTagName("product");
 
-    var descPath = '/productshop/product[' + buttonNum + 1 + ']/description';
-    var pricePath = '/productshop/product[' + buttonNum + 1 + ']/price';
-    var relPath = '/productshop/product[' + buttonNum + 1 + ']/release';
-    var docPath = '//div[@class="prodText"][' + buttonNum + ']';
+    var descPath = '/productshop/product[' + (buttonNum + 1) + ']/description';
+    var pricePath = '/productshop/product[' + (buttonNum + 1) + ']/price';
+    var relPath = '/productshop/product[' + (buttonNum + 1) + ']/release';
+    var docPath = '//div[@class="prodText"][' + (buttonNum + 1) + ']';
 
     var descNode = xmlFile.evaluate(descPath, xmlFile, null, XPathResult.ANY_TYPE, null);
     var priceNode = xmlFile.evaluate(pricePath, xmlFile, null, XPathResult.ANY_TYPE, null);
@@ -80,7 +80,7 @@ function swapXML(button) {
             '</p>';
         }
     }
-    docResult.childNodes[0].innerHTML = content;
+    docResult.innerHTML = content;
 }
 
     
