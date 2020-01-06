@@ -54,15 +54,17 @@ function swapXML(button) {
     var descPath = '/productshop/product[' + buttonNum + 1 + ']/description';
     var pricePath = '/productshop/product[' + buttonNum + 1 + ']/price';
     var relPath = '/productshop/product[' + buttonNum + 1 + ']/release';
-    var docPath = "//div[contains(concat(' ',normalize-space(@prodText),' '),' foobar ')][" + buttonNum + "]";
+    var docPath = "//div[contains(concat(' ',normalize-space(@prodText),' '),' foobar ')][" + buttonNum + 1 + "]";
 
     var descNode = xmlFile.evaluate(descPath, xmlFile, null, XPathResult.ANY_TYPE, null);
     var priceNode = xmlFile.evaluate(pricePath, xmlFile, null, XPathResult.ANY_TYPE, null);
     var relNode = xmlFile.evaluate(relPath, xmlFile, null, XPathResult.ANY_TYPE, null);
     var docNode = xmlFile.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
 
-    var test = descNode.iterateNext();
-    alert(test.childNodes[0].nodeValue);
+    var descResult = descNode.iterateNext();
+    var priceResult = priceNode.iterateNext();
+    var relResult = relNode.iterateNext();
+    var docResult = docNode.iterateNext();
     
     for (var i = 0; i < products.length; i++) {
         if (i == buttonNum) {
@@ -70,15 +72,15 @@ function swapXML(button) {
             '<h1 class="prodName">' +  
             xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
             '</h1><p>' +
-            descNode.nodeValue +
+            descResult.childNodes[0].nodeValue +
             '</p><p class = "prodPrice">Price: £' +
-            priceNode.nodeValue +
+            priceResult.childNodes[0].nodeValue +
             '</p><p class = "prodDate">Year: ' +
-            relNode.nodeValue +
+            relResult.childNodes[0].nodeValue +
             '</p>';
         }
     }
-    docNode.innerHTML = content;
+    docResult.childNodes[0].innerHTML = content;
 }
 
     
