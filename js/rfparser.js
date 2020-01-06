@@ -21,7 +21,7 @@ function loadXML(xml) {
     
     for (var i = 0; i < products.length; i++) {
         content +=
-        '<div class="mainText"><h1>' +  
+        '<div class="mainText"><h1 class="prodName">' +  
         xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
         '</h1><p>' +
         xmlFile.getElementsByTagName("description")[i].childNodes[0].nodeValue +
