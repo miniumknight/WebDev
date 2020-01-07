@@ -77,7 +77,8 @@ function swapXML(button) {
         }
         else {
             alert("IE");
-            xmlFile.setProperty("SelectionLanguage", "XPath");
+            xmlGet.setProperty("SelectionLanguage", "XPath");
+            xmlFile = xmlGet.responseXML;
             descResult = xmlFile.selectNodes(descPath);
             priceResult = xmlFile.selectNodes(pricePath);
             relResult = xmlFile.selectNodes(relPath)
