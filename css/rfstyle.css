@@ -538,6 +538,12 @@ p {
     }
 }
 
+@media screen and (max-width: 500px) {
+    .prodInfo {
+        bottom: -20px;
+    }
+}
+
 @media screen and (max-height: 400px) and (max-width: 877px) { /*Media query responsiveness for thin viewport such as a mobile phone in horizontal view*/
     main {
         top: 85px;
