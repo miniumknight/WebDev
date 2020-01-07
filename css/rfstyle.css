@@ -524,8 +524,11 @@ p {
     .thumbcontainer {
         display: none;
     }
-    .slideshow, .prodImage, .prodTxtContainer {
+    .slideshow, .prodImage {
         height: 300px;
+    }
+    .prodTxtContainer {
+        height: 350px;
     }
     .prodInfo {
         padding: 5px;
