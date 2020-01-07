@@ -1,6 +1,3 @@
-if('ActiveXObject' in window) {
-    alert("Sorry, you're running a very outdated which doesnt fully support JS/XML please try using a newer browser to view this site!");
-}
 const numberSlides = document.getElementsByClassName("slides");
 const numberText = document.getElementsByClassName("slideText");
 const thumbs = document.getElementsByClassName("thumb");
