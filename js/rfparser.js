@@ -80,7 +80,7 @@ function swapXML(button) {
             priceResult = IEDoc.selectNodes(pricePath);
             relResult = IEDoc.selectNodes(relPath)
             docResult = document.getElementById(buttonNum);
-            alert(descResult.childNodes[0].nodeValue);
+            alert(descResult);
         }
 
         for (var i = 0; i < products.length; i++) {
