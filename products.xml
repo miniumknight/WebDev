@@ -2,23 +2,23 @@
 
 <productshop>
     <product category="electronics">
-        <name lang="en">Microchip Dev Board</name>
-        <image>img/prodImg1.png</image>
-        <description>Satisfy your curiosity with a microchip dev board. 
-        This board includes an I/O interface, Intergrated programmer and debugger, 
-        8/16/32-bit MCUs, Connectivity options, User interfaces and more.</description>
-        <release>2017</release>
-        <price>24.99</price>
-    </product>
-
-    <product category="electronics">
         <name lang="en">Raspberry Pi 4</name>
-        <image>img/prodImg2.png</image>
+        <image>img/prodImg1.png</image>
         <description>The Raspberry Pi 4 is a tiny desktop computer
         which can be used for anything you can think of, the possibilities are endless
         from application development in python to operating system modification.</description>
         <release>2019</release>
         <price>29.99</price>
+    </product>
+
+    <product category="electronics">
+        <name lang="en">Microchip Dev Board</name>
+        <image>img/prodImg2.png</image>
+        <description>Satisfy your curiosity with a microchip dev board. 
+        This board includes an I/O interface, Intergrated programmer and debugger, 
+        8/16/32-bit MCUs, Connectivity options, User interfaces and more.</description>
+        <release>2017</release>
+        <price>24.99</price>
     </product>
 
     <product category="consoles">
