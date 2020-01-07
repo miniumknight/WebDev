@@ -115,21 +115,31 @@ function swapXML(button) {
         if (xmlFile.evaluate) {
             var docNode = xmlFile.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
             var docResult = docNode.iterateNext();
+            for (var i = 0; i < products.length; i++) {
+                if (i == buttonNum) {
+                    content +=
+                    '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
+                    '<img class="prodImage fade-in-transition" src="'+xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue+'">' +
+                        '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">More Information</btn>' +
+                    '</img>';
+                }
+            }
+            docResult.innerHTML = content;
         }
         else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
             xmlFile.setProperty("SelectionLanguage", "XPath");
             docResult = document.selectNodes(docPath);
-        }
-        for (var i = 0; i < products.length; i++) {
-            if (i == buttonNum) {
-                content +=
-                '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
-                '<img class="prodImage fade-in-transition" src="'+xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue+'">' +
-                    '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">More Information</btn>' +
-                '</img>';
+            for (var i = 0; i < products.length; i++) {
+                if (i == buttonNum) {
+                    content +=
+                    '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
+                    '<img class="prodImage fade-in-transition" src="'+xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue+'">' +
+                        '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">More Information</btn>' +
+                    '</img>';
+                }
             }
+            docResult.innerHTML = content;
         }
         infoCheck[buttonNum].className = "prodText";
-        docResult.innerHTML = content;
     }
 }
