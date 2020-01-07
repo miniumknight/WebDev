@@ -527,6 +527,7 @@ p {
     .prodInfo {
         padding: 5px;
         margin: 15px;
+        margin-bottom: 40px;
         font-size: 15pt;
     }
     #last {
