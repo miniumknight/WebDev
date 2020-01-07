@@ -79,23 +79,21 @@ function swapXML(button) {
             priceResult = xmlFile.selectNodes(pricePath);
             relResult = xmlFile.selectNodes(relPath)
             docResult = document.selectNodes(docPath);
-            alert(docResult);
-            alert(descNode);
-            alert(priceResult);
-        }
-
-        for (var i = 0; i < products.length; i++) {
-            if (i == buttonNum) {
-                content +=
-                '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
-                    '<div class="prodTxtContainer fade-in-transition">' +
-                        '<p><br>'+descResult.childNodes[0].nodeValue+'</p>' +
-                        '<p class="prodPrice">Price: £'+priceResult.childNodes[0].nodeValue+'</p>' +
-                        '<p class="prodDate">Year: '+relResult.childNodes[0].nodeValue+'</p>' +
-                    '</div>' +
-                '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">Back</btn>';
+            
+            for (var i = 0; i < products.length; i++) {
+                if (i == buttonNum) {
+                    content +=
+                    '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
+                        '<div class="prodTxtContainer fade-in-transition">' +
+                            '<p><br>'+descResult.childNodes[0].nodeValue+'</p>' +
+                            '<p class="prodPrice">Price: £'+priceResult.childNodes[0].nodeValue+'</p>' +
+                            '<p class="prodDate">Year: '+relResult.childNodes[0].nodeValue+'</p>' +
+                        '</div>' +
+                    '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">Back</btn>';
+                }
             }
         }
+
         infoCheck[buttonNum].className += " open"
     }
 
