@@ -73,7 +73,7 @@ function swapXML(button) {
             var relResult = relNode.iterateNext();
             var docResult = docNode.iterateNext();
         }
-        else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
+        else if (window.ActiveXObject || xmlGet.responseType == "msxml-document" || 'ActiveXObject' in window) {
             xmlFile.setProperty("SelectionLanguage", "XPath");
             descResult = xmlFile.selectNodes(descPath);
             priceResult = xmlFile.selectNodes(pricePath);
