@@ -48,7 +48,6 @@ function loadXML() {
     content += '<br><br><div class="footer"><h3>Website by Ross Fitch. Copyright &copy; 2019, All rights reserved.</h3></div>';
     
     document.getElementById("productList").innerHTML = content;
-    alert("Content loaded");
 }
 
 function swapXML(button) {
@@ -64,7 +63,6 @@ function swapXML(button) {
 
     if(infoCheck[buttonNum].className === "prodText") {
         if (xmlFile.evaluate) {
-            alert("Not IE");
             var descNode = xmlFile.evaluate(descPath, xmlFile, null, XPathResult.ANY_TYPE, null);
             var priceNode = xmlFile.evaluate(pricePath, xmlFile, null, XPathResult.ANY_TYPE, null);
             var relNode = xmlFile.evaluate(relPath, xmlFile, null, XPathResult.ANY_TYPE, null);
@@ -75,10 +73,8 @@ function swapXML(button) {
             var relResult = relNode.iterateNext();
             var docResult = docNode.iterateNext();
         }
-        else {
-            alert("IE");
-            xmlGet.setProperty("SelectionLanguage", "XPath");
-            xmlFile = xmlGet.responseXML;
+        else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
+            xmlFile.setProperty("SelectionLanguage", "XPath");
             descResult = xmlFile.selectNodes(descPath);
             priceResult = xmlFile.selectNodes(pricePath);
             relResult = xmlFile.selectNodes(relPath)
