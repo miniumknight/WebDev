@@ -45,7 +45,7 @@ function loadXML() {
             }
     }
 
-    content += '<div class="footer"><h3>Website by Ross Fitch. Copyright &copy; 2019, All rights reserved.</h3></div>';
+    content += '<br><div class="footer"><h3>Website by Ross Fitch. Copyright &copy; 2019, All rights reserved.</h3></div>';
     
     document.getElementById("productList").innerHTML = content;
 }
