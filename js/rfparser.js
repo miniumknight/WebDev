@@ -75,7 +75,6 @@ function swapXML(button) {
         }
         else if (window.ActiveXObject || "ActiveXObject" in window || xmlGet.responseType == "msxml-document") {
             alert("IE");
-            xmlFile.setProperty("SelectionLanguage", "XPath");
             descResult = xmlFile.selectNodes(descPath);
             priceResult = xmlFile.selectNodes(pricePath);
             relResult = xmlFile.selectNodes(relPath)
