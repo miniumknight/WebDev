@@ -48,6 +48,7 @@ function loadXML() {
     content += '<br><br><div class="footer"><h3>Website by Ross Fitch. Copyright &copy; 2019, All rights reserved.</h3></div>';
     
     document.getElementById("productList").innerHTML = content;
+    alert("Content loaded");
 }
 
 function swapXML(button) {
@@ -72,78 +73,50 @@ function swapXML(button) {
             var priceResult = priceNode.iterateNext();
             var relResult = relNode.iterateNext();
             var docResult = docNode.iterateNext();
-
-            for (var i = 0; i < products.length; i++) {
-                if (i == buttonNum) {
-                    content +=
-                    '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
-                        '<div class="prodTxtContainer fade-in-transition">' +
-                            '<p><br>'+descResult.childNodes[0].nodeValue+'</p>' +
-                            '<p class="prodPrice">Price: £'+priceResult.childNodes[0].nodeValue+'</p>' +
-                            '<p class="prodDate">Year: '+relResult.childNodes[0].nodeValue+'</p>' +
-                        '</div>' +
-                    '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">Back</btn>';
-                }
-            }
-            docResult.innerHTML = content;
         }
         else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
+            alert("IE");
             xmlFile.setProperty("SelectionLanguage", "XPath");
             descResult = xmlFile.selectNodes(descPath);
             priceResult = xmlFile.selectNodes(pricePath);
             relResult = xmlFile.selectNodes(relPath)
             docResult = document.selectNodes(docPath);
-
-            for (var i = 0; i < products.length; i++) {
-                if (i == buttonNum) {
-                    content +=
-                    '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
-                        '<div class="prodTxtContainer fade-in-transition">' +
-                            '<p><br>'+descResult.childNodes[0].nodeValue+'</p>' +
-                            '<p class="prodPrice">Price: £'+priceResult.childNodes[0].nodeValue+'</p>' +
-                            '<p class="prodDate">Year: '+relResult.childNodes[0].nodeValue+'</p>' +
-                        '</div>' +
-                    '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">Back</btn>';
-                }
-            }
-            var IEContent = document.createElement("div");
-            IEContent.innerHTML = content;
-            alert(IEContent.innerHTML);
-            var container = document.getElementById(buttonNum);
-            container.append(IEContent);
         }
-        infoCheck[buttonNum].className += " open";
+
+        for (var i = 0; i < products.length; i++) {
+            if (i == buttonNum) {
+                content +=
+                '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
+                    '<div class="prodTxtContainer fade-in-transition">' +
+                        '<p><br>'+descResult.childNodes[0].nodeValue+'</p>' +
+                        '<p class="prodPrice">Price: £'+priceResult.childNodes[0].nodeValue+'</p>' +
+                        '<p class="prodDate">Year: '+relResult.childNodes[0].nodeValue+'</p>' +
+                    '</div>' +
+                '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">Back</btn>';
+            }
+        }
+        infoCheck[buttonNum].className += " open"
     }
 
     else {
         if (xmlFile.evaluate) {
             var docNode = xmlFile.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
             var docResult = docNode.iterateNext();
-            for (var i = 0; i < products.length; i++) {
-                if (i == buttonNum) {
-                    content +=
-                    '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
-                    '<img class="prodImage fade-in-transition" src="'+xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue+'">' +
-                        '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">More Information</btn>' +
-                    '</img>';
-                }
-            }
-            docResult.innerHTML = content;
         }
         else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
             xmlFile.setProperty("SelectionLanguage", "XPath");
             docResult = document.selectNodes(docPath);
-            for (var i = 0; i < products.length; i++) {
-                if (i == buttonNum) {
-                    content +=
-                    '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
-                    '<img class="prodImage fade-in-transition" src="'+xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue+'">' +
-                        '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">More Information</btn>' +
-                    '</img>';
-                }
+        }
+        for (var i = 0; i < products.length; i++) {
+            if (i == buttonNum) {
+                content +=
+                '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
+                '<img class="prodImage fade-in-transition" src="'+xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue+'">' +
+                    '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">More Information</btn>' +
+                '</img>';
             }
-            document.getElementById(buttonNum).innerHTML = content;
         }
         infoCheck[buttonNum].className = "prodText";
-    }
+    } 
+    docResult.innerHTML = content;
 }
