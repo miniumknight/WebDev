@@ -109,7 +109,7 @@ function swapXML(button) {
             if (i == buttonNum) {
                 content +=`
                 <h1 class="prodName">${xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue}</h1>
-                <img class="prodImage" src="${xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue}">
+                <img class="prodImage fade-in-transition" src="${xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue}">
                     <btn class="prodInfo" onclick="swapXML(this)" id="${i}">More Information</btn>
                 </img>`;
                 
