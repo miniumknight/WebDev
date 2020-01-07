@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Cabin&display=swap');
+html {
+    min-height: 100%;
+}
 
 body {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -6,8 +9,7 @@ body {
     margin: 0;
     background-color: white;
     overflow-x: hidden;
-    height: auto;
-    min-height: 100%;
+    height: 100%;
 }
 
 h1 {
