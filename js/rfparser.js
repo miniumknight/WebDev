@@ -63,20 +63,15 @@ function swapXML(button) {
     var docPath = '//div[contains(@id, "'+buttonNum+'")]';
 
     if(infoCheck[buttonNum].className === "prodText") {
-        if (xmlFile.evaluate) {
-            var descNode = xmlFile.evaluate(descPath, xmlFile, null, XPathResult.ANY_TYPE, null);
-            var priceNode = xmlFile.evaluate(pricePath, xmlFile, null, XPathResult.ANY_TYPE, null);
-            var relNode = xmlFile.evaluate(relPath, xmlFile, null, XPathResult.ANY_TYPE, null);
-            var docNode = document.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
+        var descNode = xmlFile.evaluate(descPath, xmlFile, null, XPathResult.ANY_TYPE, null);
+        var priceNode = xmlFile.evaluate(pricePath, xmlFile, null, XPathResult.ANY_TYPE, null);
+        var relNode = xmlFile.evaluate(relPath, xmlFile, null, XPathResult.ANY_TYPE, null);
+        var docNode = document.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
 
-            var descResult = descNode.iterateNext();
-            var priceResult = priceNode.iterateNext();
-            var relResult = relNode.iterateNext();
-            var docResult = docNode.iterateNext();
-        }
-        else {
-            alert("XPath error");
-        }
+        var descResult = descNode.iterateNext();
+        var priceResult = priceNode.iterateNext();
+        var relResult = relNode.iterateNext();
+        var docResult = docNode.iterateNext();
 
         for (var i = 0; i < products.length; i++) {
             if (i == buttonNum) {
@@ -94,13 +89,8 @@ function swapXML(button) {
     }
 
     else {
-        if (xmlFile.evaluate) {
-            var docNode = document.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
-            var docResult = docNode.iterateNext();
-        }
-        else {
-            alert("XPath error");
-        }
+        var docNode = document.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
+        var docResult = docNode.iterateNext();
 
         for (var i = 0; i < products.length; i++) {
             if (i == buttonNum) {
