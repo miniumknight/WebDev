@@ -86,6 +86,7 @@ function swapXML(button) {
             descResult = xmlIE.selectSingleNode(descPath);
             priceResult = xmlIE.selectSingleNode(pricePath);
             relResult = xmlIE.selectSingleNode(relPath);
+            docResult = document.selectNodes(docPath);
         }
 
         for (var i = 0; i < products.length; i++) {
@@ -108,8 +109,7 @@ function swapXML(button) {
             var docNode = xmlFile.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
             var docResult = docNode.iterateNext();
         }
-        else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
-            xmlFile.setProperty("SelectionLanguage", "XPath");
+        else if (window.ActiveXObject || xmlGet.responseType == "msxml-document" || 'ActiveXObject' in window) {
             docResult = document.selectNodes(docPath);
         }
         for (var i = 0; i < products.length; i++) {
