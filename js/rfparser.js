@@ -64,6 +64,7 @@ function swapXML(button) {
 
     if(infoCheck[buttonNum].className === "prodText") {
         if (xmlFile.evaluate) {
+            alert("Not IE");
             var descNode = xmlFile.evaluate(descPath, xmlFile, null, XPathResult.ANY_TYPE, null);
             var priceNode = xmlFile.evaluate(pricePath, xmlFile, null, XPathResult.ANY_TYPE, null);
             var relNode = xmlFile.evaluate(relPath, xmlFile, null, XPathResult.ANY_TYPE, null);
