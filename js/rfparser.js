@@ -1,4 +1,8 @@
 async: true;
+if('ActiveXObject' in window){
+    xmlIE = new ActiveXObject('Microsoft.XMLDOM'); 
+    xmlIEDoc = xmlIE.loadXML("products.xml");
+}
 var xmlFile;
 var xmlGet = new XMLHttpRequest();
 xmlGet.onload = function () {
@@ -74,7 +78,7 @@ function swapXML(button) {
             var docResult = docNode.iterateNext();
         }
         else if (window.ActiveXObject || "ActiveXObject" in window || xmlGet.responseType == "msxml-document") {
-            alert("IE");
+            xmlIEDoc.setProperty("SelectionLanguage", "XPath");
             descResult = xmlFile.selectNodes(descPath);
             priceResult = xmlFile.selectNodes(pricePath);
             relResult = xmlFile.selectNodes(relPath)
