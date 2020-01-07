@@ -1,5 +1,5 @@
 async: true;
-wgxpath.install();
+wgxpath.install(); //Simple compatability API to allow .evaluate() to work on IE (My code already works on all other browsers).
 var xmlFile;
 var xmlGet = new XMLHttpRequest();
 xmlGet.onload = function () {
