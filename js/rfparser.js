@@ -26,7 +26,7 @@ function loadXML() {
         if (i%2 == 0 || i == 0) {
             content +=
             '<div class ="prodContainer">' +
-                '<div class="prodText" id="'+{i}+'>' +
+                '<div class="prodText" id="'+i+'>' +
                     '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
                     '<img class="prodImage" src="'+xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue+'">' +
                         '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'>More Information</btn>' +
@@ -35,7 +35,7 @@ function loadXML() {
         }
         else {
             content +=
-                '<div class="prodText" id="'+{i}+'>' +
+                '<div class="prodText" id="'+i+'>' +
                     '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
                     '<img class="prodImage" src="'+xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue+'">' +
                         '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'>More Information</btn>' +
