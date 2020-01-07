@@ -3,7 +3,7 @@ wgxpath.install(); //Simple compatability API to allow .evaluate() to work on IE
 var xmlFile;
 var xmlGet = new XMLHttpRequest();
 xmlGet.onload = function () {
-    console.log(xmlGet.responseXML.documentElement.nodeName);
+    console.log("XML Successfully loaded");
 }
 xmlGet.onerror = function () {
     console.log("Error while loading XML");
