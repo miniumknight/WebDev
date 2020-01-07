@@ -106,9 +106,13 @@ function swapXML(button) {
                     '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">Back</btn>';
                 }
             }
-            document.getElementById(buttonNum).innerHTML = content;
+            var IEContent = document.createElement("div");
+            IEContent.innerHTML = content;
+            alert(IEContent.innerHTML);
+            var container = document.getElementById(buttonNum);
+            container.appendChild(IEContent);
         }
-        infoCheck[buttonNum].className += " open"
+        infoCheck[buttonNum].className += " open";
     }
 
     else {
