@@ -1,6 +1,12 @@
 async: true;
 var xmlFile;
-var xmlGet = new XMLHttpRequest();
+if('ActiveXObject' in window) {
+    xmlGet = new ActiveXObject('Microsoft.XMLDOM');
+}
+else {
+    var xmlGet = new XMLHttpRequest();
+}
+
 xmlGet.onload = function () {
     console.log(xmlGet.responseXML.documentElement.nodeName);
 }
