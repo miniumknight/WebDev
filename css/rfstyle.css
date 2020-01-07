@@ -306,6 +306,14 @@ p {
     border-top-right-radius: 10px;
 }
 
+.prodContainer .prodText:first-of-type .prodImage {
+    border-bottom-left-radius: 10px;
+}
+
+.prodContainer .prodText:last-of-type .prodImage {
+    border-bottom-right-radius: 10px;
+}
+
 .prodName {
     background-color: lightgray;
     padding-top: 5px;
@@ -472,6 +480,10 @@ p {
     .prodName {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
+    }
+    .prodImage {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 }
 
