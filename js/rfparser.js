@@ -80,6 +80,8 @@ function swapXML(button) {
             relResult = xmlFile.selectNodes(relPath)
             docResult = document.selectNodes(docPath);
             
+            alert(descResult);
+
             for (var i = 0; i < products.length; i++) {
                 if (i == buttonNum) {
                     content +=
