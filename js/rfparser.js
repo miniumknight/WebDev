@@ -1,12 +1,6 @@
 async: true;
 var xmlFile;
-if('ActiveXObject' in window) {
-    var xmlGet = new ActiveXObject('Msxml2.XMLHTTP');
-}
-else {
-    var xmlGet = new XMLHttpRequest();
-}
-
+var xmlGet = new XMLHttpRequest();
 xmlGet.onload = function () {
     console.log(xmlGet.responseXML.documentElement.nodeName);
 }
