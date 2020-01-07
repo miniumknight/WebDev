@@ -79,9 +79,9 @@ function swapXML(button) {
         }
         else if (window.ActiveXObject || "ActiveXObject" in window || xmlGet.responseType == "msxml-document") {
             xmlIEDoc.setProperty("SelectionLanguage", "XPath");
-            descResult = xmlFile.selectNodes(descPath);
-            priceResult = xmlFile.selectNodes(pricePath);
-            relResult = xmlFile.selectNodes(relPath)
+            descResult = xmlIEDoc.selectNodes(descPath);
+            priceResult = xmlIEDoc.selectNodes(pricePath);
+            relResult = xmlIEDoc.selectNodes(relPath)
             docResult = document.selectNodes(docPath);
         }
 
@@ -106,7 +106,7 @@ function swapXML(button) {
             var docResult = docNode.iterateNext();
         }
         else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
-            xmlFile.setProperty("SelectionLanguage", "XPath");
+            xmlIEDoc.setProperty("SelectionLanguage", "XPath");
             docResult = document.selectNodes(docPath);
         }
         for (var i = 0; i < products.length; i++) {
