@@ -84,6 +84,8 @@ function swapXML(button) {
             xmlIE = new ActiveXObject('Microsoft.XMLDOM');
             xmlIE.loadXML('products.xml');
             descResult = xmlIE.selectSingleNode(descPath);
+            priceResult = xmlIE.selectSingleNode(pricePath);
+            relResult = xmlIE.selectSingleNode(relPath);
         }
 
         for (var i = 0; i < products.length; i++) {
