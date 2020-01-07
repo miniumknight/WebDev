@@ -1,5 +1,5 @@
 async: true;
-wgxpath.install(); //Simple compatability API to allow .evaluate() to work on IE (My code already works on all other browsers).
+wgxpath.install(); //Simple compatability API to allow XPath.evaluate() to work on IE (My code already works on all other browsers).
 var xmlFile;
 var xmlGet = new XMLHttpRequest();
 xmlGet.onload = function () {
@@ -74,6 +74,9 @@ function swapXML(button) {
             var relResult = relNode.iterateNext();
             var docResult = docNode.iterateNext();
         }
+        else {
+            alert("XPath error");
+        }
 
         for (var i = 0; i < products.length; i++) {
             if (i == buttonNum) {
@@ -94,6 +97,9 @@ function swapXML(button) {
         if (xmlFile.evaluate) {
             var docNode = document.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
             var docResult = docNode.iterateNext();
+        }
+        else {
+            alert("XPath error");
         }
 
         for (var i = 0; i < products.length; i++) {
