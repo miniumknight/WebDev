@@ -45,7 +45,7 @@ function loadXML() {
             }
     }
 
-    content += '<br><div class="footer"><h3>Website by Ross Fitch. Copyright &copy; 2019, All rights reserved.</h3></div>';
+    content += '<br><br><div class="footer"><h3>Website by Ross Fitch. Copyright &copy; 2019, All rights reserved.</h3></div>';
     
     document.getElementById("productList").innerHTML = content;
 }
@@ -119,44 +119,3 @@ function swapXML(button) {
     } 
     docResult.innerHTML = content;
 }
-
-    
-     /*for (var i = 0; i < products.length; i++) {
-        if (i%2 == 0 || i == 0) {
-            content +=
-            '<div class ="prodContainer"><div class="prodText"><h1 class="prodName">' +  
-            xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
-            '</h1><p>' +
-            xmlFile.getElementsByTagName("description")[i].childNodes[0].nodeValue +
-            '</p><p class = "prodPrice">Price: £' +
-            xmlFile.getElementsByTagName("price")[i].childNodes[0].nodeValue +
-            '</p><p class = "prodDate">Year: ' +
-            xmlFile.getElementsByTagName("release")[i].childNodes[0].nodeValue +
-            '</p></div>';
-        }
-        else {
-            content +=
-            '<div class="prodText"><h1 class="prodName">' +  
-            xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
-            '</h1><p>' +
-            xmlFile.getElementsByTagName("description")[i].childNodes[0].nodeValue +
-            '</p><p class = "prodPrice">Price: £' +
-            xmlFile.getElementsByTagName("price")[i].childNodes[0].nodeValue +
-            '</p><p class = "prodDate">Year: ' +
-            xmlFile.getElementsByTagName("release")[i].childNodes[0].nodeValue +
-            '</p></div></div>';
-        }
-    }*/
-
-    /*var txt="";
-    if (xmlFile.evaluate) {
-        var firstElectronic = xmlFile.evaluate('/productshop/product[1][@category="electronics"]', xmlFile, null, XPathResult.ANY_TYPE, null);
-        var nameNode = xmlFile.evaluate('/productshop/product/name', xmlFile, null, XPathResult.ANY_TYPE, null);
-        var imageNode = xmlFile.evaluate('/productshop/product/image', xmlFile, null, XPathResult.ANY_TYPE, null);
-        
-        var nameResult = nameNode.iterateNext();
-        while (nameResult) {
-            txt += '<div class="mainText"><h1>' +  nameResult.childNodes[0].nodeValue + '</h1></div>';
-            nameResult = nameNode.iterateNext();
-        }
-    }*/
