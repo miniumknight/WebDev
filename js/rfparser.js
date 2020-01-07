@@ -83,9 +83,9 @@ function swapXML(button) {
         else if('ActiveXObject' in window) {
             xmlIE = new ActiveXObject('Microsoft.XMLDOM');
             xmlIE.loadXML('products.xml');
-            descResult = xmlIE.selectNodes(descPath);
-            priceResult = xmlIE.selectNodes(pricePath);
-            relResult = xmlIE.selectNodes(relPath);
+            descResult = xmlIE.selectSingleNode(descPath);
+            priceResult = xmlIE.selectSingleNode(pricePath);
+            relResult = xmlIE.selectSingleNode(relPath);
             docResult = document.getElementById(buttonNum);
             alert(descResult.nodeValue);
         }
