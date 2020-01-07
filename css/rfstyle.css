@@ -485,6 +485,9 @@ p {
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
     }
+    .prodInfo {
+        margin-bottom: 45px;
+    }
 }
 
 @media screen and (max-width: 500px) { /*Media query responsiveness for tall screens such as mobile phones in vertical view*/
