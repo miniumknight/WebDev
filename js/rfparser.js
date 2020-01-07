@@ -1,8 +1,4 @@
 async: true;
-if('ActiveXObject' in window){
-    xmlIE = new ActiveXObject('Microsoft.XMLDOM'); 
-    xmlIEDoc = xmlIE.loadXML("products.xml");
-}
 var xmlFile;
 var xmlGet = new XMLHttpRequest();
 xmlGet.onload = function () {
@@ -77,11 +73,17 @@ function swapXML(button) {
             var relResult = relNode.iterateNext();
             var docResult = docNode.iterateNext();
         }
-        else if (window.ActiveXObject || "ActiveXObject" in window || xmlGet.responseType == "msxml-document") {
-            descResult = xmlIEDoc.selectNodes(descPath);
-            priceResult = xmlIEDoc.selectNodes(pricePath);
-            relResult = xmlIEDoc.selectNodes(relPath)
+        else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
+            xmlFile.setProperty("SelectionLanguage", "XPath");
+            descResult = xmlFile.selectNodes(descPath);
+            priceResult = xmlFile.selectNodes(pricePath);
+            relResult = xmlFile.selectNodes(relPath)
             docResult = document.selectNodes(docPath);
+        }
+        else if('ActiveXObject' in window) {
+            xmlIE = new ActiveXObject('Microsoft.XMLDOM');
+            xmlIE.loadXML('products.xml');
+            descResult = xmlIE.selectSingleNode(descPath);
         }
 
         for (var i = 0; i < products.length; i++) {
@@ -105,6 +107,7 @@ function swapXML(button) {
             var docResult = docNode.iterateNext();
         }
         else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
+            xmlFile.setProperty("SelectionLanguage", "XPath");
             docResult = document.selectNodes(docPath);
         }
         for (var i = 0; i < products.length; i++) {
