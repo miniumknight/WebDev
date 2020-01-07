@@ -1,6 +1,6 @@
 async: true;
-if('ActiveXObject' in window) {
-    alert("XML May not be fully supported in this browser, please try again with a newer browser");
+if('ActiveXObject' in window || window.ActiveXObject || xmlGet.responseType == "msxml-document") {
+    alert("Sorry, you're running a very outdated browser please try using a newer browser to view this site!");
 }
 var xmlFile;
 var xmlGet = new XMLHttpRequest();
@@ -27,25 +27,25 @@ function loadXML() {
 
     for(var i = 0; i < products.length; i++) {
         if (i%2 == 0 || i == 0) {
-            content +=
-            '<div class ="prodContainer">' +
-                '<div class="prodText" id="'+i+'">' +
-                    '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
-                    '<img class="prodImage" src="'+xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue+'">' +
-                        '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">More Information</btn>' +
-                    '</img>' +
-                '</div>';
+            content +=`
+            <div class ="prodContainer">
+                <div class="prodText" id="${i}">
+                    <h1 class="prodName">${xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue}</h1>
+                    <img class="prodImage" src="${xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue}">
+                        <btn class="prodInfo" onclick="swapXML(this)" id="${i}">More Information</btn>
+                    </img>
+                </div>`;
         }
         else {
-            content +=
-                '<div class="prodText" id="'+i+'">' +
-                    '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
-                    '<img class="prodImage" src="'+xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue+'">' +
-                        '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">More Information</btn>' +
-                    '</img>' +
-                '</div>' +
-            '</div>'
-        }
+            content +=`
+                <div class="prodText" id="${i}">
+                    <h1 class="prodName">${xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue}</h1>
+                    <img class="prodImage" src="${xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue}">
+                        <btn class="prodInfo" onclick="swapXML(this)" id="${i}">More Information</btn>
+                    </img>
+                </div>
+            </div>`
+            }
     }
 
     content += '<br><br><div class="footer"><h3>Website by Ross Fitch. Copyright &copy; 2019, All rights reserved.</h3></div>';
@@ -59,10 +59,10 @@ function swapXML(button) {
     var infoCheck = document.getElementsByClassName("prodText");
     var products = xmlFile.getElementsByTagName("product");
 
-    var descPath = '/productshop/product['+selectorNum+']/description';
-    var pricePath = '/productshop/product['+selectorNum+']/price';
-    var relPath = '/productshop/product['+selectorNum+']/release';
-    var docPath = '//div[contains(@id, "'+buttonNum+'")]';
+    var descPath = `/productshop/product[${selectorNum}]/description`;
+    var pricePath = `/productshop/product[${selectorNum}]/price`;
+    var relPath = `/productshop/product[${selectorNum}]/release`;
+    var docPath = `//div[contains(@id, "${buttonNum}")]`;
 
     if(infoCheck[buttonNum].className === "prodText") {
         if (xmlFile.evaluate) {
@@ -76,24 +76,20 @@ function swapXML(button) {
             var relResult = relNode.iterateNext();
             var docResult = docNode.iterateNext();
         }
-        else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
-            xmlFile.setProperty("SelectionLanguage", "XPath");
-            descResult = xmlFile.selectNodes(descPath);
-            priceResult = xmlFile.selectNodes(pricePath);
-            relResult = xmlFile.selectNodes(relPath)
-            docResult = document.selectNodes(docPath);
+        else {
+            alert("Error loading XML, maybe your browser is outdated?");
         }
 
         for (var i = 0; i < products.length; i++) {
             if (i == buttonNum) {
-                content +=
-                '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
-                    '<div class="prodTxtContainer fade-in-transition">' +
-                        '<p><br>'+descResult.childNodes[0].nodeValue+'</p>' +
-                        '<p class="prodPrice">Price: £'+priceResult.childNodes[0].nodeValue+'</p>' +
-                        '<p class="prodDate">Year: '+relResult.childNodes[0].nodeValue+'</p>' +
-                    '</div>' +
-                '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">Back</btn>';
+                content +=`
+                <h1 class="prodName">${xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue}</h1>
+                    <div class="prodTxtContainer">
+                        <p><br>${descResult.childNodes[0].nodeValue}</p>
+                        <p class="prodPrice">Price: £${priceResult.childNodes[0].nodeValue}</p>
+                        <p class="prodDate">Year: ${relResult.childNodes[0].nodeValue}</p>
+                    </div>
+                <btn class="prodInfo" onclick="swapXML(this)" id="${i}">Back</btn>`;
             }
         }
         infoCheck[buttonNum].className += " open"
@@ -104,19 +100,62 @@ function swapXML(button) {
             var docNode = xmlFile.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
             var docResult = docNode.iterateNext();
         }
-        else if (window.ActiveXObject || xmlGet.responseType == "msxml-document" || 'ActiveXObject' in window) {
-            docResult = document.selectNodes(docPath);
+        else {
+            alert("Error loading XML, maybe your browser is outdated?");
         }
+        
         for (var i = 0; i < products.length; i++) {
             if (i == buttonNum) {
-                content +=
-                '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
-                '<img class="prodImage fade-in-transition" src="'+xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue+'">' +
-                    '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">More Information</btn>' +
-                '</img>';
+                content +=`
+                <h1 class="prodName">${xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue}</h1>
+                <img class="prodImage" src="${xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue}">
+                    <btn class="prodInfo" onclick="swapXML(this)" id="${i}">More Information</btn>
+                </img>`;
+                
             }
         }
         infoCheck[buttonNum].className = "prodText";
     } 
     docResult.innerHTML = content;
 }
+
+    
+     /*for (var i = 0; i < products.length; i++) {
+        if (i%2 == 0 || i == 0) {
+            content +=
+            '<div class ="prodContainer"><div class="prodText"><h1 class="prodName">' +  
+            xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
+            '</h1><p>' +
+            xmlFile.getElementsByTagName("description")[i].childNodes[0].nodeValue +
+            '</p><p class = "prodPrice">Price: £' +
+            xmlFile.getElementsByTagName("price")[i].childNodes[0].nodeValue +
+            '</p><p class = "prodDate">Year: ' +
+            xmlFile.getElementsByTagName("release")[i].childNodes[0].nodeValue +
+            '</p></div>';
+        }
+        else {
+            content +=
+            '<div class="prodText"><h1 class="prodName">' +  
+            xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue + 
+            '</h1><p>' +
+            xmlFile.getElementsByTagName("description")[i].childNodes[0].nodeValue +
+            '</p><p class = "prodPrice">Price: £' +
+            xmlFile.getElementsByTagName("price")[i].childNodes[0].nodeValue +
+            '</p><p class = "prodDate">Year: ' +
+            xmlFile.getElementsByTagName("release")[i].childNodes[0].nodeValue +
+            '</p></div></div>';
+        }
+    }*/
+
+    /*var txt="";
+    if (xmlFile.evaluate) {
+        var firstElectronic = xmlFile.evaluate('/productshop/product[1][@category="electronics"]', xmlFile, null, XPathResult.ANY_TYPE, null);
+        var nameNode = xmlFile.evaluate('/productshop/product/name', xmlFile, null, XPathResult.ANY_TYPE, null);
+        var imageNode = xmlFile.evaluate('/productshop/product/image', xmlFile, null, XPathResult.ANY_TYPE, null);
+        
+        var nameResult = nameNode.iterateNext();
+        while (nameResult) {
+            txt += '<div class="mainText"><h1>' +  nameResult.childNodes[0].nodeValue + '</h1></div>';
+            nameResult = nameNode.iterateNext();
+        }
+    }*/
