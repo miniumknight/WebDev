@@ -75,8 +75,8 @@ function swapXML(button) {
         }
         else if (window.ActiveXObject || xmlGet.responseType == "msxml-document" || 'ActiveXObject' in window) {
             IEDoc = new ActiveXObject('Microsoft.XMLDOM');
-            IEDoc.loadXML('products.xml');
-            descResult = IEDoc.selectNodes(descPath);
+            IEDoc.loadXML(xmlFile);
+            descResult = IEDoc.selectNodes('xml/'+descPath+'');
             priceResult = IEDoc.selectNodes(pricePath);
             relResult = IEDoc.selectNodes(relPath)
             docResult = document.getElementById(buttonNum);
