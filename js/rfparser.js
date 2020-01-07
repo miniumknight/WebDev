@@ -1,7 +1,4 @@
 async: true;
-if('ActiveXObject' in window) {
-    alert("Sorry, you're running a very outdated browser please try using a newer browser to view this site!")
-}
 var xmlFile;
 var xmlGet = new XMLHttpRequest();
 xmlGet.onload = function () {
