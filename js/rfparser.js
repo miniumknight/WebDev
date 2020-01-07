@@ -22,6 +22,15 @@ function loadXML() {
     
     content += '<div class="header"><h1>All Products</h1></div>';
 
+    if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
+        alert("IE");
+        xmlFile.setProperty("SelectionLanguage", "XPath");
+        descResult = xmlFile.selectNodes(descPath);
+        priceResult = xmlFile.selectNodes(pricePath);
+        relResult = xmlFile.selectNodes(relPath)
+        docResult = document.selectNodes(docPath);
+    }
+    
     for(var i = 0; i < products.length; i++) {
         if (i%2 == 0 || i == 0) {
             content +=
@@ -72,14 +81,6 @@ function swapXML(button) {
             var priceResult = priceNode.iterateNext();
             var relResult = relNode.iterateNext();
             var docResult = docNode.iterateNext();
-        }
-        else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
-            alert("IE");
-            xmlFile.setProperty("SelectionLanguage", "XPath");
-            descResult = xmlFile.selectNodes(descPath);
-            priceResult = xmlFile.selectNodes(pricePath);
-            relResult = xmlFile.selectNodes(relPath)
-            docResult = document.selectNodes(docPath);
         }
 
         for (var i = 0; i < products.length; i++) {
