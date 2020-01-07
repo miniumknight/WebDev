@@ -1,4 +1,7 @@
 async: true;
+if('ActiveXObject' in window) {
+    alert("XML May not be fully supported in this browser, please try again with a newer browser");
+}
 var xmlFile;
 var xmlGet = new XMLHttpRequest();
 xmlGet.onload = function () {
@@ -79,15 +82,6 @@ function swapXML(button) {
             priceResult = xmlFile.selectNodes(pricePath);
             relResult = xmlFile.selectNodes(relPath)
             docResult = document.selectNodes(docPath);
-        }
-        else if('ActiveXObject' in window) {
-            xmlIE = new ActiveXObject('Microsoft.XMLDOM');
-            xmlIE.loadXML('products.xml');
-            descResult = xmlIE.selectSingleNode(descPath);
-            priceResult = xmlIE.selectSingleNode(pricePath);
-            relResult = xmlIE.selectSingleNode(relPath);
-            docResult = document.getElementById(buttonNum);
-            alert(descResult.childNodes[0].nodeValue);
         }
 
         for (var i = 0; i < products.length; i++) {
