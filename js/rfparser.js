@@ -1,6 +1,6 @@
 async: true;
-if('ActiveXObject' in window || window.ActiveXObject || xmlGet.responseType == "msxml-document") {
-    alert("Sorry, you're running a very outdated browser please try using a newer browser to view this site!");
+if('ActiveXObject' in window) {
+    alert("Sorry, you're running a very outdated browser please try using a newer browser to view this site!")
 }
 var xmlFile;
 var xmlGet = new XMLHttpRequest();
@@ -76,8 +76,12 @@ function swapXML(button) {
             var relResult = relNode.iterateNext();
             var docResult = docNode.iterateNext();
         }
-        else {
-            alert("Error loading XML, maybe your browser is outdated?");
+        else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
+            xmlFile.setProperty("SelectionLanguage", "XPath");
+            descResult = xmlFile.selectNodes(descPath);
+            priceResult = xmlFile.selectNodes(pricePath);
+            relResult = xmlFile.selectNodes(relPath)
+            docResult = document.selectNodes(docPath);
         }
 
         for (var i = 0; i < products.length; i++) {
@@ -100,10 +104,10 @@ function swapXML(button) {
             var docNode = xmlFile.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
             var docResult = docNode.iterateNext();
         }
-        else {
-            alert("Error loading XML, maybe your browser is outdated?");
+        else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
+            xmlFile.setProperty("SelectionLanguage", "XPath");
+            docResult = document.selectNodes(docPath);
         }
-        
         for (var i = 0; i < products.length; i++) {
             if (i == buttonNum) {
                 content +=`
