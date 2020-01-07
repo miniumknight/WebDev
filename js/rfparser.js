@@ -1,6 +1,11 @@
 async: true;
+if ('ActiveXObject' in window) {
+    var xmlGet = new ActiveXObject('Msxml2.XMLHTTP')
+}
+else {
+    var xmlGet = new XMLHttpRequest();
+}
 var xmlFile;
-var xmlGet = new XMLHttpRequest();
 xmlGet.onload = function () {
     console.log(xmlGet.responseXML.documentElement.nodeName);
 }
@@ -73,14 +78,14 @@ function swapXML(button) {
             var relResult = relNode.iterateNext();
             var docResult = docNode.iterateNext();
         }
-        else if (window.ActiveXObject || xmlGet.responseType == "msxml-document" || 'ActiveXObject' in window) {
+        else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
             IEDoc = new ActiveXObject('Microsoft.XMLDOM');
             IEDoc.loadXML(xmlFile);
             descResult = IEDoc.selectNodes(descPath);
             priceResult = IEDoc.selectNodes(pricePath);
             relResult = IEDoc.selectNodes(relPath)
             docResult = document.getElementById(buttonNum);
-            alert(descResult.childNodes[0].nodeValue);
+
         }
 
         for (var i = 0; i < products.length; i++) {
