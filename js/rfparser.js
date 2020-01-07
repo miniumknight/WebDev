@@ -1,5 +1,5 @@
 async: true;
-var xmlFile;
+xmlFile;
 var xmlGet = new XMLHttpRequest();
 xmlGet.onload = function () {
     console.log(xmlGet.responseXML.documentElement.nodeName);
