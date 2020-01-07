@@ -66,7 +66,7 @@ function swapXML(button) {
             var descNode = xmlFile.evaluate(descPath, xmlFile, null, XPathResult.ANY_TYPE, null);
             var priceNode = xmlFile.evaluate(pricePath, xmlFile, null, XPathResult.ANY_TYPE, null);
             var relNode = xmlFile.evaluate(relPath, xmlFile, null, XPathResult.ANY_TYPE, null);
-            var docNode = xmlFile.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
+            var docNode = document.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
 
             var descResult = descNode.iterateNext();
             var priceResult = priceNode.iterateNext();
@@ -98,7 +98,7 @@ function swapXML(button) {
 
     else {
         if (xmlFile.evaluate) {
-            var docNode = xmlFile.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
+            var docNode = document.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
             var docResult = docNode.iterateNext();
         }
         else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
