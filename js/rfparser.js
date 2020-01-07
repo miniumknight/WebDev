@@ -142,8 +142,8 @@ function swapXML(button) {
             }
             var IEContent = document.createElement("div");
             IEContent.innerHTML = content;
-            alert(IEContent.innerHTML);
-            alert(docResult);
+            console.log(IEContent.innerHTML);
+            console.log(docResult);
             docResult.appendChild(IEContent);
         }
         infoCheck[buttonNum].className = "prodText";
