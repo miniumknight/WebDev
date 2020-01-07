@@ -24,24 +24,24 @@ function loadXML() {
 
     for(var i = 0; i < products.length; i++) {
         if (i%2 == 0 || i == 0) {
-            content +=`
-            <div class ="prodContainer">
-                <div class="prodText" id="${i}">
-                    <h1 class="prodName">${xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue}</h1>
-                    <img class="prodImage" src="${xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue}">
-                        <btn class="prodInfo" onclick="swapXML(this)" id="${i}">More Information</btn>
-                    </img>
-                </div>`;
+            content +=
+            '<div class ="prodContainer">' +
+                '<div class="prodText" id="'+{i}+'>' +
+                    '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
+                    '<img class="prodImage" src="'+xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue+'">' +
+                        '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'>More Information</btn>' +
+                    '</img>' +
+                '</div>';
         }
         else {
-            content +=`
-                <div class="prodText" id="${i}">
-                    <h1 class="prodName">${xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue}</h1>
-                    <img class="prodImage" src="${xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue}">
-                        <btn class="prodInfo" onclick="swapXML(this)" id="${i}">More Information</btn>
-                    </img>
-                </div>
-            </div>`
+            content +=
+                '<div class="prodText" id="'+{i}+'>' +
+                    '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
+                    '<img class="prodImage" src="'+xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue+'">' +
+                        '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'>More Information</btn>' +
+                    '</img>' +
+                '</div>' +
+            '</div>';
             }
     }
 
@@ -56,10 +56,10 @@ function swapXML(button) {
     var infoCheck = document.getElementsByClassName("prodText");
     var products = xmlFile.getElementsByTagName("product");
 
-    var descPath = `/productshop/product[${selectorNum}]/description`;
-    var pricePath = `/productshop/product[${selectorNum}]/price`;
-    var relPath = `/productshop/product[${selectorNum}]/release`;
-    var docPath = `//div[contains(@id, "${buttonNum}")]`;
+    var descPath = '/productshop/product['+selectorNum+']/description';
+    var pricePath = '/productshop/product['+selectorNum+']/price';
+    var relPath = '/productshop/product['+selectorNum+']/release';
+    var docPath = '//div[contains(@id, "'+buttonNum+'")]';
 
     if(infoCheck[buttonNum].className === "prodText") {
         if (xmlFile.evaluate) {
@@ -83,14 +83,14 @@ function swapXML(button) {
 
         for (var i = 0; i < products.length; i++) {
             if (i == buttonNum) {
-                content +=`
-                <h1 class="prodName">${xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue}</h1>
-                    <div class="prodTxtContainer fade-in-transition">
-                        <p><br>${descResult.childNodes[0].nodeValue}</p>
-                        <p class="prodPrice">Price: £${priceResult.childNodes[0].nodeValue}</p>
-                        <p class="prodDate">Year: ${relResult.childNodes[0].nodeValue}</p>
-                    </div>
-                <btn class="prodInfo" onclick="swapXML(this)" id="${i}">Back</btn>`;
+                content +=
+                '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
+                    '<div class="prodTxtContainer fade-in-transition">' +
+                        '<p><br>'+descResult.childNodes[0].nodeValue+'</p>' +
+                        '<p class="prodPrice">Price: £'+priceResult.childNodes[0].nodeValue+'</p>' +
+                        '<p class="prodDate">Year: '+relResult.childNodes[0].nodeValue+'</p>' +
+                    '</div>' +
+                '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">Back</btn>';
             }
         }
         infoCheck[buttonNum].className += " open"
@@ -107,12 +107,11 @@ function swapXML(button) {
         }
         for (var i = 0; i < products.length; i++) {
             if (i == buttonNum) {
-                content +=`
-                <h1 class="prodName">${xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue}</h1>
-                <img class="prodImage fade-in-transition" src="${xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue}">
-                    <btn class="prodInfo" onclick="swapXML(this)" id="${i}">More Information</btn>
-                </img>`;
-                
+                content +=
+                '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
+                '<img class="prodImage" src="'+xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue+'">' +
+                    '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'>More Information</btn>' +
+                '</img>';
             }
         }
         infoCheck[buttonNum].className = "prodText";
