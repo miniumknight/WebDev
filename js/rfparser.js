@@ -1,4 +1,5 @@
 async: true;
+wgxpath.install();
 var xmlFile;
 var xmlGet = new XMLHttpRequest();
 xmlGet.onload = function () {
@@ -73,15 +74,6 @@ function swapXML(button) {
             var relResult = relNode.iterateNext();
             var docResult = docNode.iterateNext();
         }
-        else if (window.ActiveXObject || xmlGet.responseType == "msxml-document" || 'ActiveXObject' in window) {
-            IEDoc = new ActiveXObject('Microsoft.XMLDOM');
-            IEDoc.loadXML(xmlFile);
-            descResult = IEDoc.selectNodes('xml/'+descPath+'');
-            priceResult = IEDoc.selectNodes(pricePath);
-            relResult = IEDoc.selectNodes(relPath)
-            docResult = document.getElementById(buttonNum);
-            alert(descResult.childNodes[0].nodeValue);
-        }
 
         for (var i = 0; i < products.length; i++) {
             if (i == buttonNum) {
@@ -103,10 +95,7 @@ function swapXML(button) {
             var docNode = document.evaluate(docPath, document, null, XPathResult.ANY_TYPE, null);
             var docResult = docNode.iterateNext();
         }
-        else if (window.ActiveXObject || xmlGet.responseType == "msxml-document") {
-            xmlFile.setProperty("SelectionLanguage", "XPath");
-            docResult = document.selectNodes(docPath);
-        }
+
         for (var i = 0; i < products.length; i++) {
             if (i == buttonNum) {
                 content +=
