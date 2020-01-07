@@ -75,11 +75,12 @@ function swapXML(button) {
         }
         else if (window.ActiveXObject || xmlGet.responseType == "msxml-document" || 'ActiveXObject' in window) {
             IEDoc = new ActiveXObject('Microsoft.XMLDOM');
-            IEDoc.loadXML(xmlGet);
+            IEDoc.loadXML(xmlFile);
             descResult = IEDoc.selectNodes(descPath);
             priceResult = IEDoc.selectNodes(pricePath);
             relResult = IEDoc.selectNodes(relPath)
             docResult = document.getElementById(buttonNum);
+            alert(descResult.childNodes[0].nodeValue);
         }
 
         for (var i = 0; i < products.length; i++) {
