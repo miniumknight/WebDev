@@ -86,7 +86,7 @@ function swapXML(button) {
             descResult = xmlIE.selectSingleNode(descPath);
             priceResult = xmlIE.selectSingleNode(pricePath);
             relResult = xmlIE.selectSingleNode(relPath);
-            docResult = document.selectSingleNode(docPath);
+            docResult = document.getElementById(buttonNum);
         }
 
         for (var i = 0; i < products.length; i++) {
