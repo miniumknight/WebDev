@@ -1,7 +1,7 @@
 async: true;
 var xmlFile;
 if('ActiveXObject' in window) {
-    xmlGet = new ActiveXObject('Microsoft.XMLDOM');
+    xmlGet = new ActiveXObject('Msxml2.XMLHTTP');
 }
 else {
     var xmlGet = new XMLHttpRequest();
