@@ -79,6 +79,9 @@ function swapXML(button) {
             priceResult = xmlFile.selectNodes(pricePath);
             relResult = xmlFile.selectNodes(relPath)
             docResult = document.selectNodes(docPath);
+            alert(docResult);
+            alert(descNode);
+            alert(priceResult);
         }
 
         for (var i = 0; i < products.length; i++) {
