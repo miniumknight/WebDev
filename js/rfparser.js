@@ -110,7 +110,7 @@ function swapXML(button) {
             IEContent.innerHTML = content;
             alert(IEContent.innerHTML);
             var container = document.getElementById(buttonNum);
-            container.appendChild(IEContent);
+            container.append(IEContent);
         }
         infoCheck[buttonNum].className += " open";
     }
