@@ -105,15 +105,3 @@ function swapXML(button) {
     } 
     docResult.innerHTML = content;
 }
-
-function XMLCheck(){
-    var products = xmlFile.getElementsByTagName("product");
-    for (var i = 0; i < products.length; i++) {
-        if (document.getElementsByName("product")[0].value == xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue) {
-            document.getElementsByName("product")[0].setCustomValidity("");
-        }
-        else {
-            document.getElementsByName("product")[0].setCustomValidity("That isnt a product which exists in our database!");
-        }
-    }
-}
