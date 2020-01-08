@@ -127,6 +127,8 @@ function checkXML() {
             }
         }
     }
+    xmlReq.open("GET", "products.xml");
+    xmlReq.send();
 }
 
 function checkMatch() {
