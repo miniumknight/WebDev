@@ -32,7 +32,7 @@
                     <input class="form" type="text" placeholder="Last Name" name="lastName" required>
 
                     <label for="email"><h1>Email</h1></label>
-                    <input id ="preEmail" class="form" type="email" placeholder="Your Email" pattern="[a-z0-9 ]+@[a-z0-9- ]+\.[a-z.]{2,}$" name="email" oninput="setCustomValidity('')" oninvalid="setCustomValidity('Invalid email!')" required>
+                    <input id ="preEmail" class="form" type="email" placeholder="Your Email" pattern="[a-z0-9]+@[a-z0-9-]+\.[a-z.]{2,}$" name="email" oninput="setCustomValidity('')" oninvalid="setCustomValidity('Invalid email!')" required>
 
                     <label for="password"><h1>Password</h1></label>
                     <input id="password" class="form" type="password" placeholder="Your Password" pattern="(?=.*\d).{8,}" name="password" oninput="setCustomValidity('')" oninvalid="setCustomValidity('Password must be at least 8 digits long with at least one number!')" required>
