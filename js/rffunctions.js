@@ -75,6 +75,11 @@ function captchaExpiry() {
     allowSubmit = false;
 }
 
+function setValidation() {
+    document.getElementsByName("address")[0].setCustomValidity("Invalid address or format(Number Street Postcode)");
+    document.getElementsByName("telephone")[0].setCustomValidity("Invalid telepohone number");
+}
+
 function SubmitAcc() {
     accounts = loadAcc(accounts);
     if (allowSubmit) {
@@ -106,13 +111,6 @@ function checkAcc() {
         document.getElementById('email').setCustomValidity("");
     else 
         document.getElementById('email').setCustomValidity("Invalid email or password");
-}
-
-function setValidationMsg() {
-    var telBox = document.getElementsByName("telephone");
-    telBox.setCustomValidity("Invalid phone number, must be a number between 9 and 11 digits long");
-    var addrBox = document.getElementsByName("address");
-    addrBox.setCustomValidity("Invalid address or format, please use 'House Number Street Postcode'");
 }
 
 function checkValidation() {
