@@ -1,7 +1,7 @@
 /*This is a free public library created by google to allow full xpath compatibility with a variety of older browsers and is
-not my code. I have used this library to help solve compatability issues with internet explorer or other outdated browsers
-as there was no clear way of getting my code to work without it, especially not on the version of IE I had installed for
-testing purposes.*/
+not my code. I have used this library to help solve compatability issues with Internet Explorer or other outdated browsers
+(Though the code already worked in every other browser) as there was no clear way of getting my code to work without it, 
+especially not on the version of IE I had installed for testing purposes.*/
 (function(){'use strict';var k=this;
 function aa(a){var b=typeof a;if("object"==b)if(a){if(a instanceof Array)return"array";if(a instanceof Object)return b;var c=Object.prototype.toString.call(a);if("[object Window]"==c)return"object";if("[object Array]"==c||"number"==typeof a.length&&"undefined"!=typeof a.splice&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("splice"))return"array";if("[object Function]"==c||"undefined"!=typeof a.call&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("call"))return"function"}else return"null";else if("function"==
 b&&"undefined"==typeof a.call)return"object";return b}function l(a){return"string"==typeof a}function ba(a,b,c){return a.call.apply(a.bind,arguments)}function ca(a,b,c){if(!a)throw Error();if(2<arguments.length){var d=Array.prototype.slice.call(arguments,2);return function(){var c=Array.prototype.slice.call(arguments);Array.prototype.unshift.apply(c,d);return a.apply(b,c)}}return function(){return a.apply(b,arguments)}}
