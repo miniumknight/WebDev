@@ -1,5 +1,4 @@
 async: true;
-wgxpath.install(); //Simple google compatability Library to allow XPath.evaluate() to work on IE (My code already works on all other browsers).
 var currentPage = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
 
 var xmlFile;
@@ -13,6 +12,7 @@ xmlReq.onerror = function () {
 xmlReq.onreadystatechange = function(){
     if (this.readyState == 4 && this.status == 200){
         if (currentPage == "Products.html") {
+            wgxpath.install(); //Simple google compatability Library to allow XPath.evaluate() to work on IE (My code already works on all other browsers).
             xmlFile = xmlReq.responseXML;
             loadXML()
         }
