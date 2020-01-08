@@ -75,15 +75,6 @@ function captchaExpiry() {
     allowSubmit = false;
 }
 
-function setValidation() {
-    if (document.getElementsByName("address")[0].oninvalid) {
-        document.getElementsByName("address")[0].setCustomValidity("Invalid address or format (Number Street Postcode)");
-    }
-    else {
-    document.getElementsByName("telephone")[0].setCustomValidity("Invalid telephone number");
-    }
-}
-
 function SubmitAcc() {
     accounts = loadAcc(accounts);
     if (allowSubmit) {
