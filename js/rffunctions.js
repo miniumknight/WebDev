@@ -76,8 +76,12 @@ function captchaExpiry() {
 }
 
 function setValidation() {
-    document.getElementsByName("address")[0].setCustomValidity("Invalid address or format (Number Street Postcode)");
+    if (document.getElementsByName("address")[0].oninvalid) {
+        document.getElementsByName("address")[0].setCustomValidity("Invalid address or format (Number Street Postcode)");
+    }
+    else {
     document.getElementsByName("telephone")[0].setCustomValidity("Invalid telepohone number");
+    }
 }
 
 function SubmitAcc() {
