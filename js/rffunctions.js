@@ -60,8 +60,8 @@ function timedSlide() {
 }
 
 function toggleMobile() {
-    var x = document.getElementById("responsive");
-    if(x.className === "navbar") 
+    let x = document.getElementById("responsive");
+    if(x.className == "navbar") 
         x.className += " resNav";
     else 
         x.className = "navbar";
