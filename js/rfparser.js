@@ -115,7 +115,6 @@ function checkXML() {
         }
         else {
             document.getElementsByName("product")[0].setCustomValidity("That product does not exist within our database!");
-            break;
         }
     }
 }
