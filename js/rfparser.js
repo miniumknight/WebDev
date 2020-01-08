@@ -1,21 +1,21 @@
 async: true;
 wgxpath.install(); //Simple google compatability Library to allow XPath.evaluate() to work on IE (My code already works on all other browsers).
 var xmlFile;
-var xmlGet = new XMLHttpRequest();
-xmlGet.onload = function () {
+var xmlReq = new XMLHttpRequest();
+xmlReq.onload = function () {
     console.log("XML Successfully loaded");
 }
-xmlGet.onerror = function () {
+xmlReq.onerror = function () {
     console.log("Error while loading XML");
 }
-xmlGet.onreadystatechange = function(){
+xmlReq.onreadystatechange = function(){
     if (this.readyState == 4 && this.status == 200){
-        xmlFile = xmlGet.responseXML;
+        xmlFile = xmlReq.responseXML;
         loadXML()
     }
 }
-xmlGet.open("GET", "products.xml");
-xmlGet.send();
+xmlReq.open("GET", "products.xml");
+xmlReq.send();
 
 function loadXML() {
     var content = "";

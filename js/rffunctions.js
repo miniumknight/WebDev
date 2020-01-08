@@ -106,6 +106,25 @@ function checkAcc() {
         document.getElementById('email').setCustomValidity("");
     else 
         document.getElementById('email').setCustomValidity("Invalid email or password");
+    
+    checkXML();
+}
+
+function checkXML() {
+    var xmlReq = new XMLHttpRequest();
+    xmlReq.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200){
+            var products = xmlFile.getElementsByTagName("product");
+            for (i = 0; i < products.length; i++) {
+                if(document.getElementsByName("product")[0].value == xmlReq.responseXML.getElementsByTagName("name")[i].childNodes[0].nodeValue){
+                    document.getElementsByName("product")[0].setCustomValidity("");
+                }
+                else {
+                    document.getElementsByName("product")[0].setCustomValidity("That product doesnt exist within our database!");
+                }
+            }
+        }
+    }
 }
 
 function checkMatch() {
