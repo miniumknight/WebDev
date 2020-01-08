@@ -118,7 +118,7 @@ function checkXML() {
             break;
         }
         else {
-            document.getElementsByName("product")[0].setCustomValidity("That product does not exist within our database!");
+            document.getElementsByName("product")[0].setCustomValidity("That product does not exist within our database! (Case and spacing sensitive)");
         }
     }
 }
