@@ -26,7 +26,7 @@ function displaySlide(n) {
     for (i = 0; i < numberSlides.length; i++) 
         numberSlides[i].style.display = "none";
     
-    for (i = 0; i< numberText.length; i++)
+    for (i = 0; i < numberText.length; i++)
         numberText[i].style.display = "none";
 
     for (i = 0; i < thumbs.length; i++) 
