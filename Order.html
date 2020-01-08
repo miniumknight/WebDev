@@ -35,7 +35,7 @@
                     <input id ="preEmail" class="form" type="email" placeholder="Your Email" name="email" required>
 
                     <label for="password"><h1>Password</h1></label>
-                    <input id="password" class="form" type="password" placeholder="Your Password" name="password" required>
+                    <input id="password" class="form" type="password" placeholder="Your Password" pattern="(?=.*\d).{8,}" name="password" oninput="setCustomValidity('')" oninvalid="setCustomValidity('Password must be at least 8 digits long with at least one number!')" required>
 
                     <label for="passwordRepeat"><h1>Repeat Password</h1></label>
                     <input id="confirmPassword" class="form" type="password" placeholder="Repeat Password" name="passwordRepeat" required>
@@ -43,7 +43,7 @@
                     <div class="submitcontainer">
                         <div class="g-recaptcha" data-sitekey="6Lc1KssUAAAAAP4MZBgFOa8O8zw83w1vy3KrtqG-"  data-callback="captchaSuccess"  data-expired-callback="captchaExpiry" data-error-callback="captchaSuccess"></div>
 
-                        <button type="submit" class="submitBtn" onclick="checkValidation();">Register</button>
+                        <button type="submit" class="submitBtn" onclick="checkMatch();">Register</button>
                     </div>
                 </form>
             </div>

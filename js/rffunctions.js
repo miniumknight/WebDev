@@ -108,7 +108,7 @@ function checkAcc() {
         document.getElementById('existingPass').setCustomValidity("Invalid email or password");
 }
 
-function checkValidation() {
+function checkMatch() {
     if (document.getElementById('password').value == document.getElementById('confirmPassword').value)
         document.getElementById('confirmPassword').setCustomValidity("");
     else 
