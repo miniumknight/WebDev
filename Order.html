@@ -49,7 +49,7 @@
             </div>
             <div class="mainText">
                 <h1>Order Form</h1>
-                <form class="formContainer" onload="setValidation()">
+                <form class="formContainer">
                     <label for="email"><h1>Email</h1></label>
                     <input id="email" class="form" type="email" placeholder="Your Email" name="email" required>
 
@@ -60,10 +60,10 @@
                     <input class="form" type="text" placeholder="Product Name" name="product" required>
 
                     <label for="address"><h1>Address</h1></label>
-                    <input class="form" type="text" placeholder="1 Placeholder St AB1 1AA" pattern="\d{1,5}\s[ a-zA-Z]{0,20}\s[ A-Z0-9]{1,9}" name="address" required>
+                    <input class="form" type="text" placeholder="1 Placeholder St AB11AA" pattern="\d{1,5}\s[ a-zA-Z]{0,20}\s[ A-Z0-9]{1,9}" name="address" oninvalid="setValidation()" required>
 
                     <label for="telephone"><h1>Telephone</h1></label>
-                    <input class="form" type="tel" placeholder="07123456789" pattern="[0-9]{9,11}" name="telephone" required>
+                    <input class="form" type="tel" placeholder="07123456789" pattern="[0-9]{9,11}" name="telephone" oninvalid="setValidation()" required>
 
                     <div class="submitcontainer">
                         <button type="submit" class="submitBtn" id="last" onclick="checkAcc()">Place Order</button>
