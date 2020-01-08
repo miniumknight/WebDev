@@ -26,7 +26,7 @@ function displaySlide(n) {
     for (i = 0; i < numberSlides.length; i++) 
         numberSlides[i].style.display = "none";
     
-    for (i = 0; i < numberText.length; i++)
+    for (i = 0; i< numberText.length; i++)
         numberText[i].style.display = "none";
 
     for (i = 0; i < thumbs.length; i++) 
@@ -103,9 +103,9 @@ function checkAcc() {
             exists = true;
     }
     if(exists)
-        document.getElementById('existingPass').setCustomValidity("");
+        document.getElementById('email').setCustomValidity("");
     else 
-        document.getElementById('existingPass').setCustomValidity("Invalid email or password");
+        document.getElementById('email').setCustomValidity("Invalid email or password");
 }
 
 function checkMatch() {
