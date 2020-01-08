@@ -116,6 +116,7 @@ function checkXML() {
         if (this.readyState == 4 && this.status == 200){
             var products = xmlReq.responseXML.getElementsByTagName("product");
             for (i = 0; i < products.length; i++) {
+                alert(xmlReq.responseXML.getElementsByTagName("name")[i].childNodes[0].nodeValue)
                 if(document.getElementsByName("product")[0].value == xmlReq.responseXML.getElementsByTagName("name")[i].childNodes[0].nodeValue){
                     document.getElementsByName("product")[0].setCustomValidity("");
                     break;
