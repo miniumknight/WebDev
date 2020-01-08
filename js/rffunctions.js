@@ -110,27 +110,6 @@ function checkAcc() {
     checkXML();
 }
 
-function checkXML() {
-    var xmlReq = new XMLHttpRequest();
-    xmlReq.onreadystatechange = function(){
-        if (this.readyState == 4 && this.status == 200){
-            var products = xmlReq.responseXML.getElementsByTagName("product");
-            for (i = 0; i < products.length; i++) {
-                if(document.getElementsByName("product")[0].value == xmlReq.responseXML.getElementsByTagName("name")[i].childNodes[0].nodeValue){
-                    document.getElementsByName("product")[0].setCustomValidity("");
-                    break;
-                }
-                else {
-                    document.getElementsByName("product")[0].setCustomValidity("That product does not exist within our database!");
-                    break;
-                }
-            }
-        }
-    }
-    xmlReq.open("GET", "products.xml");
-    xmlReq.send();
-}
-
 function checkMatch() {
     if (document.getElementById('password').value == document.getElementById('confirmPassword').value)
         document.getElementById('confirmPassword').setCustomValidity("");

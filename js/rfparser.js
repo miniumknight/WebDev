@@ -105,3 +105,17 @@ function swapXML(button) {
     } 
     docResult.innerHTML = content;
 }
+
+function checkXML() {
+    var products = xmlReq.responseXML.getElementsByTagName("product");
+    for (i = 0; i < products.length; i++) {
+        if(document.getElementsByName("product")[0].value == xmlReq.responseXML.getElementsByTagName("name")[i].childNodes[0].nodeValue){
+            document.getElementsByName("product")[0].setCustomValidity("");
+            break;
+        }
+        else {
+            document.getElementsByName("product")[0].setCustomValidity("That product does not exist within our database!");
+            break;
+        }
+    }
+}
