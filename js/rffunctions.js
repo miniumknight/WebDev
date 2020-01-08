@@ -103,9 +103,9 @@ function checkAcc() {
             exists = true;
     }
     if(exists)
-        document.getElementById('email').setCustomValidity("");
+        document.getElementById('existingPass').setCustomValidity("");
     else 
-        document.getElementById('email').setCustomValidity("Invalid email or password");
+        document.getElementById('existingPass').setCustomValidity("Invalid email or password");
 }
 
 function checkValidation() {
