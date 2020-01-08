@@ -1,5 +1,5 @@
 async: true;
-wgxpath.install(); //Simple compatability API to allow XPath.evaluate() to work on IE (My code already works on all other browsers).
+wgxpath.install(); //Simple google compatability Library to allow XPath.evaluate() to work on IE (My code already works on all other browsers).
 var xmlFile;
 var xmlGet = new XMLHttpRequest();
 xmlGet.onload = function () {
