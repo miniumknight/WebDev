@@ -105,3 +105,5 @@ function swapXML(button) {
     } 
     docResult.innerHTML = content;
 }
+
+toggleMobile();
