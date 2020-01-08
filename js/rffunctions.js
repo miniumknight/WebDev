@@ -76,7 +76,7 @@ function captchaExpiry() {
 }
 
 function setValidation() {
-    document.getElementsByName("address")[0].setCustomValidity("Invalid address or format(Number Street Postcode)");
+    document.getElementsByName("address")[0].setCustomValidity("Invalid address or format (Number Street Postcode)");
     document.getElementsByName("telephone")[0].setCustomValidity("Invalid telepohone number");
 }
 
