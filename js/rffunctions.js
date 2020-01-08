@@ -61,7 +61,7 @@ function timedSlide() {
 
 function toggleMobile() {
     let x = document.getElementById("responsive");
-    if(x.className == "navbar") 
+    if(x.className === "navbar") 
         x.className += " resNav";
     else 
         x.className = "navbar";
