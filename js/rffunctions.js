@@ -80,7 +80,7 @@ function setValidation() {
         document.getElementsByName("address")[0].setCustomValidity("Invalid address or format (Number Street Postcode)");
     }
     else {
-    document.getElementsByName("telephone")[0].setCustomValidity("Invalid telepohone number");
+    document.getElementsByName("telephone")[0].setCustomValidity("Invalid telephone number");
     }
 }
 
