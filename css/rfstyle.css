@@ -286,13 +286,6 @@ p {
     opacity: 1;
 }
 
-.homeBg {
-    height: 100%;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
-    z-index: -1;
-}
-
 .fullWidthBg {
     height: 100%;
     margin-left: calc(50% - 50vw);

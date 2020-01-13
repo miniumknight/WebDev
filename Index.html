@@ -24,12 +24,56 @@
             <h1>Home</h1>
         </div>
         <div class="slideShow">
-            <img class="homeBg" src="img/homeBg.png"/>
+            <div class="slideImgContainer">
+                <div class="slides fade-in-transition">
+                    <img src="img/homeImg.png">
+                </div>
+                <div class="slides fade-in-transition">
+                    <img src="img/homeImg2.png">
+                </div>
+                <div class="slides fade-in-transition">
+                    <img src="img/homeImg3.png">
+                </div>
+                <img src="img/arrowLeft.png" class="prevSlide" onclick="addtoSlide(-1)">
+                <img src="img/arrowRight.png" class="nextSlide" onclick="addtoSlide(1)">
+                <div class="thumbcontainer">
+                    <img src="img/homeImg.png" class="thumb" style="margin-left: 21%;" onclick="switchSlide(1)">
+                    <img src="img/homeImg2.png" class="thumb" onclick="switchSlide(2)">
+                    <img src="img/homeImg3.png" class="thumb" onclick="switchSlide(3)">
+                </div>
+            </div>
+            <div class="slideTxtContainer">
+                <div class="slideText">
+                    <h2>East Midlands Electronics</h2>
+                    <p>Welcome to East Midlands Electronics! 
+                        <br><br>
+                        If you're after high quality electronics in the East Midlands area
+                        you've come to the right place! 
+                        <br><br>
+                        See below for additional information about our website such as how to order our products!
+                    </p>
+                </div>
+                <div class="slideText">
+                    <h2>Fast Delivery</h2>
+                    <p>Our delivery is extremely fast with same day dispatch on all products and many services to 
+                        choose from such as Royal Mail Next Day or Hermes Special Delivery along with free 
+                        standard delivery when you spend over £50 on an order!
+                    </p>
+                </div>
+                <div class="slideText">
+                    <h2>Trusted by Customers</h2>
+                    <p>Our site has a trusted reputation especially for such a small company, we have fantastic reviews
+                        and testimonies. If you have any questions or require support you can contact us using the 
+                        support email provided in your order confirmation.
+                    </p>
+                </div>
+            </div>
+            <div class="fullWidthBg"></div>
         </div>
         <div class="mainTextContainer">
             <div class="mainText">
-                <h1>Welcome</h1>
-                <p>Welcome to East Midlands Electronics! We are a small business based in the east midlands with a
+                <h1>About Us</h1>
+                <p>We are East Midlands Electronics! We are a small business based in the east midlands with a
                     focus on selling the latest electronics and technology and shipping it straight to your doorstep.
                     From the useful Raspberri Pi to the powerful Xbox One X we have everything to suit your needs so feel free to browse our
                     site at your leisure.
