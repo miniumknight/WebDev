@@ -295,6 +295,12 @@ p {
     box-shadow: inset 0px 11px 8px -10px, inset 0 -11px 8px -10px;
 }
 
+.fullWidthImg {
+    height: 100%;
+    width: 100%;
+    box-shadow: inset 0px 11px 8px -10px, inset 0 -11px 8px -10px;
+}
+
 .prodContainer {
     width: 100%;
     overflow: auto;
