@@ -289,7 +289,7 @@ p {
 .fullWidthBg {
     height: 100%;
     margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw); /* Forces the div to the full width of the sceen by using a trick which calculates the distance to the edge of the viewport and dynamically forces the margins to maintain that size. */
     background-color: #d3d3d3;
     z-index: -1;
     box-shadow: inset 0px 11px 8px -10px, inset 0 -11px 8px -10px;

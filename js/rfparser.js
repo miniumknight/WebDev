@@ -2,19 +2,19 @@ async: true;
 var currentPage = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1);
 
 var xmlFile;
-var xmlReq = new XMLHttpRequest();
-xmlReq.onload = function () {
-    console.log("XML Successfully loaded");
+var xmlReq = new XMLHttpRequest(); //Using XMLHttp for its built-in parser.
+xmlReq.onload = function () { 
+    console.log("XML Successfully loaded"); //On load; Tells the user that XML has been successfully loaded in the console.
 }
 xmlReq.onerror = function () {
-    console.log("Error while loading XML");
+    console.log("Error while loading XML"); //On error; Tells the user that there was an error loading the XML in the console. 
 }
-xmlReq.onreadystatechange = function(){
-    if (this.readyState == 4 && this.status == 200){
-        if (currentPage == "Products.html") {
+xmlReq.onreadystatechange = function(){ 
+    if (this.readyState == 4 && this.status == 200){ //Check if XML is fully loaded and ready to be used.
+        if (currentPage == "Products.html") { //Only load content from XML if on the products page (So that XML can be used by other pages without the script trying to load the content).
             wgxpath.install(); //Simple google compatability Library to allow XPath.evaluate() to work on IE (My code already works on all other browsers).
             xmlFile = xmlReq.responseXML;
-            loadXML()
+            loadXML();
         }
     }
 }
@@ -27,8 +27,8 @@ function loadXML() {
     
     content += '<div class="header"><h1>All Products</h1></div>';
 
-    for(var i = 0; i < products.length; i++) {
-        if (i%2 == 0 || i == 0) {
+    for(var i = 0; i < products.length; i++) { //For each product which exists within the XML file.
+        if (i%2 == 0 || i == 0) { //Check if even.
             content +=
             '<div class ="prodContainer">' +
                 '<div class="prodText" id="'+i+'">' +
@@ -36,8 +36,8 @@ function loadXML() {
                     '<img class="prodImage" src="'+xmlFile.getElementsByTagName("image")[i].childNodes[0].nodeValue+'">' +
                     '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">More Information</btn>' + 
                 '</div>';
-        }
-        else {
+        } //Generate content using HTML and XML for the left side (Due to half and half layout; Opens the 50/50 container div).
+        else { //If not even.
             content +=
                 '<div class="prodText" id="'+i+'">' +
                     '<h1 class="prodName">'+xmlFile.getElementsByTagName("name")[i].childNodes[0].nodeValue+'</h1>' +
@@ -45,7 +45,7 @@ function loadXML() {
                     '<btn class="prodInfo" onclick="swapXML(this)" id="'+i+'">More Information</btn>' + 
                 '</div>' +
             '</div>'
-        }
+        } //Generate content using HTML and XML for the right side (Slightly different HTML; Closes the 50/50 container div).
     }
 
     content += '<br><br><div class="footer"><h3>Website by Ross Fitch. Copyright &copy; 2019, All rights reserved.</h3></div>';
