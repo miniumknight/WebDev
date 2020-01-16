@@ -112,7 +112,7 @@ function checkXML() { //Function which compares the value a user has input to th
     var products = xmlReq.responseXML.getElementsByTagName("product");
     for (i = 0; i < products.length; i++) { //Iterate through the products in the XML once again.
         if(document.getElementsByName("product")[0].value == xmlReq.responseXML.getElementsByTagName("name")[i].childNodes[0].nodeValue){ //If the value input by the user is a product which exists in the XML.
-            document.getElementsByName("product")[0].setCustomValidity(""); //The input tag is set to valid.
+            document.getElementsByName("product")[0].setCustomValidity(""); //The corresponding input tag is set to valid.
             break; //End the loop.
         }
         else { //The input is invalid (The product does not exist in the XML file).
