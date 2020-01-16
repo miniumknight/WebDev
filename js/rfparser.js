@@ -111,8 +111,8 @@ function swapXML(button) {
 function checkXML() { //Function which compares the value a user has input to the XML data and updates the validity of the corresponding input tag accordingly.
     var products = xmlReq.responseXML.getElementsByTagName("product");
     for (i = 0; i < products.length; i++) { //Iterate through the products in the XML once again.
-        if(document.getElementsByName("product")[0].value == xmlReq.responseXML.getElementsByTagName("name")[i].childNodes[0].nodeValue){ //If the value input by the user exists in the XML.
-            document.getElementsByName("product")[0].setCustomValidity(""); //The input is valid (The product exists in the XML file).
+        if(document.getElementsByName("product")[0].value == xmlReq.responseXML.getElementsByTagName("name")[i].childNodes[0].nodeValue){ //If the value input by the user is a product which exists in the XML.
+            document.getElementsByName("product")[0].setCustomValidity(""); //The input tag is set to valid.
             break; //End the loop.
         }
         else { //The input is invalid (The product does not exist in the XML file).
